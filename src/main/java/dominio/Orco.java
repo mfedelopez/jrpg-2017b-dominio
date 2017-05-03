@@ -37,12 +37,18 @@ public class Orco extends Personaje {
 	}
 
 
-	/**Retorna un booleano dependiendo de si se realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque pueda realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se descuentan seguido de comprobar que los posee,
-	 * de lo contrario el ataque no será posible y se retornará false
-	 * El método serAtacado() tiene como argumento el doble del valor del atributo defensa del llamador
-	 * @param atacado Instancia de Personaje o de NPC, dependiendo de cual sea, será como responda el
+	/**Retorna un booleano dependiendo de si se 
+	 * realizó exitosamente o no el ataque.
+	 * La primera condición para que el ataque 
+	 * pueda realizarse es que el atacante(caster) posea 10 o
+	 * más del atributo energia ya que estos se 
+	 * descuentan seguido de comprobar que los posee,
+	 * de lo contrario el ataque no será posible 
+	 * y se retornará false
+	 * El método serAtacado() tiene como argumento 
+	 * el doble del valor del atributo defensa del llamador
+	 * @param atacado Instancia de Personaje o de NPC, 
+	 * dependiendo de cual sea, será como responda el
 	 * método serAtacado()
 	 * @return Retorna si el ataque fue exitoso o no.
 	 */
@@ -58,13 +64,19 @@ public class Orco extends Personaje {
 	}
 
 
-	/**Retorna un booleano dependiendo de si se realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque pueda realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se descuentan seguido de comprobar que los posee,
-	 * de lo contrario el ataque no será posible y se retornará false
-	 * El método serAtacado() tiene como argumento el valor del atributo fuerza del llamador
+	/**Retorna un booleano dependiendo de si se 
+	 * realizó exitosamente o no el ataque.
+	 * La primera condición para que el ataque 
+	 * pueda realizarse es que el atacante(caster) posea 10 o
+	 * más del atributo energia ya que estos se 
+	 * descuentan seguido de comprobar que los posee,
+	 * de lo contrario el ataque no será posible 
+	 * y se retornará false
+	 * El método serAtacado() tiene como argumento 
+	 * el valor del atributo fuerza del llamador
 	 * luego el llamador se cura con el daño causado al atacado
-	 * @param atacado Instancia de Personaje o de NPC, dependiendo de cual sea, será como responda el
+	 * @param atacado Instancia de Personaje o de NPC, 
+	 * dependiendo de cual sea, será como responda el
 	 * método serAtacado()
 	 * @return Retorna si el ataque fue exitoso o no.
 	 */
@@ -80,21 +92,25 @@ public class Orco extends Personaje {
 		}
 		return false;
 	}
-	/**Retorna un vector de string con los nombres de las habilidades de la raza.
-	 * @return Retorna nombres de las habilidades propias de la raza.
+	/**Retorna un vector de string con los nombres 
+	 * de las habilidades de la raza.
+	 * @return Retorna nombres de las habilidades 
+	 * propias de la raza.
 	 */
 	@Override
 	public final String[] getHabilidadesRaza() {
 		return new String[] {"Golpe Defensa","Mordisco de Vida"}; 
 	}
-	/**Retorna un entero con el bonificador de salud de la raza.
+	/**Retorna un entero con el bonificador de 
+	 * salud de la raza.
 	 * @return Retorna la salud extra de la raza.
 	 */
 	@Override
 	public final int getSaludBonus() {
 		return BONUSSALUD;
 	}
-	/**Retorna un entero con el bonificador de energia de la raza.
+	/**Retorna un entero con el bonificador de 
+	 * energia de la raza.
 	 * @return Retorna 0 para esta raza.
 	 */
 	@Override

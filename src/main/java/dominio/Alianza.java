@@ -16,7 +16,11 @@ public class Alianza {
 		this.nombre = nombre;
 		this.aliados = new LinkedList<Personaje>();
 	}
-
+	/** Se encarga de retornar la lista que 
+	 * contiene los personajes 
+	 * pertenecientes a la alianza.
+	 * @return Retorna la lista de aliados.
+	 */
 	public final LinkedList<Personaje> getAliados() {
 		return aliados;
 	}
@@ -29,11 +33,18 @@ public class Alianza {
 	public final void setAliados(final LinkedList<Personaje> aliados) {
 		this.aliados = aliados;
 	}
-
+	/** Se encarga de retornar 
+	 * el nombre de la alianza.
+	 * @return Retorna nombre de la alianza.
+	 */
 	public final String obtenerNombre() {
 		return nombre;
 	}
-
+	/** Se encarga de eliminar un 
+	 * personaje de la alianza.
+	 * @param pj personaje a remover 
+	 * de la alianza.
+	 */
 	public final void eliminarPersonaje(final Personaje pj) {
 		aliados.remove(pj);
 	}

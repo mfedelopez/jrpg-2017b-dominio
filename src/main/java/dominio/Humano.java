@@ -9,7 +9,8 @@ public class Humano extends Personaje {
 	private static final int BONUSSALUD = 5;
 
 	/**La clase Humano hereda de la clase Personaje.
-	 * Completa ciertos atributos que estaban declarados en la clase Personaje,
+	 * Completa ciertos atributos que estaban 
+	 * declarados en la clase Personaje,
 	 * como por ejemplo habilidadesRaza[]
 	 * @param nombre Indica el nombre el personaje
 	 * @param casta Indica la casta(Raza) del personaje
@@ -41,13 +42,19 @@ public class Humano extends Personaje {
 	}
 
 
-	/** Retorna un booleano dependiendo de si se realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque pueda realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se descuentan seguido de comprobar que los posee,
-	 * de lo contrario el ataque no será posible y se retornará false
-	 * El método serAtacado() tiene como argumento la suma del valor del atributo ataque
+	/** Retorna un booleano dependiendo de si se 
+	 * realizó exitosamente o no el ataque.
+	 * La primera condición para que el ataque 
+	 * pueda realizarse es que el atacante(caster) posea 10 o
+	 * más del atributo energia ya que estos se 
+	 * descuentan seguido de comprobar que los posee,
+	 * de lo contrario el ataque no será posible 
+	 * y se retornará false
+	 * El método serAtacado() tiene como argumento 
+	 * la suma del valor del atributo ataque
 	 * y magia del llamador.
-	 * @param atacado Instancia de Personaje o de NPC, dependiendo de cual sea, será como responda el
+	 * @param atacado Instancia de Personaje o de NPC, 
+	 * dependiendo de cual sea, será como responda el
 	 * método serAtacado()
 	 */
 	@Override
@@ -61,14 +68,21 @@ public class Humano extends Personaje {
 	}
 
 
-	/** Retorna un booleano dependiendo de si se realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque pueda realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se descuentan seguido de comprobar que los posee,
-	 * de lo contrario el ataque no será posible y se retornará false
-	 * El método serAtacado() recibe como parámetro la mitad del valor de la salud del atacado,
-	 * si el valor retornado es mayor a 0, el valor del atributo energia del llamador será
+	/** Retorna un booleano dependiendo de si se 
+	 * realizó exitosamente o no el ataque.
+	 * La primera condición para que el ataque 
+	 * pueda realizarse es que el atacante(caster) posea 10 o
+	 * más del atributo energia ya que estos se 
+	 * descuentan seguido de comprobar que los posee,
+	 * de lo contrario el ataque no será posible y 
+	 * se retornará false
+	 * El método serAtacado() recibe como parámetro 
+	 * la mitad del valor de la salud del atacado,
+	 * si el valor retornado es mayor a 0, el valor 
+	 * del atributo energia del llamador será
 	 * reducido a la mitad.
-	 * @param atacado Instancia de Personaje o de NPC, dependiendo de cual sea, será como responda el
+	 * @param atacado Instancia de Personaje o de NPC, 
+	 * dependiendo de cual sea, será como responda el
 	 * método serAtacado()
 	 */
 	@Override
@@ -82,21 +96,25 @@ public class Humano extends Personaje {
 		this.setEnergia(this.getEnergia() - ENERGIAMINIMA);
 		return false;
 	}
-	/**Retorna un vector de string con los nombres de las habilidades de la raza.
-	 * @return Retorna nombres de las habilidades propias de la raza.
+	/**Retorna un vector de string con los nombres 
+	 * de las habilidades de la raza.
+	 * @return Retorna nombres de las habilidades 
+	 * propias de la raza.
 	 */
 	@Override
 	public final String[] getHabilidadesRaza() {
 		return new String[] {"Incentivar","Golpe Fatal"}; 
 	}
-	/**Retorna un entero con el bonificador de salud de la raza.
+	/**Retorna un entero con el bonificador de salud 
+	 * de la raza.
 	 * @return Retorna la salud extra de la raza.
 	 */
 	@Override
 	public final int getSaludBonus() {
 		return BONUSSALUD;
 	}
-	/**Retorna un entero con el bonificador de energia de la raza.
+	/**Retorna un entero con el bonificador de energia 
+	 * de la raza.
 	 * @return Retorna la energia extra para esta raza.
 	 */
 	@Override
