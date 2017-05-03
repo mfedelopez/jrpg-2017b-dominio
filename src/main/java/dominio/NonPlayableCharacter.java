@@ -1,6 +1,13 @@
 
 package dominio;
 
+/**
+ * La clase NonPlayableCharacter (NPC) representa a los personajes del juego que no son
+ * controlados por humanos.
+ * Implementa la Interfaz Peleable.
+ *
+ */
+
 public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 
 	private int salud;
@@ -33,12 +40,12 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	private static final double NUMEROPARAATACAR = 0.15;
 	private static final int DIVISORDEDEFENSA = 2;
 
-	/** La clase NonPlayableCharacter representa a los NPC del juego.
-	 * Dependiendo de la dificultad que se pasa por parámetro al constructor,
-	 * aumentará o disminuirá el valor de los atributos fuerza salud y defensa.
+	/**
+	 * Constructor de la Clase. Dependiendo de la dificultad que se pasa por parámetro al
+	 *  constructor, aumentará o disminuirá el valor de los atributos fuerza salud y defensa.
 	 * @param nombre Nombre que se le otorga al NPC
-	 * @param nivel Nivel (entero) que se le otorga al NPC
-	 * @param dificultadNPC valor entero que consecuentemente produce una variación en los atributos.
+	 * @param nivel Nivel que se le otorga al NPC
+	 * @param dificultadNPC Valor entero que produce una variación en los atributos.
 	 */
 	public NonPlayableCharacter(String nombre, int nivel, final int dificultadNPC) {
 		super(0,0,nivel,nombre);
@@ -72,10 +79,10 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 		}
 	}
 
-	/** Retorna un entero.
-	 * Rrepresentando la cantidad de experiencia que debe sumarse al Personaje que
-	 * produjo la disminución de la salud del NPC a 0
-	 * La experiencia será 30 veces el valor del atributo nivel
+	/** 
+	 * Retorna un entero que la cantidad de experiencia que debe sumarse al Personaje que
+	 * produjo la disminución de la salud del NPC a 0. La misma sera MULTIPLCADOREXPNPC veces
+	 *  el valor del atributo nivel
 	 */
 	@Override
 	public final int otorgarExp() {
@@ -83,23 +90,38 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	}
 
 
-
+	/**
+	 * Retorna un booleano que indica si el NPC esta vivo, evaluando si el mismo tiene
+	 * salud mayor a 0.
+	 */
 	@Override
 	public final boolean estaVivo() {
 		return salud > 0;
 	}
 
 
-
+	/**
+	 * Retorna un entero que representa los puntos de salud del NPC.
+	 */
 	@Override
 	public final int getSalud() {
 		return salud;
 	}
-
+	
+	/**
+	 * Asigna un valor entero que representará la salud del NPC
+	 * @param salud Entero que indica la nueva salud del NPC.
+	 */
 	public final void setSalud(int salud) {
 		this.salud = salud;
 	}
-
+	
+	/**
+	 * Método que, dependiendo de MyRandom.nextdouble() y NUMEROPARAATACAR, puede ejecutar un
+	 * ataque mejorado por el atributo MULTIPLICADORFUERZA
+	 * @param atacado Peleable que recibe el ataque
+	 * @return Retorna un entero que representa los puntos de daño realizados
+	 */
 	@Override
 	public int atacar(Peleable atacado) {
 		if (MyRandom.nextDouble() <= NUMEROPARAATACAR) {
@@ -108,11 +130,9 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 			return atacado.serAtacado(this.getAtaque());
 	}
 
-	/** Método que retorna 0 o un valor positivo.
-	 * Ei el número generado por MyRandom.nextDouble() es mayor a 0.15,
-	 * se procede a disminuir el daño por la mitad del atributo defensa si después de la
-	 * reducción de daño, este sigue siendo mayor a 0,
-	 *  se procede a restar el valor del daño al atributo
+	/** 
+	 * Método que, dependiendo de MyRandom.nextdouble() y NUMEROPARASERATACADO, puede
+	 * disminuir el daño dependiendo del atributo DIVISORDEDEFENSA.
 	 * salud.
 	 * @param daño valor a ser descontado del atributo salud.
 	 * @return Retorna 0 si el ataque no fue realizado con exito
@@ -129,24 +149,37 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 		}
 		return 0;
 	}
-
+	
+	/**
+	 * Método sin implementar
+	 */
 	@Override
 	public void despuesDeTurno() { }
 
 	public void ganarExperiencia(final int exp) {
 
 	}
-
+	
+	/**
+	 * Retorna un entero que representa el atributo de Fuerza del NPC
+	 */
 	@Override
 	public final int getAtaque() {
 		return this.getFuerza();
 	}
-
+	
+	/**
+	 * Asigna un valor entero que representará el ataque del NPC
+	 * @param ataque Entero que indica la nueva fuerza del NPC.
+	 */
 	@Override
 	public final void setAtaque(final int ataque) {
 		this.setFuerza(ataque);
 	}
-
+	
+	/**
+	 * Retorna siempre un entero de valor 0
+	 */
 	@Override
 	public int getMagia() {
 
