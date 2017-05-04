@@ -1,25 +1,43 @@
 
 package dominio;
-
+/** La clase Hechicero es una casta de Personaje,
+ * hereda de la clase Casta.
+ * Posee dos constructores
+ * El otro constructor, llama al constructor de
+ * la clase padre (Casta),
+ * pasándole los argumentos recibidos
+ * por el constructor hijo.
+ * */
 public class Hechicero extends Casta {
+	/**
+	 * Energia minima para realizar una habilidad.
+	 */
 	private static final int ENERGIAMINIMA = 10;
+	/**
+	 * Numero por el cual seran multiplicados los puntos de magia.
+	 */
 	private static final double MULTIPLICADORMAGIA = 1.5;
+	/**
+	 * Numero por el cual se dividiran los puntos de magia.
+	 */
 	private static final int DIVISORDEMAGIA = 2;
+	/**
+	 * Bonus de inteligencia por ser de casta Hechicero.
+	 */
 	private static final int BONUSINTELIGENCIA = 5;
 
-	/** La clase Hechicero es una casta de Personaje, 
+	/** La clase Hechicero es una casta de Personaje,
 	 * hereda de la clase Casta.
 	 * Posee dos constructores
-	 * El otro constructor, llama al constructor de 
+	 * El otro constructor, llama al constructor de
 	 * la clase padre (Casta),
 	 * pasándole los argumentos recibidos
-	 * por el constructor hijo y luego inicializa la 
-	 * variable nombreCasta
-	 * @param prob_crit Probabilidad de que el 
+	 * por el constructor hijo.
+	 * @param prob_crit Probabilidad de que el
 	 * personaje realice un golpe crítico
-	 * @param evasion Probabilidad de que el personaje 
+	 * @param evasion Probabilidad de que el personaje
 	 * evite un golpe crítico
-	 * @param daño_crit Valor por el cual será 
+	 * @param daño_crit Valor por el cual será
 	 * multiplicado el golpe básico
 	 */
 
@@ -27,9 +45,9 @@ public class Hechicero extends Casta {
 		super(prob_crit, evasion, daño_crit);
 
 	}
-	/** El constructor por defecto, llama al constructor 
+	/** El constructor por defecto, llama al constructor
 	 * por defecto de la clase
-	 * padre (Casta), inicializando probabilidadGolpeCritico, 
+	 * padre (Casta), inicializando probabilidadGolpeCritico,
 	 * probabilidadEvitarDaño, dañoCritico,
 	 * con valores predeterminados.
 	 */
@@ -38,15 +56,15 @@ public class Hechicero extends Casta {
 	}
 
 
-	/** Retorna un booleano dependiendo de si se 
+	/** Retorna un booleano dependiendo de si se
 	 * realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque pueda 
+	 * La primera condición para que el ataque pueda
 	 * realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se 
+	 * más del atributo energia ya que estos se
 	 * descuentan seguido de comprobar que los posee,
 	 * de lo contrario
 	 * el ataque no será posible y se retornará false.
-	 * El parámetro caster a su vez llama al método 
+	 * El parámetro caster a su vez llama al método
 	 * calcularPuntosDeMagia()
 	 * el cual luego se multiplica por 1.5
 	 * @param caster Personaje que realiza la habilidad
@@ -66,17 +84,17 @@ public class Hechicero extends Casta {
 	}
 
 
-	/** Retorna un booleano dependiendo de si se 
+	/** Retorna un booleano dependiendo de si se
 	 * realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque 
+	 * La primera condición para que el ataque
 	 * pueda realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se 
+	 * más del atributo energia ya que estos se
 	 * descuentan seguido de comprobar que los posee, de lo contrario
 	 * el ataque no será posible y se retornará false.
-	 * Para que éste método tenga posibilidad de 
+	 * Para que éste método tenga posibilidad de
 	 * retornar true, aliado debe ser de la instancia Personaje
 	 * @param caster Personaje que realiza la habilidad
-	 * @param aliado atacado puede ser una instancia de 
+	 * @param aliado atacado puede ser una instancia de
 	 * Persona o NPC dependiendo de la misma podrá o no
 	 * retornar true el método.
 	 */
@@ -92,17 +110,17 @@ public class Hechicero extends Casta {
 		return false;
 	}
 
-	/** Retorna un booleano dependiendo de si se 
+	/** Retorna un booleano dependiendo de si se
 	 * realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque 
+	 * La primera condición para que el ataque
 	 * pueda realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se 
+	 * más del atributo energia ya que estos se
 	 * descuentan seguido de comprobar que los posee, de lo contrario
 	 * el ataque no será posible y se retornará false.
-	 * Para que éste método tenga posibilidad de retornar 
+	 * Para que éste método tenga posibilidad de retornar
 	 * true, el Atacado debe ser una instancia Personaje
 	 * @param caster Personaje que realiza la habilidad
-	 * @param atacado El atacado puede ser una instancia 
+	 * @param atacado El atacado puede ser una instancia
 	 * de Persona o NPC dependiendo de la misma podrá o no
 	 * retornar true el método.
 	 * @return retorna si se ejecutó correctamente la habilidad.
@@ -122,7 +140,7 @@ public class Hechicero extends Casta {
 		}
 		return false;
 	}
-	/** Retorna un entero que otorga el bonus de 
+	/** Retorna un entero que otorga el bonus de
 	 * inteligencia perteneciente a esta casta.
 	 * @return Retorna la inteligencia extra de la casta.
 	 */
@@ -130,7 +148,7 @@ public class Hechicero extends Casta {
 	public final int recibirInteligenciaBonus() {
 		return BONUSINTELIGENCIA;
 	}
-	/** Retorna un entero que otorga el bonus de 
+	/** Retorna un entero que otorga el bonus de
 	 * destreza perteneciente a esta casta.
 	 * @return Retorna 0 para esta casta.
 	 */
@@ -138,7 +156,7 @@ public class Hechicero extends Casta {
 	public final int recibirDestrezaBonus() {
 		return 0;
 	}
-	/** Retorna un entero que otorga el bonus de 
+	/** Retorna un entero que otorga el bonus de
 	 * fuerza perteneciente a esta casta.
 	 * @return Retorna 0 para esta casta.
 	 */
@@ -153,9 +171,9 @@ public class Hechicero extends Casta {
 	public final String getNombreCasta() {
 		return "Hechiero";
 	}
-	/**Retorna un vector de string con los nombres 
+	/**Retorna un vector de string con los nombres
 	 * de las habilidades de la casta.
-	 * @return Retorna nombres de las habilidades 
+	 * @return Retorna nombres de las habilidades
 	 * propias de la casta.
 	 */
 	@Override
