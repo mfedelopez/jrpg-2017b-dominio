@@ -1,32 +1,32 @@
 
 package dominio;
 
-/** Interface implementada en las clases Personaje 
+/** Interface implementada en las clases Personaje
  * y NPC.
- * Dependiendo qué clase las esté implementando 
+ * Dependiendo qué clase las esté implementando
  * será como responderán
  */
 public interface Peleable {
 	/**
-	 * Metodo implementado en Personaje 
+	 * Metodo implementado en Personaje
 	 * y en NonPlayableCharacter.
-	 * 
-	 * @param daño
+	 *
+	 * @param daño Valor el cual se descontará de la defensa.
 	 * @return Retorna un entero con el daño causado al llamador.
 	 */
 	int serAtacado(int daño);
-	
+
 	/**
-	 * Metodo implementado en Personaje 
+	 * Metodo implementado en Personaje
 	 * y NonPlayableCharacter.
-	 * 
+	 *
 	 * @return Retornara un entero con la salud del llamador.
 	 */
 	int getSalud();
 	/**
-	 * Metodo implementado en Personaje 
+	 * Metodo implementado en Personaje
 	 * y NonPlayableCharacter.
-	 * 
+	 *
 	 * @return Retornara un entero con la energia del llamador.
 	 */
 	int getMagia();
@@ -64,10 +64,14 @@ public interface Peleable {
 	/**
 	 * Metodo implementado en Personaje
 	 * y NonPlayableCharacter.
-	 * 
-	 * @return Retorna un boolean si esta vivo o no el llamador. 
+	 *
+	 * @return Retorna un boolean si esta vivo o no el llamador.
 	 */
 	boolean estaVivo();
-
+	/**
+	 * Método.
+	 * @return retorna el nombre del Personaje o NPC.
+	 */
 	String getNombre();
 }
+
