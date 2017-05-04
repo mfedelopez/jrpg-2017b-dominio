@@ -1,15 +1,35 @@
 
 package dominio;
 
+/**La clase Humano hereda de la clase Personaje.
+ * Completa ciertos atributos que estaban
+ * declarados en la clase Personaje,
+ * como por ejemplo habilidadesRaza[]
+ */
 public class Humano extends Personaje {
+	/**
+	 * Energia minima que se necesita para realizar una habilidad.
+	 */
 	private static final int ENERGIAMINIMA = 10;
+	/**
+	 * Numero por el cual se divide la salud.
+	 */
 	private static final int DIVISORSALUD = 2;
+	/**
+	 * Numero por el cual se divide la energia.
+	 */
 	private static final int DIVISORENERGIA = 2;
+	/**
+	 * Bonus de energia obtenido por ser de casta Humano.
+	 */
 	private static final int BONUSENERGIA = 5;
+	/**
+	 * Bonus de salud obtenido por ser de casta Humano.
+	 */
 	private static final int BONUSSALUD = 5;
 
 	/**La clase Humano hereda de la clase Personaje.
-	 * Completa ciertos atributos que estaban 
+	 * Completa ciertos atributos que estaban
 	 * declarados en la clase Personaje,
 	 * como por ejemplo habilidadesRaza[]
 	 * @param nombre Indica el nombre el personaje
@@ -42,18 +62,18 @@ public class Humano extends Personaje {
 	}
 
 
-	/** Retorna un booleano dependiendo de si se 
+	/** Retorna un booleano dependiendo de si se
 	 * realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque 
+	 * La primera condición para que el ataque
 	 * pueda realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se 
+	 * más del atributo energia ya que estos se
 	 * descuentan seguido de comprobar que los posee,
-	 * de lo contrario el ataque no será posible 
+	 * de lo contrario el ataque no será posible
 	 * y se retornará false
-	 * El método serAtacado() tiene como argumento 
+	 * El método serAtacado() tiene como argumento
 	 * la suma del valor del atributo ataque
 	 * y magia del llamador.
-	 * @param atacado Instancia de Personaje o de NPC, 
+	 * @param atacado Instancia de Personaje o de NPC,
 	 * dependiendo de cual sea, será como responda el
 	 * método serAtacado()
 	 */
@@ -68,20 +88,20 @@ public class Humano extends Personaje {
 	}
 
 
-	/** Retorna un booleano dependiendo de si se 
+	/** Retorna un booleano dependiendo de si se
 	 * realizó exitosamente o no el ataque.
-	 * La primera condición para que el ataque 
+	 * La primera condición para que el ataque
 	 * pueda realizarse es que el atacante(caster) posea 10 o
-	 * más del atributo energia ya que estos se 
+	 * más del atributo energia ya que estos se
 	 * descuentan seguido de comprobar que los posee,
-	 * de lo contrario el ataque no será posible y 
+	 * de lo contrario el ataque no será posible y
 	 * se retornará false
-	 * El método serAtacado() recibe como parámetro 
+	 * El método serAtacado() recibe como parámetro
 	 * la mitad del valor de la salud del atacado,
-	 * si el valor retornado es mayor a 0, el valor 
+	 * si el valor retornado es mayor a 0, el valor
 	 * del atributo energia del llamador será
 	 * reducido a la mitad.
-	 * @param atacado Instancia de Personaje o de NPC, 
+	 * @param atacado Instancia de Personaje o de NPC,
 	 * dependiendo de cual sea, será como responda el
 	 * método serAtacado()
 	 */
@@ -96,16 +116,16 @@ public class Humano extends Personaje {
 		this.setEnergia(this.getEnergia() - ENERGIAMINIMA);
 		return false;
 	}
-	/**Retorna un vector de string con los nombres 
+	/**Retorna un vector de string con los nombres
 	 * de las habilidades de la raza.
-	 * @return Retorna nombres de las habilidades 
+	 * @return Retorna nombres de las habilidades
 	 * propias de la raza.
 	 */
 	@Override
 	public final String[] getHabilidadesRaza() {
-		return new String[] {"Incentivar","Golpe Fatal"}; 
+		return new String[] {"Incentivar","Golpe Fatal"};
 	}
-	/**Retorna un entero con el bonificador de salud 
+	/**Retorna un entero con el bonificador de salud
 	 * de la raza.
 	 * @return Retorna la salud extra de la raza.
 	 */
@@ -113,7 +133,7 @@ public class Humano extends Personaje {
 	public final int getSaludBonus() {
 		return BONUSSALUD;
 	}
-	/**Retorna un entero con el bonificador de energia 
+	/**Retorna un entero con el bonificador de energia
 	 * de la raza.
 	 * @return Retorna la energia extra para esta raza.
 	 */
