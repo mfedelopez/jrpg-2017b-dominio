@@ -24,7 +24,7 @@ public class Humano extends Personaje {
 	 */
 	private static final int BONUSENERGIA = 5;
 	/**
-	 * Bonus de salud obtenido por ser de casta Humano.
+	 * Bonus de salud obtenido por ser de raza Humano.
 	 */
 	private static final int BONUSSALUD = 5;
 
