@@ -860,6 +860,13 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * @return Boolean si pudo o no realizar la habilidad 1 de la Raza.
 	 */
 	public abstract boolean habilidadRaza1(Peleable atacado);
+	/** Metodo abstracto implementado en cada raza.
+	 * Que retorna un vector String con los nombres de las habilidades
+	 * de esa raza.
+	 * Depende de la raza que sea el personaje
+	 * llamador, Humano, Orco o Elfo.
+	 * @return Un array de Strings con los nombres de las habilidades.
+	 */
 	public abstract boolean habilidadRaza2(Peleable atacado);
 	/** Metodo abstracto implementado en cada raza.
 	 * Que retorna un vector String con los nombres de las habilidades
