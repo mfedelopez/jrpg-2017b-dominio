@@ -1,3 +1,5 @@
+[![Travis](https://travis-ci.org/LosIsotopos/jrpg-2017a-dominio.svg?branch=master)]()
+
 # World Of Middle Earth (WOME) - dominio
 
 ## Sobre las personas
