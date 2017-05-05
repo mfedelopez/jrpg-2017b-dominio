@@ -216,16 +216,16 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	/**
 	 * Dependiendo de MyRandom.nextdouble() y NUMEROPARASERATACADO.
 	 * Puede disminuir el daño dependiendo del atributo DIVISORDEDEFENSA.
-	 * @param daño valor a ser descontado del atributo salud.
+	 * @param danio valor a ser descontado del atributo salud.
 	 * @return Retorna 0 si el ataque no fue realizado con exito
 	 */
 	@Override
-	public final int serAtacado(int daño) {
+	public final int serAtacado(int danio) {
 		if (MyRandom.nextDouble() >= NUMEROPARASERATACADO) {
-			daño -= this.getDefensa() / DIVISORDEDEFENSA;
-			if (daño > 0) {
-				salud -= daño;
-				return daño;
+			danio -= this.getDefensa() / DIVISORDEDEFENSA;
+			if (danio > 0) {
+				salud -= danio;
+				return danio;
 			}
 			return 0;
 		}

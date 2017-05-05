@@ -33,16 +33,16 @@ public class Hechicero extends Casta {
 	 * la clase padre (Casta),
 	 * pasándole los argumentos recibidos
 	 * por el constructor hijo.
-	 * @param prob_crit Probabilidad de que el
+	 * @param probCrit Probabilidad de que el
 	 * personaje realice un golpe crítico
 	 * @param evasion Probabilidad de que el personaje
 	 * evite un golpe crítico
-	 * @param daño_crit Valor por el cual será
+	 * @param danioCrit Valor por el cual será
 	 * multiplicado el golpe básico
 	 */
 
-	public Hechicero(final double prob_crit, final double evasion, final double daño_crit) {
-		super(prob_crit, evasion, daño_crit);
+	public Hechicero(final double probCrit, final double evasion, final double danioCrit) {
+		super(probCrit, evasion, danioCrit);
 
 	}
 	/** El constructor por defecto, llama al constructor
@@ -130,10 +130,10 @@ public class Hechicero extends Casta {
 		if (caster.getEnergia() > ENERGIAMINIMA) {
 			caster.setEnergia(caster.getEnergia() - ENERGIAMINIMA);
 			if (atacado instanceof Personaje) {
-				int energia_robada = ((Personaje) atacado).serDesernegizado(caster.calcularPuntosDeMagia());
-				int salud_robada = ((Personaje) atacado).serRobadoSalud(caster.calcularPuntosDeMagia() / DIVISORDEMAGIA);
-				caster.serEnergizado(energia_robada);
-				caster.serCurado(salud_robada);
+				int energiaRobada = ((Personaje) atacado).serDesernegizado(caster.calcularPuntosDeMagia());
+				int saludRobada = ((Personaje) atacado).serRobadoSalud(caster.calcularPuntosDeMagia() / DIVISORDEMAGIA);
+				caster.serEnergizado(energiaRobada);
+				caster.serCurado(saludRobada);
 				return true;
 			}
 

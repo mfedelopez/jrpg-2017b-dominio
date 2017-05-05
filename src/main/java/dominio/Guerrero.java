@@ -29,15 +29,15 @@ public class Guerrero extends Casta {
 	 * clase padre (Casta),
 	 * pasándole los argumentos recibidos
 	 * por el constructor hijo
-	 * @param prob_crit Probabilidad de que el
+	 * @param probCrit Probabilidad de que el
 	 * personaje realice un golpe crítico
 	 * @param evasion Probabilidad de que el
 	 * personaje evite un golpe crítico
-	 * @param daño_crit Valor por el cual será
+	 * @param danioCrit Valor por el cual será
 	 * multiplicado el golpe básico
 	 */
-	public Guerrero(final double prob_crit, final double evasion, final double daño_crit) {
-		super(prob_crit, evasion, daño_crit);
+	public Guerrero(final double probCrit, final double evasion, final double danioCrit) {
+		super(probCrit, evasion, danioCrit);
 	}
 	/** El constructor por defecto, llama al constructor por defecto.
 	 * padre (Casta), inicializando probabilidadGolpeCritico,
@@ -128,10 +128,10 @@ public class Guerrero extends Casta {
 		if (caster.getEnergia() > ENERGIAMINIMA) {
 			caster.setEnergia(caster.getEnergia() - ENERGIAMINIMA);
 			if (atacado instanceof Personaje) {
-				int defensa_original = ((Personaje) atacado).getDefensa();
+				int defensaOriginal = ((Personaje) atacado).getDefensa();
 				((Personaje) atacado).setDefensa(0);
 				if (atacado.serAtacado(caster.getAtaque()) > 0) {
-					((Personaje) atacado).setDefensa(defensa_original);
+					((Personaje) atacado).setDefensa(defensaOriginal);
 					return true;
 				}
 			}

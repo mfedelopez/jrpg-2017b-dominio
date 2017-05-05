@@ -585,21 +585,21 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * del argumento daño, se procederá a igualar el
 	 * atributo salud a 0 y retornar el daño realziado
 	 * (que será igual a la salud antes de que esté en 0)
-	 * @param daño valor a descontarse del atributo salud
+	 * @param danio valor a descontarse del atributo salud
 	 * @return Retorna si el Personaje peude ser atacado.
 	 */
 	@Override
-	public final int serAtacado(int daño) {
+	public final int serAtacado(int danio) {
 		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
-			daño -= this.getDefensa();
-			if (daño > 0) {
-				if (salud <= daño) {
-					daño = salud;
+			danio -= this.getDefensa();
+			if (danio > 0) {
+				if (salud <= danio) {
+					danio = salud;
 					salud = 0;
 				} else {
-					salud -= daño;
+					salud -= danio;
 				}
-				return daño;
+				return danio;
 			}
 			return 0;
 		}
@@ -612,42 +612,42 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * a la salud del personaje se le quita daño puntos de salud.
 	 * Si el daño es mayor a la salud se establece la salud del
 	 * personaje en 0.
-	 * @param daño Daño causado al personaje
+	 * @param danio Daño causado al personaje
 	 * @return Retorna los puntos de vida quitados al personaje
 	 */
-	public final int serRobadoSalud(int daño) {
-		daño -= this.getDefensa();
-		if (daño <= 0) {
+	public final int serRobadoSalud(int danio) {
+		danio -= this.getDefensa();
+		if (danio <= 0) {
 			return 0;
 		}
-		if ((salud - daño) >= 0) {
-			salud -= daño;
+		if ((salud - danio) >= 0) {
+			salud -= danio;
 		} else {
-			daño = salud;
+			danio = salud;
 			salud = 0;
 		}
-		return daño;
+		return danio;
 	}
 	/**Metodo que retorna los puntos de energia quitados
 	 * al personaje. Al daño total ejercido al personaje
 	 * se le resta la defensa del mismo. Si este daño es
 	 * menor o igual a la energia del personaje se le
 	 * resta al mismo, sino se establece energia como 0.
-	 * @param daño Daño causado al personaje
+	 * @param danio Daño causado al personaje
 	 * @return Retorna los puntos de energia quitados al personaje.
 	 */
-	public final int serDesernegizado(int daño) {
-		daño -= this.getDefensa();
-		if (daño <= 0) {
+	public final int serDesernegizado(int danio) {
+		danio -= this.getDefensa();
+		if (danio <= 0) {
 			return 0;
 		}
-		if ((energia - daño) >= 0) {
-			energia -= daño;
+		if ((energia - danio) >= 0) {
+			energia -= danio;
 		} else {
-			daño = energia;
+			danio = energia;
 			energia = 0;
 		}
-		return daño;
+		return danio;
 	}
 	/** Metodo void que aumenta la salud actual del personaje.
 	 * Si este aumento es mayor al tope, establece como salud
@@ -676,10 +676,10 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	/**Metodo void que crea una nueva alianza. Asigna a ésta
 	 * al clan actual del personaje y lo añade a la lista de
 	 * Personajes que integran la alianza.
-	 * @param nombre_alianza Nombre de la alianza
+	 * @param nombreAlianza Nombre de la alianza
 	 */
-	public final void crearAlianza(final String nombre_alianza) {
-		this.clan = new Alianza(nombre_alianza);
+	public final void crearAlianza(final String nombreAlianza) {
+		this.clan = new Alianza(nombreAlianza);
 		this.clan.añadirPersonaje(this);
 	}
 	/**Metodo void que desvincula al personaje de la alianza
@@ -697,19 +697,19 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * se crea una con el nombre "Alianza 1" por defecto.
 	 * Luego se agrega al nuevo aliado enviado como parametro
 	 * a la alianza del personaje llamador.
-	 * @param nuevo_aliado Personaje que se añadira al clan del llamador
+	 * @param nuevoAliado Personaje que se añadira al clan del llamador
 	 * @return	Boolean si pudo agregar al nuevo aliado
 	 */
-	public final boolean aliar(final Personaje nuevo_aliado) {
+	public final boolean aliar(final Personaje nuevoAliado) {
 		if (this.clan == null) {
 			Alianza a = new Alianza("Alianza 1");
 			this.clan = a;
 			a.añadirPersonaje(this);
 		}
 
-		if (nuevo_aliado.clan == null) {
-			nuevo_aliado.clan = this.clan;
-			this.clan.añadirPersonaje(nuevo_aliado);
+		if (nuevoAliado.clan == null) {
+			nuevoAliado.clan = this.clan;
+			this.clan.añadirPersonaje(nuevoAliado);
 			return true;
 		} else {
 			return false;

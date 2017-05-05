@@ -27,7 +27,7 @@ public class Asesino extends Casta {
 	/**
 	 * Probabilidad de evitar dano por defecto.
 	 */
-	private static final double PROBEVITARDAÑO = 0.5;
+	private static final double PROBEVITARDANIO = 0.5;
 
 
 	/** La clase Asesino es una casta de Personaje.
@@ -38,16 +38,16 @@ public class Asesino extends Casta {
 	 * pasándole los argumentos recibidos
 	 * por el constructor hijo y luego inicializa la
 	 * variable nombreCasta
-	 * @param prob_crit Probabilidad de que el
+	 * @param probCrit Probabilidad de que el
 	 * personaje realice un golpe crítico
 	 * @param evasion Probabilidad de que el
 	 * personaje evite un golpe crítico
-	 * @param daño_crit Valor por el cual será
+	 * @param danioCrit Valor por el cual será
 	 * multiplicado el golpe básico
 	 */
 
-public Asesino(final double prob_crit, final double evasion, final double daño_crit) {
-	super(prob_crit, evasion, daño_crit);
+public Asesino(final double probCrit, final double evasion, final double danioCrit) {
+	super(probCrit, evasion, danioCrit);
 }
 	/** El constructor por defecto, llama al constructor por defecto.
 	 * padre (Casta), inicializando probabilidadGolpeCritico,
@@ -117,7 +117,7 @@ public Asesino(final double prob_crit, final double evasion, final double daño_
 			if (this.getProbabilidadEvitarDaño() + AUMENTARPROBEVITAR < 0.5) {
 				this.aumentarEvitarDaño(AUMENTARPROBEVITAR);
 			} else {
-				this.setProbabilidadEvitarDaño(PROBEVITARDAÑO);
+				this.setProbabilidadEvitarDaño(PROBEVITARDANIO);
 			}
 			return true;
 		}

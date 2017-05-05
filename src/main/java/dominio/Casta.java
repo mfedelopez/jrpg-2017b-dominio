@@ -31,11 +31,11 @@ public abstract class Casta implements Serializable {
 	/**
 	 * Probabilidad de evitar recibir dano.
 	 */
-	private static final double PROBEVITARDAÑO = 0.2;
+	private static final double PROBEVITARDANIO = 0.2;
 	/**
 	 *  Numero por el cual sera multiplicado el ataque por defecto.
 	 */
-	private static final double DAÑOCRITICO = 1.5;
+	private static final double DANIOCRITICO = 1.5;
 
 
 	/** Clase abstracta de la cual heredarán las
@@ -47,23 +47,23 @@ public abstract class Casta implements Serializable {
 	 */
 	public Casta() {
 		this.probabilidadGolpeCritico = PROBEVITARGOLPC;
-		this.probabilidadEvitarDaño = PROBEVITARDAÑO;
-		this.dañoCritico = DAÑOCRITICO;
+		this.probabilidadEvitarDaño = PROBEVITARDANIO;
+		this.dañoCritico = DANIOCRITICO;
 	}
 	 /** El constructor asignará a cada atributo,
 	 * el valor correspondiente que será el
 	 * que se reciba por argumento.
-	 * @param prob_crit Probabilidad
+	 * @param probCrit Probabilidad
 	 * de que el personaje realice un golpe crítico
 	 * @param evasion Probabilidad
 	 * de que el personaje evite un golpe crítico
-	 * @param daño_crit Valor por el cual será
+	 * @param danioCrit Valor por el cual será
 	 * multiplicado el golpe básico
 	 */
-	public Casta(final double prob_crit, final double evasion, final double daño_crit) {
-		this.probabilidadGolpeCritico = prob_crit;
+	public Casta(final double probCrit, final double evasion, final double danioCrit) {
+		this.probabilidadGolpeCritico = probCrit;
 		this.probabilidadEvitarDaño = evasion;
-		this.dañoCritico = daño_crit;
+		this.dañoCritico = danioCrit;
 	}
 	/**
 	 * Método abstracto que será implementado
@@ -144,11 +144,11 @@ public abstract class Casta implements Serializable {
 	/** Método void que sobreescribe el atributo
 	 * probabilidadEvitarDaño.
 	 * con el valor que se ingresa por parámetro.
-	 * @param probabilidadEvitarDaño Valor que
+	 * @param probabilidadEvitarDanio Valor que
 	 * tendra probabilidadEvitarDaño.
 	 */
-	public final void setProbabilidadEvitarDaño(final double probabilidadEvitarDaño) {
-		this.probabilidadEvitarDaño = probabilidadEvitarDaño;
+	public final void setProbabilidadEvitarDaño(final double probabilidadEvitarDanio) {
+		this.probabilidadEvitarDaño = probabilidadEvitarDanio;
 	}
 	/** Método que devuelve el dañoCritico.
 	 * @return dañoCritico
@@ -159,10 +159,10 @@ public abstract class Casta implements Serializable {
 	/** Método void que sobreescribe el atributo
 	 * dañoCritico.
 	 * con el valor que se ingresa por parámetro.
-	 * @param dañoCritico Valor que tendra dañoCritico
+	 * @param danioCritico Valor que tendra dañoCritico
 	 */
-	public final void setDañoCritico(final double dañoCritico) {
-		this.dañoCritico = dañoCritico;
+	public final void setDañoCritico(final double danioCritico) {
+		this.dañoCritico = danioCritico;
 	}
 	/** Método void que aumenta el atributo
 	 * probabilidadEvitarDaño.
