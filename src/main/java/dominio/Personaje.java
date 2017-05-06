@@ -228,17 +228,19 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		experiencia = EXPERIENCIAINICIAL;
 		inteligencia = INTELIGENCIANICIAL;
 		destreza = DESTREZAINICIAL;
-		destreza += casta.recibirDestrezaBonus();
-		this.aumentarFuerza(casta.recibirFuerzaBonus());
-		inteligencia += casta.recibirInteligenciaBonus();
+		saludTope = SALUDTOPEINICIAL;
+		energiaTope = ENERGIATOPEINICIAL;
+		aumentarEnergiaTope(getEnergiaBonus());
+		aumentarSaludTope(getSaludBonus());
+		aumentarDestreza(casta.recibirDestrezaBonus());
+		aumentarFuerza(casta.recibirFuerzaBonus());
+		aumentarInteligencia(casta.recibirInteligenciaBonus());
 		nombreRaza = getNombreRaza();
 		nombreCasta = casta.getNombreCasta();
 		habilidadesRaza = getHabilidadesRaza();
 		habilidadesCasta = casta.getHabilidadesCasta();
 		x = POSXI;
 		y = POSYI;
-		saludTope = SALUDTOPEINICIAL + getSaludBonus();
-		energiaTope = ENERGIATOPEINICIAL + getEnergiaBonus();
 		salud = saludTope;
 		energia = energiaTope;
 		ataque = this.calcularPuntosDeAtaque();
@@ -905,6 +907,38 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * @return Retorna el String con el nombre de la Raza del personaje.
 	 */
 	public abstract String getNombreRaza();
+	/**
+	 * Aumenta la inteligencia del personaje.
+	 * Según la cantidad otorgada
+	 * @param bonus Cantidad a sumar a inteligencia.
+	 */
+	public final void aumentarInteligencia(final int bonus) {
+		inteligencia += bonus;
+	}
+	/**
+	 * Aumenta la destreza del personaje.
+	 * Según la cantidad otorgada
+	 * @param bonus Cantidad a sumar a Destreza.
+	 */
+	public final void aumentarDestreza(final int bonus) {
+		destreza += bonus;
+	}
+	/**
+	 * Aumenta la saludTope del personaje.
+	 * Según la cantidad otorgada
+	 * @param bonus Cantidad a sumar a saludTope.
+	 */
+	public final void aumentarSaludTope(final int bonus) {
+		saludTope += bonus;
+	}
+	/**
+	 * Aumenta la energiaTope del personaje.
+	 * Según la cantidad otorgada
+	 * @param bonus Cantidad a sumar a energiaTope.
+	 */
+	public final void aumentarEnergiaTope(final int bonus) {
+		energiaTope += bonus;
+	}
 
 }
 
