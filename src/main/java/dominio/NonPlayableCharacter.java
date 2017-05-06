@@ -162,6 +162,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	 * produjo la disminución de la salud del
 	 * NPC a 0. La misma sera MULTIPLCADOREXPNPC veces
 	 * el valor del atributo nivel
+	 * @return Cantidad de experiencia a otorgar
 	 */
 	@Override
 	public final int otorgarExp() {
@@ -173,6 +174,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	 * Retorna un booleano.
 	 * Que indica si el NPC esta vivo, evaluando si el mismo tiene
 	 * salud mayor a 0.
+	 * @return true si el NPC está vivo, false para lo contrario.
 	 */
 	@Override
 	public final boolean estaVivo() {
@@ -182,6 +184,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 
 	/**
 	 * Retorna un entero que representa los puntos de salud del NPC.
+	 * @return Devuelve la cantidad de vida actual del NPC
 	 */
 	@Override
 	public final int getSalud() {
@@ -247,6 +250,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 
 	/**
 	 * Retorna un entero que representa el atributo de Fuerza del NPC.
+	 * @return retorna el ataque del NPC.
 	 */
 	@Override
 	public final int getAtaque() {
@@ -264,6 +268,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 
 	/**
 	 * Retorna siempre un entero de valor 0.
+	 * @return retorna 0 porque NPC no tiene magia.
 	 */
 	@Override
 	public final int getMagia() {

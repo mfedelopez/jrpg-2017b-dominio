@@ -183,7 +183,7 @@ public class Guerrero extends Casta {
 	 */
 	@Override
 	public final String[] getHabilidadesCasta() {
-		return new String[] {"Ataque Doble","Aumentar Defensa","Ignorar Defensa"};
+		return new String[] {"Ataque Doble", "Aumentar Defensa", "Ignorar Defensa"};
 	}
 }
 

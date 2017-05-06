@@ -45,9 +45,9 @@ public class Elfo extends Personaje {
 	 * @param nivel Nivel del personaje
 	 * @param idPersonaje Id del personaje
 	 */
-	public Elfo(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta,
-			final int experiencia, final int nivel,
-			final int idPersonaje) {
+	public Elfo(final String nombre, final int salud, final int energia,
+			final int fuerza, final int destreza, final int inteligencia, final Casta casta,
+			final int experiencia, final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta,
 				experiencia, nivel, idPersonaje);
 	}
@@ -118,7 +118,7 @@ public class Elfo extends Personaje {
 	 */
 	@Override
 	public final String[] getHabilidadesRaza() {
-		return new String[] {"Golpe Level","Ataque Bosque"};
+		return new String[] {"Golpe Level", "Ataque Bosque"};
 	}
 	/**Retorna un entero con el bonificador de salud de la raza.
 	 * @return Retorna 0 para esta raza.

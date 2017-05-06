@@ -264,7 +264,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * @param nivel Nivel del personaje
 	 * @param idPersonaje Id del personaje
 	 */
-	public Personaje(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta,
+	public Personaje(final String nombre, final int salud, final int energia, final int fuerza,
+			final int destreza, final int inteligencia, final Casta casta,
 			final int experiencia, final int nivel,
 			final int idPersonaje) {
 		super(fuerza, destreza, nivel, nombre);
@@ -475,7 +476,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 			return 0;
 		}
 		if (atacado.getSalud() > 0) {
-			if (MyRandom.nextDouble() <= this.casta.getProbabilidadGolpeCritico() + this.destreza / DIVISORDEDESTREZA) {
+			if (MyRandom.nextDouble() <= this.casta.getProbabilidadGolpeCritico()
+					+ this.destreza / DIVISORDEDESTREZA) {
 				return atacado.serAtacado(this.golpe_critico());
 			} else {
 				return atacado.serAtacado(this.ataque);
@@ -752,7 +754,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 			return;
 		}
 		while (this.getNivel() != NIVELMAXIMO
-				&& (this.experiencia >= Personaje.tablaDeNiveles[this.getNivel() + 1] + acumuladorExperiencia)) {
+				&& (this.experiencia >= Personaje.
+				tablaDeNiveles[this.getNivel() + 1] + acumuladorExperiencia)) {
 			acumuladorExperiencia += Personaje.tablaDeNiveles[this.getNivel() + 1];
 			this.aumentarNivel();
 			this.modificarAtributos();
@@ -782,6 +785,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * del mismo y de MULTIPLICADOREXP.
 	 * MULTIPLICADOREXP atributo estatico de la clase
 	 * personaje.
+	 * @return retorna la experiencia brindada por el Personaje
 	 */
 	@Override
 	public final int otorgarExp() {
@@ -790,6 +794,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 
 	/**Metodo que retorna un Objetc utilizado para
 	 * clonar a un personaje.
+	 * @throws CloneNotSupportedException Excepción de clonación cuando no está implementada
 	 * @return Retorna un Objetc con los atributos del
 	 * personaje llamador.
 	 */
@@ -865,6 +870,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * de esa raza.
 	 * Depende de la raza que sea el personaje
 	 * llamador, Humano, Orco o Elfo.
+	 * @param atacado Es el personaje al cual
+	 * le realizará la habilidad el personaje llamador.
 	 * @return Un array de Strings con los nombres de las habilidades.
 	 */
 	public abstract boolean habilidadRaza2(Peleable atacado);

@@ -71,6 +71,7 @@ public class Hechicero extends Casta {
 	 * @param atacado puede ser una instancia de Persona
 	 *  o NPC dependiendo de la misma,
 	 * variará lo que retornará serAtacado()
+	 * @return booleano que determina si el ataque fue exitoso o no.
 	 */
 	@Override
 	public final boolean habilidad1(final Personaje caster, final Peleable atacado) {
@@ -97,6 +98,7 @@ public class Hechicero extends Casta {
 	 * @param aliado atacado puede ser una instancia de
 	 * Persona o NPC dependiendo de la misma podrá o no
 	 * retornar true el método.
+	 * @return booleano que determina si el ataque fue exitoso o no.
 	 */
 	@Override
 	public final boolean habilidad2(final Personaje caster, final Peleable aliado) {
@@ -130,8 +132,10 @@ public class Hechicero extends Casta {
 		if (caster.getEnergia() > ENERGIAMINIMA) {
 			caster.setEnergia(caster.getEnergia() - ENERGIAMINIMA);
 			if (atacado instanceof Personaje) {
-				int energiaRobada = ((Personaje) atacado).serDesernegizado(caster.calcularPuntosDeMagia());
-				int saludRobada = ((Personaje) atacado).serRobadoSalud(caster.calcularPuntosDeMagia() / DIVISORDEMAGIA);
+				int energiaRobada = ((Personaje) atacado).
+						serDesernegizado(caster.calcularPuntosDeMagia());
+				int saludRobada = ((Personaje) atacado).
+						serRobadoSalud(caster.calcularPuntosDeMagia() / DIVISORDEMAGIA);
 				caster.serEnergizado(energiaRobada);
 				caster.serCurado(saludRobada);
 				return true;
@@ -178,6 +182,6 @@ public class Hechicero extends Casta {
 	 */
 	@Override
 	public final String[] getHabilidadesCasta() {
-		return new String[] {"Bola de Fuego","Curar Aliado","Robar Energia y Salud"};
+		return new String[] {"Bola de Fuego", "Curar Aliado", "Robar Energia y Salud"};
 	}
 }

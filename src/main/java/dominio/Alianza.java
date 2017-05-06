@@ -34,7 +34,7 @@ public class Alianza {
 
 	/**Método void que referencia al atributo aliado.
 	 * Con el argumento del método.
-	 * De haber una lista aliados preexistente, 
+	 * De haber una lista aliados preexistente,
 	 * está será sobreescrita por la nueva.
 	 * @param aliados LinkedList que sobreescribirá a la actual
 	 */
@@ -66,3 +66,4 @@ public class Alianza {
 		aliados.add(pj);
 	}
 }
+

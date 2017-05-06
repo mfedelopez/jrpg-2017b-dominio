@@ -56,7 +56,8 @@ public class Humano extends Personaje {
 	 * @param nivel Nivel del personaje
 	 * @param idPersonaje Id del personaje
 	 */
-	public Humano(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta,
+	public Humano(final String nombre, final int salud, final int energia, final int fuerza, 
+			final int destreza, final int inteligencia, final Casta casta,
 			final int experiencia, final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 	}
@@ -76,6 +77,7 @@ public class Humano extends Personaje {
 	 * @param atacado Instancia de Personaje o de NPC,
 	 * dependiendo de cual sea, será como responda el
 	 * método serAtacado()
+	 * @return booleano que determina si el ataque fue exitoso o no.
 	 */
 	@Override
 	public final boolean habilidadRaza1(final Peleable atacado) {
@@ -104,6 +106,7 @@ public class Humano extends Personaje {
 	 * @param atacado Instancia de Personaje o de NPC,
 	 * dependiendo de cual sea, será como responda el
 	 * método serAtacado()
+	 * @return booleano que determina si el ataque fue exitoso o no.
 	 */
 	@Override
 	public final boolean habilidadRaza2(final Peleable atacado) {
@@ -123,7 +126,7 @@ public class Humano extends Personaje {
 	 */
 	@Override
 	public final String[] getHabilidadesRaza() {
-		return new String[] {"Incentivar","Golpe Fatal"};
+		return new String[] {"Incentivar", "Golpe Fatal"};
 	}
 	/**Retorna un entero con el bonificador de salud
 	 * de la raza.

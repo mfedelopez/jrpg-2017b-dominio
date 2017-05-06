@@ -174,7 +174,8 @@ public Asesino(final double probCrit, final double evasion, final double danioCr
 	 */
 	@Override
 	public final String[] getHabilidadesCasta() {
-		return new String[] {"Golpe Critico","Aumentar Evasion","Robar"}; 
+		return new String[] {"Golpe Critico", "Aumentar Evasion", "Robar"};
 	}
 
 }
+

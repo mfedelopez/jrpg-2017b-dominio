@@ -43,7 +43,8 @@ public class Orco extends Personaje {
 	 * @param nivel Nivel del personaje
 	 * @param idPersonaje Id del personaje
 	 */
-	public Orco(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta,
+	public Orco(final String nombre, final int salud, final int energia, final int fuerza, 
+			final int destreza, final int inteligencia, final Casta casta,
 			final int experiencia, final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 	}
@@ -111,7 +112,7 @@ public class Orco extends Personaje {
 	 */
 	@Override
 	public final String[] getHabilidadesRaza() {
-		return new String[] {"Golpe Defensa","Mordisco de Vida"};
+		return new String[] {"Golpe Defensa", "Mordisco de Vida"};
 	}
 	/**Retorna un entero con el bonificador de
 	 * salud de la raza.
