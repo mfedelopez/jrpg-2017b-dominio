@@ -136,17 +136,17 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 
 		switch (dificultad) {
 		case 0:
-			this.setFuerza(DIF1F + (nivel - 1) * DIF1MF);
+			this.aumentarFuerza(DIF1F + (nivel - 1) * DIF1MF);
 			this.salud = DIF1S + (nivel - 1) * DIF1MS;
 			this.setDefensa(DIF1D + (nivel - 1) * DIF1MD);
 			break;
 		case 1:
-			this.setFuerza(DIF2F + (nivel - 1) * DIF2MF);
+			this.aumentarFuerza(DIF2F + (nivel - 1) * DIF2MF);
 			this.salud = DIF2S + (nivel - 1) * DIF2MS;
 			this.setDefensa(DIF2D + (nivel - 1) * DIF2MD);
 			break;
     	case 2:
-			this.setFuerza(DIF3F + (nivel - 1) * DIF3MF);
+			this.aumentarFuerza(DIF3F + (nivel - 1) * DIF3MF);
 			this.salud = DIF3S + (nivel - 1) * DIF3MS;
 			this.setDefensa(DIF3D + (nivel - 1) * DIF3MD);
 			break;
@@ -263,7 +263,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	 */
 	@Override
 	public final void setAtaque(final int ataque) {
-		this.setFuerza(ataque);
+		this.aumentarFuerza(ataque);
 	}
 
 	/**

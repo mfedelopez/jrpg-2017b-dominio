@@ -363,25 +363,14 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	public final int getEnergia() {
 		return energia;
 	}
-	/** Metodo void que sobreescribe la energia del personaje.
-	 * @param energia Nueva energia del personaje.
-	 */
-	public final void setEnergia(final int energia) {
-		this.energia = energia;
-	}
+
 	/**Retorna un entero con la destreza del personaje.
 	 * @return Destreza del personaje
 	 */
 	public final int getDestreza() {
 		return destreza;
 	}
-	/** Metodo void que sobreescribe la destreza del personaje.
-	 * @param destreza Nueva destreza del personaje
-	 */
 
-	public final void setDestreza(final int destreza) {
-		this.destreza = destreza;
-	}
 
 	/** Retorna un entero con la inteligencia del personaje.
 	 * @return Inteligencia del personaje
@@ -389,48 +378,28 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	public final int getInteligencia() {
 		return inteligencia;
 	}
-	/** Metodo void que sobreescribe la inteligencia del personaje.
-	 * @param inteligencia Nueva inteligencia del personaje
-	 */
-	public final void setInteligencia(final int inteligencia) {
-		this.inteligencia = inteligencia;
-	}
+
 	/**Retorna una Casta con la casta del personaje.
 	 * @return Casta del personaje
 	 */
 	public final Casta getCasta() {
 		return casta;
 	}
-	/**Metodo void que sobreescribe la Casta del personaje.
-	 * @param casta Nueva Casta del personaje
-	 */
-	public final void setCasta(final Casta casta) {
-		this.casta = casta;
-	}
+
 	/**Retorna un entero con la experiencia del personaje.
 	 * @return Experiencia del personaje
 	 */
 	public final int getExperiencia() {
 		return experiencia;
 	}
-	/**Metodo void que sobreescribe la experiencia del personaje.
-	 * @param experiencia Nueva experiencia del personaje
-	 */
-	public final void setExperiencia(final int experiencia) {
-		this.experiencia = experiencia;
-	}
+
 	/** Retorna un entero con el Id del personaje.
 	 * @return Identificacion del personaje
 	 */
 	public final int getIdPersonaje() {
 		return idPersonaje;
 	}
-	/** Metodo void que sobreescribe el Id del personaje.
-	 * @param idPersonaje Nuevo Id del personaje
-	 */
-	public final void setIdPersonaje(final int idPersonaje) {
-		this.idPersonaje = idPersonaje;
-	}
+
 	/**Retorna un entero.
 	 * Con el maximo de salud que tiene el personaje
 	 * @return saludTope del personaje
@@ -438,13 +407,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	public final int getSaludTope() {
 		return saludTope;
 	}
-	/**Metodo void que sobreescribe la salud maxima.
-	 * Que puede tener el personaje.
-	 * @param saludTope Nueva saludTope, salud maxima del personaje
-	 */
-	public final void setSaludTope(final int saludTope) {
-		this.saludTope = saludTope;
-	}
+
 	/**Retorna un entero.
 	 * Con la energia Maxima que puede
 	 * tener el personaje.
@@ -452,12 +415,6 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * */
 	public final int getEnergiaTope() {
 		return energiaTope;
-	}
-	/** Metodo void que sobreescribe la enegria maxima que el personaje.
-	 * @param energiaTope Nueva energia maxima del personaje
-	 */
-	public final void setEnergiaTope(final int energiaTope) {
-		this.energiaTope = energiaTope;
 	}
 	/**
 	 * Método que retorna un entero.
@@ -945,6 +902,22 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	private static void setTablaDeNiveles(int[] tablaDeNiveles) {
 		Personaje.tablaDeNiveles = tablaDeNiveles;
 	}
-
+	
+	public final void aumentarEnergia(int bonus) {
+		energia += bonus;
+	}
+	
+	public final void reducirEnergia(int monto) {
+		if(energia > monto) {
+			energia -= monto;
+		} else {
+			energia = 0;
+		}
+		
+	}
+	
+	public final void setEnergia(int energia) {
+		this.energia = energia;
+	}
 }
 

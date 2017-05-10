@@ -32,13 +32,6 @@ public class Alianza {
 		return new LinkedList<Personaje>(aliados);
 	}
 
-	/**Método void que referencia al atributo aliado.
-	 * Con el argumento del método.
-	 * De haber una lista aliados preexistente,
-	 * está será sobreescrita por la nueva.
-	 * @param aliados LinkedList que sobreescribirá a la actual
-	 */
-
 
 	/** Se encarga de retornar
 	 * el nombre de la alianza.

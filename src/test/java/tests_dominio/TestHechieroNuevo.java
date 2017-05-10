@@ -18,7 +18,7 @@ public class TestHechieroNuevo {
 		Personaje p2 = new Humano("Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.setEnergia(0);
+		p1.aumentarEnergia(-100);
 		Assert.assertFalse(p1.habilidadCasta3(p2));
 	}
 	
@@ -28,7 +28,7 @@ public class TestHechieroNuevo {
 		Personaje p2 = new Humano("Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.setEnergia(0);
+		p1.aumentarEnergia(-100);
 		Assert.assertFalse(p1.habilidadCasta2(p2));
 	}
 	
@@ -38,14 +38,14 @@ public class TestHechieroNuevo {
 		Personaje p2 = new Humano("Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.setEnergia(0);
+		p1.aumentarEnergia(-100);
 		Assert.assertFalse(p1.habilidadCasta1(p2));
 	}
 	
 	@Test
 	public void testInstanceOfHorrible1() {
 		Personaje p1 = new Humano("Ben Affleck",new Hechicero(),2);
-		p1.setInteligencia(0);
+		p1.aumentarInteligencia(-20);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		NonPlayableCharacter npc = new NonPlayableCharacter("Pepe", 1, 1);
 		npc.setRandom(new MyRandomStub(0.49,3));

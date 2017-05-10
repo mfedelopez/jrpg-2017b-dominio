@@ -1,9 +1,11 @@
 package tests_dominio;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import dominio.*;
-import org.junit.Assert;
+import dominio.Guerrero;
+import dominio.Humano;
+import dominio.Personaje;
 
 public class TestAsignarPuntos {
 
@@ -30,9 +32,9 @@ public class TestAsignarPuntos {
 	@Test
 	public void testMasDe200Puntos(){
 		Humano h = new Humano("Nicolas",new Guerrero(),1);
-		h.setFuerza(199);
-		h.setDestreza(199);
-		h.setInteligencia(199);
+		h.aumentarFuerza(184);
+		h.aumentarDestreza(189);
+		h.aumentarInteligencia(189);
 		h.AsignarPuntosSkills(2, 2, 2);
 		Assert.assertTrue(h.getFuerza()==199);
 		Assert.assertTrue(h.getDestreza()==199);

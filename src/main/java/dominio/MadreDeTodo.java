@@ -57,13 +57,7 @@ public abstract class MadreDeTodo {
 	public final int getFuerza() {
 		return fuerza;
 	}
-	/** Método void que sobreescribe el atributo fuerza.
-	 * Con el valor que se ingresa por parámetro.
-	 * @param fuerza valor a sobreescribir
-	 */
-	public final void setFuerza(final int fuerza) {
-		this.fuerza = fuerza;
-	}
+
 	/** Método que devuelve la defensa del personaje o NPC.
 	 * @return defensa del personaje o NPC.
 	 */
@@ -83,15 +77,7 @@ public abstract class MadreDeTodo {
 	public final int getNivel() {
 		return nivel;
 	}
-	/** Método void que sobreescribe el atributo
-	 * nivel.
-	 * Con el valor que se ingresa por
-	 * parámetro.
-	 * @param nivel valor a sobreescribir
-	 */
-	public final void setNivel(final int nivel) {
-		this.nivel = nivel;
-	}
+
 	/** Método que devuelve el nombre del personaje o NPC.
 	 * @return nombre del personaje o NPC.
 	 */

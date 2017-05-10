@@ -16,7 +16,7 @@ public class TestHumanoNuevo {
 		Personaje p2 = new Humano("I'm Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.setEnergia(0);
+		p1.aumentarEnergia(-100);
 		Assert.assertFalse(p1.habilidadRaza1(p2));
 	}
 	
@@ -38,7 +38,7 @@ public class TestHumanoNuevo {
 		Personaje p2 = new Humano("I'm Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.setEnergia(0);
+		p1.aumentarEnergia(-100);
 		Assert.assertFalse(p1.habilidadRaza2(p2));
 	}
 

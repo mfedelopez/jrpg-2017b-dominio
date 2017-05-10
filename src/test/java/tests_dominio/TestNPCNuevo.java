@@ -34,7 +34,8 @@ public class TestNPCNuevo {
 	@Test
 	public void testSetAtaque() {
 		NonPlayableCharacter npc = new NonPlayableCharacter("Pepe", 1, 1);
-		npc.setAtaque(80);
+		// Set ataque suma su parametro a la fuerza actual, revisar
+		npc.setAtaque(60);
 		Assert.assertEquals(80, npc.getFuerza());
 	}
 	

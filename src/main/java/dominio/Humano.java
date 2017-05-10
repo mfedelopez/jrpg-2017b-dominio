@@ -82,7 +82,7 @@ public class Humano extends Personaje {
 	@Override
 	public final boolean habilidadRaza1(final Peleable atacado) {
 		if (this.getEnergia() > ENERGIAMINIMA) {
-			this.setEnergia(this.getEnergia() - ENERGIAMINIMA);
+			this.reducirEnergia(ENERGIAMINIMA);
 			atacado.setAtaque(atacado.getAtaque() + this.getMagia());
 			return true;
 		}
@@ -116,7 +116,7 @@ public class Humano extends Personaje {
 				return true;
 			}
 		}
-		this.setEnergia(this.getEnergia() - ENERGIAMINIMA);
+		this.reducirEnergia(ENERGIAMINIMA);
 		return false;
 	}
 	/**Retorna un vector de string con los nombres

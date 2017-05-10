@@ -18,7 +18,7 @@ public class TestGuerreroNuevo {
 		Personaje p2 = new Humano("Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.setEnergia(0);
+		p1.aumentarEnergia(-105);
 		Assert.assertFalse(p1.habilidadCasta1(p2));
 	}
 	
@@ -38,7 +38,7 @@ public class TestGuerreroNuevo {
 		Personaje p2 = new Humano("Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.setEnergia(0);
+		p1.aumentarEnergia(-105);
 		Assert.assertFalse(p1.habilidadCasta2(p2));
 	}
 	
@@ -48,7 +48,7 @@ public class TestGuerreroNuevo {
 		Personaje p2 = new Humano("Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.setEnergia(0);
+		p1.aumentarEnergia(-105);
 		Assert.assertFalse(p1.habilidadCasta3(p2));
 	}
 	

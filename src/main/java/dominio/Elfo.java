@@ -74,7 +74,7 @@ public class Elfo extends Personaje {
 	@Override
 	public final boolean habilidadRaza1(final Peleable atacado) {
 		if (this.getEnergia() > ENERGIAMINIMA) {
-			this.setEnergia(this.getEnergia() - ENERGIAMINIMA);
+			this.reducirEnergia(ENERGIAMINIMA);
 			if (atacado.serAtacado(this.getFuerza() + this.getNivel() * MULTIPLICADORNIVEL) > 0) {
 				return true;
 			}
@@ -104,7 +104,7 @@ public class Elfo extends Personaje {
 	@Override
 	public final boolean habilidadRaza2(final Peleable atacado) {
 		if (this.getEnergia() > ENERGIAMINIMA) {
-			this.setEnergia(this.getEnergia() - ENERGIAMINIMA);
+			this.reducirEnergia(ENERGIAMINIMA);
 			if (atacado.serAtacado((this.getMagia())) > 0) {
 				return true;
 			}
