@@ -27,8 +27,8 @@ public abstract class MadreDeTodo {
 	 * Objeto para obtener valores aleatorios.
 	 */
 	private RandomGenerator random;
-	
-	
+
+
 	/** Clase abstracta.
 	 * Que tiene como
 	 * funcion tener los atributos que
@@ -125,7 +125,7 @@ public abstract class MadreDeTodo {
 	public RandomGenerator getRandom() {
 		return random;
 	}
-	
+
 	/**
 	 * Setter del Randomizador.
 	 * @param random Randomizador que reemplazará al actual.

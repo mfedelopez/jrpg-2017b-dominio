@@ -43,7 +43,7 @@ public class Orco extends Personaje {
 	 * @param nivel Nivel del personaje
 	 * @param idPersonaje Id del personaje
 	 */
-	public Orco(final String nombre, final int salud, final int energia, final int fuerza, 
+	public Orco(final String nombre, final int salud, final int energia, final int fuerza,
 			final int destreza, final int inteligencia, final Casta casta,
 			final int experiencia, final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);

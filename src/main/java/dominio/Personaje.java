@@ -202,11 +202,11 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * Que sirve para cargar la tabla de niveles de personaje.
 	 */
 	public static void cargarTablaNivel() {
-		Personaje.tablaDeNiveles = new int[CANTIDADNIVELES];
-		Personaje.tablaDeNiveles[0] = 0;
-		Personaje.tablaDeNiveles[1] = 0;
+		Personaje.setTablaDeNiveles(new int[CANTIDADNIVELES]);
+		Personaje.getTablaDeNiveles()[0] = 0;
+		Personaje.getTablaDeNiveles()[1] = 0;
 		for (int i = 2; i < CANTIDADNIVELES; i++) {
-			Personaje.tablaDeNiveles[i] = Personaje.tablaDeNiveles[i - 1] + CONSTANTENIVEL;
+			Personaje.getTablaDeNiveles()[i] = Personaje.getTablaDeNiveles()[i - 1] + CONSTANTENIVEL;
 		}
 	}
 	/** La clase Personaje es la cual posee todos los atributos.
@@ -757,8 +757,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		}
 		while (this.getNivel() != NIVELMAXIMO
 				&& (this.experiencia >= Personaje.
-				tablaDeNiveles[this.getNivel() + 1] + acumuladorExperiencia)) {
-			acumuladorExperiencia += Personaje.tablaDeNiveles[this.getNivel() + 1];
+				getTablaDeNiveles()[this.getNivel() + 1] + acumuladorExperiencia)) {
+			acumuladorExperiencia += Personaje.getTablaDeNiveles()[this.getNivel() + 1];
 			this.aumentarNivel();
 			this.modificarAtributos();
 			this.saludTope += SALUDTOPESUBIRN;
@@ -776,7 +776,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	public final boolean ganarExperiencia(final int exp) {
 		this.experiencia += exp;
 
-		if (experiencia >= Personaje.tablaDeNiveles[this.getNivel() + 1]) {
+		if (experiencia >= Personaje.getTablaDeNiveles()[this.getNivel() + 1]) {
 			subirNivel();
 			return true;
 		}
@@ -938,6 +938,12 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 */
 	public final void aumentarEnergiaTope(final int bonus) {
 		energiaTope += bonus;
+	}
+	public final static int[] getTablaDeNiveles() {
+		return tablaDeNiveles;
+	}
+	private static void setTablaDeNiveles(int[] tablaDeNiveles) {
+		Personaje.tablaDeNiveles = tablaDeNiveles;
 	}
 
 }
