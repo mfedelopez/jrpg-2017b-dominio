@@ -129,7 +129,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 
 		int dificultad;
 		if (dificultadNPC == DIFICULTADALEATORIA) {
-			dificultad = MyRandom.nextInt(ELEGIRDIF);
+			dificultad = this.getRandom().nextInt(ELEGIRDIF);
 		} else {
 			dificultad = dificultadNPC;
 		}
@@ -209,7 +209,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	 */
 	@Override
 	public final int atacar(final Peleable atacado) {
-		if (MyRandom.nextDouble() <= NUMEROPARAATACAR) {
+		if (this.getRandom().nextDouble() <= NUMEROPARAATACAR) {
 			return atacado.serAtacado((int) (this.getAtaque() * MULTIPLICADORFUERZA));
 		} else {
 			return atacado.serAtacado(this.getAtaque());
@@ -224,7 +224,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	 */
 	@Override
 	public final int serAtacado(int danio) {
-		if (MyRandom.nextDouble() >= NUMEROPARASERATACADO) {
+		if (this.getRandom().nextDouble() >= NUMEROPARASERATACADO) {
 			danio -= this.getDefensa() / DIVISORDEDEFENSA;
 			if (danio > 0) {
 				salud -= danio;

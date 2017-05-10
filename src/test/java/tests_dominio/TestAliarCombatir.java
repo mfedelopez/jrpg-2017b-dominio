@@ -1,7 +1,12 @@
 package tests_dominio;
 import org.junit.Assert;
 import org.junit.Test;
-import dominio.*;
+
+import dominio.Alianza;
+import dominio.Asesino;
+import dominio.Guerrero;
+import dominio.Humano;
+import dominio.MyRandomStub;
 
 public class TestAliarCombatir {
 
@@ -21,7 +26,8 @@ public class TestAliarCombatir {
 	public void testDañar(){
 		Humano h = new Humano("Nicolas",new Guerrero(),1);
 		Humano h2 = new Humano("Lautaro",new Asesino(),1);
-		
+		h.setRandom(new MyRandomStub(0.49,3));
+		h2.setRandom(new MyRandomStub(0.49,3));
 		Assert.assertTrue(h2.getSalud()==105);
 		if(	h.atacar(h2)!=0)
 			Assert.assertTrue(h2.getSalud()<105);
@@ -34,7 +40,8 @@ public class TestAliarCombatir {
 		Humano h = new Humano("Nicolas",new Guerrero(),1);
 		Humano h2 = new Humano("Lautaro",new Guerrero(),1);
 		Alianza a1= new Alianza("Los CacheFC");
-		
+		h.setRandom(new MyRandomStub(0.49,3));
+		h2.setRandom(new MyRandomStub(0.49,3));
 		Assert.assertNull(h2.getClan());
 		Assert.assertNull(h.getClan());
 		h.setClan(a1);

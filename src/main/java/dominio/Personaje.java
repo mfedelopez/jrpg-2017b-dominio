@@ -478,7 +478,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 			return 0;
 		}
 		if (atacado.getSalud() > 0) {
-			if (MyRandom.nextDouble() <= this.casta.getProbabilidadGolpeCritico()
+			if (this.getRandom().nextDouble() <= this.casta.getProbabilidadGolpeCritico()
 					+ this.destreza / DIVISORDEDESTREZA) {
 				return atacado.serAtacado(this.golpe_critico());
 			} else {
@@ -594,7 +594,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 */
 	@Override
 	public final int serAtacado(int danio) {
-		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
+		if (this.getRandom().nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
 			danio -= this.getDefensa();
 			if (danio > 0) {
 				if (salud <= danio) {

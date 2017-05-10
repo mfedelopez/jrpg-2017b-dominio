@@ -6,6 +6,7 @@ import org.junit.Test;
 import dominio.Asesino;
 import dominio.Hechicero;
 import dominio.Humano;
+import dominio.MyRandomStub;
 
 public class TestAsesino {
 
@@ -16,7 +17,8 @@ public class TestAsesino {
 	public void testCritico(){
 		Humano h = new Humano("Nicolas",new Asesino(),1);
 		Humano h2 = new Humano("Lautaro",new Hechicero(),2);
-		
+		h.setRandom(new MyRandomStub(0.49,3));
+		h2.setRandom(new MyRandomStub(0.49,3));
 		Assert.assertEquals(105, h2.getSalud());
 		if	(h.habilidadCasta1(h2))
 			Assert.assertTrue(93==h2.getSalud());
@@ -27,6 +29,7 @@ public class TestAsesino {
 	@Test
 	public void testProbEvasion(){
 		Humano h = new Humano("Nico",100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
+		h.setRandom(new MyRandomStub(0.49,3));
 		
 		Assert.assertTrue(0.3==h.getCasta().getProbabilidadEvitarDaño());
 		h.habilidadCasta2(null);

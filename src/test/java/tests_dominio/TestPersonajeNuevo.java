@@ -3,7 +3,13 @@ package tests_dominio;
 
 import org.junit.Assert;
 import org.junit.Test;
-import dominio.*;
+
+import dominio.Asesino;
+import dominio.Casta;
+import dominio.Hechicero;
+import dominio.Humano;
+import dominio.MyRandomStub;
+import dominio.Personaje;
 
 
 public class TestPersonajeNuevo {
@@ -74,6 +80,8 @@ public class TestPersonajeNuevo {
 	public void testAtacarGolpeCritico() {
 		Personaje p1 = new Humano("Ben Affleck",new Asesino(),2);
 		Personaje p2 = new Humano("Link",new Hechicero(),2);
+		p1.setRandom(new MyRandomStub(0.49,3));
+		p2.setRandom(new MyRandomStub(0.49,3));
 		p1.setDestreza(1000);
 		Assert.assertEquals(1000, p1.getDestreza());
 		//Me aseguro golpe critico, 12 porque 22.5 truncado 

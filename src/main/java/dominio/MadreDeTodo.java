@@ -23,6 +23,12 @@ public abstract class MadreDeTodo {
 	 * Nombre que recibira el personaje o npc.
 	 */
 	private String nombre;
+	/**
+	 * Objeto para obtener valores aleatorios.
+	 */
+	private RandomGenerator random;
+	
+	
 	/** Clase abstracta.
 	 * Que tiene como
 	 * funcion tener los atributos que
@@ -41,6 +47,7 @@ public abstract class MadreDeTodo {
 		this.defensa = defensa;
 		this.nivel = nivel;
 		this.nombre = nombre;
+		this.random = new MyRandom();
 	}
 
 
@@ -109,5 +116,21 @@ public abstract class MadreDeTodo {
 	 */
 	public final void aumentarNivel() {
 		nivel++;
+	}
+
+	/**
+	 * Getter del Randomizador.
+	 * @return Retorna el randomizador.
+	 */
+	public RandomGenerator getRandom() {
+		return random;
+	}
+	
+	/**
+	 * Setter del Randomizador.
+	 * @param random Randomizador que reemplazará al actual.
+	 */
+	public void setRandom(RandomGenerator random) {
+		this.random = random;
 	}
 }
