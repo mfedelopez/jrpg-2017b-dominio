@@ -29,7 +29,7 @@ public class Alianza {
 	 * @return Retorna la lista de aliados.
 	 */
 	public final LinkedList<Personaje> getAliados() {
-		return aliados;
+		return new LinkedList<Personaje>(aliados);
 	}
 
 	/**Método void que referencia al atributo aliado.
@@ -39,9 +39,7 @@ public class Alianza {
 	 * @param aliados LinkedList que sobreescribirá a la actual
 	 */
 
-	public final void setAliados(final LinkedList<Personaje> aliados) {
-		this.aliados = aliados;
-	}
+
 	/** Se encarga de retornar
 	 * el nombre de la alianza.
 	 * @return Retorna nombre de la alianza.
