@@ -33,7 +33,6 @@ public class TestOrco {
 		o.setRandom(new MyRandomStub(0.49,3));
 
 		Assert.assertTrue(h.getSalud() == 100);
-		o.setSalud(100);
 		if (o.habilidadRaza2(h)) {
 			Assert.assertEquals(40, h.getSalud());
 			Assert.assertTrue(o.getSalud() == 100);

@@ -29,6 +29,8 @@ public abstract class MadreDeTodo {
 	private RandomGenerator random;
 
 
+
+
 	/** Clase abstracta.
 	 * Que tiene como
 	 * funcion tener los atributos que
@@ -64,13 +66,7 @@ public abstract class MadreDeTodo {
 	public final int getDefensa() {
 		return defensa;
 	}
-	/** Método void que sobreescribe el atributo fuerza.
-	 * Con el valor que se ingresa por parámetro.
-	 * @param defensa valor a sobreescribir
-	 */
-	public final void setDefensa(final int defensa) {
-		this.defensa = defensa;
-	}
+
 	/** Método que devuelve el nivel del personaje o NPC.
 	 * @return nivel del personaje o NPC.
 	 */
@@ -108,7 +104,7 @@ public abstract class MadreDeTodo {
 	 * Getter del Randomizador.
 	 * @return Retorna el randomizador.
 	 */
-	public RandomGenerator getRandom() {
+	public final RandomGenerator getRandom() {
 		return random;
 	}
 
@@ -116,7 +112,16 @@ public abstract class MadreDeTodo {
 	 * Setter del Randomizador.
 	 * @param random Randomizador que reemplazará al actual.
 	 */
-	public void setRandom(RandomGenerator random) {
+	public final void setRandom(final RandomGenerator random) {
 		this.random = random;
 	}
+	
+	public final void aumentarDefensa(final int bonus) {
+		defensa += bonus;
+	} 
+	
+	public final void reducirDefensa(final int reduc) {
+		defensa -= reduc;
+	}
+	
 }

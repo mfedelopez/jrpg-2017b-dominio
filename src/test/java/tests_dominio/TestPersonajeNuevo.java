@@ -91,7 +91,7 @@ public class TestPersonajeNuevo {
 	@Test
 	public void testRestablecerSalud() {
 		Personaje p1 = new Humano("Ben Affleck",new Asesino(),2);
-		p1.setSalud(3);
+		p1.reducirSalud(102);
 		Assert.assertEquals(3, p1.getSalud());
 		p1.restablecerSalud();
 		Assert.assertEquals(105, p1.getSalud());

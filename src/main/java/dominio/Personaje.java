@@ -46,7 +46,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	/**
 	 * Defensa inicial del personaje.
 	 */
-	private static final int DEFENSAINICIAL = 10;
+	private static final int DEFENSAINICIAL = 0;
 	/**
 	 * Experiencia inicial del personaje.
 	 */
@@ -187,6 +187,10 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * Nombre de la casta del personaje.
 	 */
 	private String nombreCasta;
+	/**
+	 * Salud del objeto prior ataque
+	 */
+	private int saludAnterior;
 
 	/**
 	 * Metodo que retorna las habilidades que posee el personaje.
@@ -242,10 +246,11 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		x = POSXI;
 		y = POSYI;
 		salud = saludTope;
+		saludAnterior = salud;
 		energia = energiaTope;
 		ataque = this.calcularPuntosDeAtaque();
-		this.setDefensa(this.calcularPuntosDeDefensa());
 		magia = this.calcularPuntosDeMagia();
+		this.aumentarDefensa(destreza);
 
 	}
 	/** La clase Personaje es la cual posee todos los atributos.
@@ -270,12 +275,13 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 			final int destreza, final int inteligencia, final Casta casta,
 			final int experiencia, final int nivel,
 			final int idPersonaje) {
-		super(fuerza, destreza, nivel, nombre);
+		super(fuerza, 0, nivel, nombre);
 
 		this.salud = salud;
 		this.energia = energia;
-
+		saludAnterior = salud;
 		this.destreza = destreza;
+		this.aumentarDefensa(destreza);
 		this.inteligencia = inteligencia;
 		this.casta = casta;
 
@@ -286,7 +292,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		this.energiaTope = this.energia;
 
 		this.idPersonaje = idPersonaje;
-		this.setDefensa(this.calcularPuntosDeDefensa());
+		
 		this.ataque = this.calcularPuntosDeAtaque();
 		this.magia = this.calcularPuntosDeMagia();
 	}
@@ -350,13 +356,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	public final int getSalud() {
 		return salud;
 	}
-	/**Metodo void que sobreescribe.
-	 * El atributo de salud actual del personaje.
-	 * @param salud Nueva salud actual del personaje
-	 */
-	public final void setSalud(final int salud) {
-		this.salud = salud;
-	}
+
 	/**Retorna entero con la energia del personaje.
 	 * @return Energia del personaje
 	 */
@@ -521,8 +521,11 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * Magia depende de la inteligencia y de MULTIPLICADORMGA (constante).
 	 */
 	public final void modificarAtributos() {
+		/*
+		 * Tener en cuenta para cuando implementemos asignarPuntosSkills
+		 */
 		this.ataque = this.calcularPuntosDeAtaque();
-		this.setDefensa(this.calcularPuntosDeDefensa());
+		this.aumentarDefensa(destreza);
 		this.magia = this.calcularPuntosDeMagia();
 	}
 
@@ -551,6 +554,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 */
 	@Override
 	public final int serAtacado(int danio) {
+		saludAnterior = salud;
 		if (this.getRandom().nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
 			danio -= this.getDefensa();
 			if (danio > 0) {
@@ -916,8 +920,38 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		
 	}
 	
-	public final void setEnergia(int energia) {
+	public final void setEnergia(final int energia) {
 		this.energia = energia;
 	}
+	
+	public final void saludPrevia() {
+		saludAnterior = salud;
+	}
+	
+	public final void actualizarSalud() {
+		if(salud != saludAnterior) {
+			// Mi salud anterior era mayor a mi salud actual?
+			if(saludAnterior > salud) {
+				salud -= saludAnterior - salud;
+				
+			} else {
+				salud = 0;
+			}
+		}
+	}
+	
+	public final void reducirSalud(int reduc) {
+		salud -= reduc;
+	}
+	
+	public final void aumentarSalud(int bonus) {
+		salud += bonus;
+	}
+	
+	public final void setSalud(final int salud) {
+		this.salud = salud;
+	}
+	
+	
 }
 

@@ -18,7 +18,7 @@ public class TestHechicero {
 		h.setRandom(new MyRandomStub(0.49,3));
 		e.setRandom(new MyRandomStub(0.49,3));
 		Assert.assertTrue(e.getSalud() == 100);
-		e.setSalud(65);
+		e.reducirSalud(35);
 		Assert.assertTrue(e.getSalud() == 65);
 		h.habilidadCasta2(e);
 		Assert.assertTrue(e.getSalud() > 65);
@@ -44,7 +44,7 @@ public class TestHechicero {
 		h.setRandom(new MyRandomStub(0.49,3));
 		e.setRandom(new MyRandomStub(0.49,3));
 		Assert.assertTrue(e.getSalud() == 100);
-		h.setSalud(50);
+		h.reducirSalud(50);
 		h.aumentarEnergia(-55);
 		if (h.habilidadCasta3(e)) {
 			Assert.assertTrue(e.getSalud() < 100);

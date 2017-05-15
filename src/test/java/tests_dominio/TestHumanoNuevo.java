@@ -26,7 +26,7 @@ public class TestHumanoNuevo {
 		Personaje p2 = new Humano("I'm Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p2.setSalud(0);
+		p2.reducirSalud(p2.getSalud());
 		Assert.assertEquals(105, p1.getEnergia());
 		Assert.assertFalse(p1.habilidadRaza2(p2));
 		Assert.assertEquals(95, p1.getEnergia());
