@@ -151,5 +151,14 @@ public class Humano extends Personaje {
 	public final String getNombreRaza() {
 		return "Humano";
 	}
+	@Override
+	public Humano clone() {
+		
+		return new Humano(this.getNombre(), this.getSalud(), this.getEnergia(), this.getFuerza(), 
+				this.getDestreza(), this.getInteligencia(), this.getCasta(), this.getExperiencia(), 
+				this.getNivel(), this.getIdPersonaje());
+	}
+	
+	
 
 }

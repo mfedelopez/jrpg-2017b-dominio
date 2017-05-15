@@ -187,10 +187,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * Nombre de la casta del personaje.
 	 */
 	private String nombreCasta;
-	/**
-	 * Salud del objeto prior ataque
-	 */
-	private int saludAnterior;
+
 
 	/**
 	 * Metodo que retorna las habilidades que posee el personaje.
@@ -246,7 +243,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		x = POSXI;
 		y = POSYI;
 		salud = saludTope;
-		saludAnterior = salud;
+		
 		energia = energiaTope;
 		ataque = this.calcularPuntosDeAtaque();
 		magia = this.calcularPuntosDeMagia();
@@ -279,7 +276,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 
 		this.salud = salud;
 		this.energia = energia;
-		saludAnterior = salud;
+		
 		this.destreza = destreza;
 		this.aumentarDefensa(destreza);
 		this.inteligencia = inteligencia;
@@ -435,6 +432,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 			return 0;
 		}
 		if (atacado.getSalud() > 0) {
+			
 			if (this.getRandom().nextDouble() <= this.casta.getProbabilidadGolpeCritico()
 					+ this.destreza / DIVISORDEDESTREZA) {
 				return atacado.serAtacado(this.golpe_critico());
@@ -554,7 +552,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 */
 	@Override
 	public final int serAtacado(int danio) {
-		saludAnterior = salud;
+		
 		if (this.getRandom().nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
 			danio -= this.getDefensa();
 			if (danio > 0) {
@@ -762,7 +760,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * personaje llamador.
 	 */
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
+	public Object clone() throws CloneNotSupportedException{
 		return super.clone();
 	}
 
@@ -924,21 +922,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		this.energia = energia;
 	}
 	
-	public final void saludPrevia() {
-		saludAnterior = salud;
-	}
-	
-	public final void actualizarSalud() {
-		if(salud != saludAnterior) {
-			// Mi salud anterior era mayor a mi salud actual?
-			if(saludAnterior > salud) {
-				salud -= saludAnterior - salud;
-				
-			} else {
-				salud = 0;
-			}
-		}
-	}
+
 	
 	public final void reducirSalud(int reduc) {
 		salud -= reduc;
@@ -950,6 +934,11 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	
 	public final void setSalud(final int salud) {
 		this.salud = salud;
+	}
+	
+	public final void actualizarAtribs(Personaje enemigo) {
+		salud = enemigo.salud;
+		energia = enemigo.energia;
 	}
 	
 	

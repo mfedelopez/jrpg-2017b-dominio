@@ -141,4 +141,13 @@ public class Elfo extends Personaje {
 	public final String getNombreRaza() {
 		return "Elfo";
 	}
+	@Override
+	public Elfo clone() {
+		
+		return new Elfo(this.getNombre(), this.getSalud(), this.getEnergia(), this.getFuerza(), 
+				this.getDestreza(), this.getInteligencia(), this.getCasta(), this.getExperiencia(), 
+				this.getNivel(), this.getIdPersonaje());
+	}
+	
+	
 }
