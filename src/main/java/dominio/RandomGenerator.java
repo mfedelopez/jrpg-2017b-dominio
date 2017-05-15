@@ -1,6 +1,10 @@
 package dominio;
 
-public abstract class RandomGenerator {
-	public abstract int nextInt(final int val);
-	public abstract double nextDouble();
+public  class RandomGenerator {
+	public  int nextInt(final int val){return 0;}
+	public  double nextDouble(){return 0;}
+	
+	public RandomGenerator() {
+		
+	}
 }
