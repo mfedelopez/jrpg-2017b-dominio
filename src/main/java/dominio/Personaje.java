@@ -2,6 +2,7 @@
 package dominio;
 
 import java.io.Serializable;
+import java.util.HashMap;
 /** Clase Personaje.
  * La cual sirve de base para la creacion de las distintas Razas.
  */
@@ -936,9 +937,9 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		this.salud = salud;
 	}
 	
-	public final void actualizarAtribs(Personaje enemigo) {
-		salud = enemigo.salud;
-		energia = enemigo.energia;
+	public final void actualizarAtributos(HashMap<String,Integer> map) {
+		salud = map.get("salud");
+		energia = map.get("energia");
 	}
 	
 	
