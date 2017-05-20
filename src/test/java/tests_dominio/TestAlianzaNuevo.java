@@ -13,5 +13,6 @@ public class TestAlianzaNuevo {
 		Alianza ali = new Alianza("Los Isotopos");
 		Assert.assertEquals("Los Isotopos", ali.obtenerNombre());
 	}
+		
 
 }

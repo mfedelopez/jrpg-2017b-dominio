@@ -1,6 +1,8 @@
 package tests_dominio;
 
 
+import java.util.HashMap;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -32,6 +34,7 @@ public class TestPersonajeNuevo {
 	@Test
 	public void testAliarPorPrimeraVez() {
 		Personaje p1 = new Humano("Ben Affleck",new Asesino(),2);
+		
 		p1.crearAlianza("AndaPls");
 		Personaje p2 = new Humano("Link",new Hechicero(),2);
 		Assert.assertTrue(p1.aliar(p2));
@@ -40,6 +43,7 @@ public class TestPersonajeNuevo {
 	@Test
 	public void testSalirAlianza() {
 		Personaje p1 = new Humano("Ben Affleck",new Asesino(),2);
+		p1.salirDeAlianza();
 		p1.crearAlianza("AndaPls");
 		Assert.assertNotNull(p1.getClan());
 		p1.salirDeAlianza();
@@ -147,4 +151,23 @@ public class TestPersonajeNuevo {
 		Assert.assertEquals(2, p1.getIdPersonaje());
 	}
 
+	@Test
+	public void testAumentarSalud() {
+		Personaje p1 = new Humano("Ben Affleck",new Asesino(),2);
+		p1.aumentarSalud(10);
+		Assert.assertEquals(115, p1.getSalud());
+	}
+	
+	@Test
+	public void testActualizarAtributos() {
+		Personaje p1 = new Humano("Ben Affleck",new Asesino(),2);
+		HashMap<String, Integer> mapaso = new HashMap<String, Integer>();
+		mapaso.put("salud", 20);
+		mapaso.put("energia", 10);
+		p1.actualizarAtributos(mapaso);
+		Assert.assertEquals(20, p1.getSalud());
+		Assert.assertEquals(10, p1.getEnergia());
+		Assert.assertTrue(p1.calcularPuntosDeDefensa() == p1.getDestreza());
+		
+	}
 }

@@ -75,6 +75,26 @@ public class TestNPCNuevo {
 		Assert.assertEquals(0, npc.getSalud());
 	}
 	
-	
+	@Test
+	public void testNivel3NPC() {
+		NonPlayableCharacter npc = new NonPlayableCharacter("Pepe", 1, 2);
+		Assert.assertEquals(4, npc.getDefensa());
+		Assert.assertEquals(50, npc.getSalud());
+		Assert.assertEquals(30, npc.getFuerza());
+	}
 
+	@Test
+	public void testAtacar2() {
+		NonPlayableCharacter npc = new NonPlayableCharacter("Pepe", 1, 1);
+		NonPlayableCharacter npc2 = new NonPlayableCharacter("Pepe", 1, 1);
+		Personaje p1 = new Humano("Ben Affleck",new Asesino(),2);
+		npc.setRandom(new MyRandomStub(0.1,3));
+		npc2.setRandom(new MyRandomStub(0.1,3));
+		p1.setRandom(new MyRandomStub(0.49,3));
+		// Recordar que trunca porque es entero
+		//NPC 20 - (5/2) = 18
+		//P1 20 - 15 = 5
+		Assert.assertEquals(0, npc.atacar(npc2));
+		Assert.assertEquals(15, npc.atacar(p1));
+	}
 }
