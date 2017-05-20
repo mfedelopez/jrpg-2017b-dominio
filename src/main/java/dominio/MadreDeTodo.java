@@ -115,13 +115,19 @@ public abstract class MadreDeTodo {
 	public final void setRandom(final RandomGenerator random) {
 		this.random = random;
 	}
-	
+	/**
+	 * Aumenta la defensa del personaje / npc.
+	 * @param bonus valor que se le agrega a la defensa.
+	 */
 	public final void aumentarDefensa(final int bonus) {
 		defensa += bonus;
-	} 
-	
+	}
+	/**
+	 * Reduce la defensa del personaje.
+	 * @param reduc Valor que se reduce la defensa.
+	 */
 	public final void reducirDefensa(final int reduc) {
 		defensa -= reduc;
 	}
-	
+
 }

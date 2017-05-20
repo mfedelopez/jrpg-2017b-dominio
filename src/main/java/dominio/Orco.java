@@ -137,14 +137,15 @@ public class Orco extends Personaje {
 	public final String getNombreRaza() {
 		return "Orco";
 	}
-	
+
+	@Override
 	public Orco clone() throws CloneNotSupportedException {
-		
-		
-		return new Orco(this.getNombre(), this.getSalud(), this.getEnergia(), this.getFuerza(), 
-				this.getDestreza(), this.getInteligencia(), this.getCasta(), this.getExperiencia(), 
+
+
+		return new Orco(this.getNombre(), this.getSalud(), this.getEnergia(), this.getFuerza(),
+				this.getDestreza(), this.getInteligencia(), this.getCasta(), this.getExperiencia(),
 				this.getNivel(), this.getIdPersonaje());
 	}
-	
-	
+
+
 }

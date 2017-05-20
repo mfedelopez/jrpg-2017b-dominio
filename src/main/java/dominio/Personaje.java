@@ -244,7 +244,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		x = POSXI;
 		y = POSYI;
 		salud = saludTope;
-		
+
 		energia = energiaTope;
 		ataque = this.calcularPuntosDeAtaque();
 		magia = this.calcularPuntosDeMagia();
@@ -277,7 +277,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 
 		this.salud = salud;
 		this.energia = energia;
-		
+
 		this.destreza = destreza;
 		this.aumentarDefensa(destreza);
 		this.inteligencia = inteligencia;
@@ -290,7 +290,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		this.energiaTope = this.energia;
 
 		this.idPersonaje = idPersonaje;
-		
+
 		this.ataque = this.calcularPuntosDeAtaque();
 		this.magia = this.calcularPuntosDeMagia();
 	}
@@ -433,7 +433,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 			return 0;
 		}
 		if (atacado.getSalud() > 0) {
-			
+
 			if (this.getRandom().nextDouble() <= this.casta.getProbabilidadGolpeCritico()
 					+ this.destreza / DIVISORDEDESTREZA) {
 				return atacado.serAtacado(this.golpe_critico());
@@ -553,7 +553,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 */
 	@Override
 	public final int serAtacado(int danio) {
-		
+
 		if (this.getRandom().nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
 			danio -= this.getDefensa();
 			if (danio > 0) {
@@ -761,7 +761,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * personaje llamador.
 	 */
 	@Override
-	public Object clone() throws CloneNotSupportedException{
+	public Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}
 
@@ -899,49 +899,64 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	public final void aumentarEnergiaTope(final int bonus) {
 		energiaTope += bonus;
 	}
-	public final static int[] getTablaDeNiveles() {
+	/**
+	 * Devuelve la tabla de niveles.
+	 * @return	Devuelve la tabla de niveles
+	 */
+	public static final  int[] getTablaDeNiveles() {
 		return tablaDeNiveles;
 	}
-	private static void setTablaDeNiveles(int[] tablaDeNiveles) {
+	/**
+	 * Reemplaza a la tabla de niveles por otra.
+	 * @param tablaDeNiveles tabla de niveles que reemplazará a la anterior.
+	 */
+	private static void setTablaDeNiveles(final int[] tablaDeNiveles) {
 		Personaje.tablaDeNiveles = tablaDeNiveles;
 	}
-	
-	public final void aumentarEnergia(int bonus) {
+	/**
+	 * Método void que aumenta la energía.
+	 * @param bonus	monto entero que será agregado a la energía
+	 */
+	public final void aumentarEnergia(final int bonus) {
 		energia += bonus;
 	}
-	
-	public final void reducirEnergia(int monto) {
-		if(energia > monto) {
+	/**
+	 * Método void que reduce la energía.
+	 * @param monto	monto entero que será reducido a la energía
+	 */
+	public final void reducirEnergia(final int monto) {
+		if (energia > monto) {
 			energia -= monto;
 		} else {
 			energia = 0;
 		}
-		
-	}
-	
-	public final void setEnergia(final int energia) {
-		this.energia = energia;
-	}
-	
 
-	
-	public final void reducirSalud(int reduc) {
+	}
+
+	/**
+	 * Método void que reduce la salud.
+	 * @param reduc	monto entero que será reducido a la energía
+	 */
+	public final void reducirSalud(final int reduc) {
 		salud -= reduc;
 	}
-	
-	public final void aumentarSalud(int bonus) {
+	/**
+	 * Método void que aumenta la salud.
+	 * @param bonus	monto entero que será agregado a la salud
+	 */
+	public final void aumentarSalud(final int bonus) {
 		salud += bonus;
 	}
-	
-	public final void setSalud(final int salud) {
-		this.salud = salud;
-	}
-	
-	public final void actualizarAtributos(HashMap<String,Integer> map) {
+
+	/**
+	 * Actualiza la salud y la energía del personaje en batalla.
+	 * @param map contenedor de los atributos a actualizar.
+	 */
+	public final void actualizarAtributos(final HashMap<String, Integer> map) {
 		salud = map.get("salud");
 		energia = map.get("energia");
 	}
-	
-	
+
+
 }
 

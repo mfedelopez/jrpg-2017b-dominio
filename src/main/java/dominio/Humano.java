@@ -112,7 +112,7 @@ public class Humano extends Personaje {
 	public final boolean habilidadRaza2(final Peleable atacado) {
 		if (this.getEnergia() > ENERGIAMINIMA) {
 			if (atacado.serAtacado(atacado.getSalud() / DIVISORSALUD) > 0) {
-				this.setEnergia(this.getEnergia() / DIVISORENERGIA);
+				this.reducirEnergia(this.getEnergia() / DIVISORENERGIA);
 				return true;
 			}
 		}
@@ -153,12 +153,12 @@ public class Humano extends Personaje {
 	}
 	@Override
 	public Humano clone() {
-		
-		return new Humano(this.getNombre(), this.getSalud(), this.getEnergia(), this.getFuerza(), 
-				this.getDestreza(), this.getInteligencia(), this.getCasta(), this.getExperiencia(), 
+
+		return new Humano(this.getNombre(), this.getSalud(), this.getEnergia(), this.getFuerza(),
+				this.getDestreza(), this.getInteligencia(), this.getCasta(), this.getExperiencia(),
 				this.getNivel(), this.getIdPersonaje());
 	}
-	
-	
+
+
 
 }

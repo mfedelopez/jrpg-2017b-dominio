@@ -185,6 +185,6 @@ public class Hechicero extends Casta {
 		return new String[] {"Bola de Fuego", "Curar Aliado", "Robar Energia y Salud"};
 	}
 
-	
-	
+
+
 }

@@ -143,11 +143,11 @@ public class Elfo extends Personaje {
 	}
 	@Override
 	public Elfo clone() {
-		
-		return new Elfo(this.getNombre(), this.getSalud(), this.getEnergia(), this.getFuerza(), 
-				this.getDestreza(), this.getInteligencia(), this.getCasta(), this.getExperiencia(), 
+
+		return new Elfo(this.getNombre(), this.getSalud(), this.getEnergia(), this.getFuerza(),
+				this.getDestreza(), this.getInteligencia(), this.getCasta(), this.getExperiencia(),
 				this.getNivel(), this.getIdPersonaje());
 	}
-	
-	
+
+
 }
