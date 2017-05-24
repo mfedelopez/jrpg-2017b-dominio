@@ -161,9 +161,11 @@ public class TestPersonajeNuevo {
 	@Test
 	public void testActualizarAtributos() {
 		Personaje p1 = new Humano("Ben Affleck",new Asesino(),2);
-		HashMap<String, Integer> mapaso = new HashMap<String, Integer>();
+		HashMap<String, Number> mapaso = new HashMap<String, Number>();
 		mapaso.put("salud", 20);
 		mapaso.put("energia", 10);
+		mapaso.put("defensa", 10);
+		mapaso.put("probEvitarDanio", 0.15);
 		p1.actualizarAtributos(mapaso);
 		Assert.assertEquals(20, p1.getSalud());
 		Assert.assertEquals(10, p1.getEnergia());

@@ -952,9 +952,11 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * Actualiza la salud y la energía del personaje en batalla.
 	 * @param map contenedor de los atributos a actualizar.
 	 */
-	public final void actualizarAtributos(final HashMap<String, Integer> map) {
-		salud = map.get("salud");
-		energia = map.get("energia");
+	public final void actualizarAtributos(final HashMap<String, Number> map) {
+		salud = map.get("salud").intValue();
+		energia = map.get("energia").intValue();
+		defensa = map.get("defensa").intValue();
+		casta.setProbabilidadEvitarDaño(map.get("probEvitarDanio").doubleValue());
 	}
 
 

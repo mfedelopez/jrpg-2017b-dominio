@@ -14,7 +14,7 @@ public abstract class MadreDeTodo {
 	/**
 	 * Defensa que recibira el personaje o npc.
 	 */
-	private int defensa;
+	protected int defensa;
 	/**
 	 * Nivel que recibira el personaje o npc.
 	 */

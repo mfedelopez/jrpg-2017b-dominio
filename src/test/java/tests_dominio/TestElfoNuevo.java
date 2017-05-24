@@ -17,7 +17,7 @@ public class TestElfoNuevo {
 		Personaje p2 = new Humano("I'm Batman",new Asesino(),2);
 		p1.setRandom(new MyRandomStub(0.49,3));
 		p2.setRandom(new MyRandomStub(0.49,3));
-		p1.aumentarEnergia(-100);
+		p1.aumentarEnergia(-110);
 		Assert.assertFalse(p1.habilidadRaza1(p2));
 	}
 	
