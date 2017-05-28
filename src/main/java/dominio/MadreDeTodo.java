@@ -1,6 +1,8 @@
 
 package dominio;
 
+import java.util.ArrayList;
+
 /** Clase abstracta.
  * Que tiene como funcion tener los atributos que
  * comparten las clases NPC y Personaje
@@ -27,7 +29,8 @@ public abstract class MadreDeTodo {
 	 * Objeto para obtener valores aleatorios.
 	 */
 	private RandomGenerator random;
-
+	
+	protected ArrayList<Item> items = new ArrayList<Item>();
 
 
 
@@ -128,6 +131,14 @@ public abstract class MadreDeTodo {
 	 */
 	public final void reducirDefensa(final int reduc) {
 		defensa -= reduc;
+	}
+	
+	public final void anadirItem(Item i) {
+		items.add(i);
+	}
+	
+	public final void removerItem(Item i) {
+		items.remove(i);
 	}
 
 }
