@@ -42,17 +42,19 @@ public class Item {
 		return bonusEnergia;
 	}
 
-	public int getBonusAtaque() {
+	public int getBonusFuerza() {
 		return bonusAtaque;
 	}
 
-	public int getBonusDefensa() {
+	public int getBonusDestreza() {
 		return bonusDefensa;
 	}
 
-	public int getBonusMagia() {
+	public int getBonusInteligencia() {
 		return bonusMagia;
 	}
+
+
 	
 	
 	
