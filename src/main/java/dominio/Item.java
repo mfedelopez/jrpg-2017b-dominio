@@ -19,7 +19,9 @@ public class Item {
 		// TODO Auto-generated method stub
 		return foto;
 	}
-	
-	
+
+	public String getNombre() {
+		return nombre;
+	}
 	
 }
