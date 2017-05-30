@@ -1,11 +1,14 @@
 package dominio;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Item {
 	private final int idItem;
-	private final BufferedImage foto;
+	private final String foto;
 	private final String nombre;
 	private final int wearLocation;
 	private final int bonusSalud;
@@ -13,8 +16,8 @@ public class Item {
 	private final int bonusFuerza;
 	private final int bonusDestreza;
 	private final int bonusInteligencia;
-	private final BufferedImage fotoEquipado;
-	public Item(int idItem, String nombre, int wearLocation, int bonusSalud, int bonusEnergia, int bonusAtaque, int bonusDefensa, int bonusMagia, BufferedImage foto, BufferedImage fotoEquipado) throws IOException {
+	private final String fotoEquipado;
+	public Item(int idItem, String nombre, int wearLocation, int bonusSalud, int bonusEnergia, int bonusAtaque, int bonusDefensa, int bonusMagia, String foto, String fotoEquipado) throws IOException {
 		this.foto = foto;
 		this.idItem = idItem;
 		this.nombre = nombre;
@@ -27,9 +30,9 @@ public class Item {
 		this.fotoEquipado = fotoEquipado;
 	}
 
-	public BufferedImage getFoto() {
+	public BufferedImage getFoto() throws IOException {
 		// TODO Auto-generated method stub
-		return foto;
+		return ImageIO.read(new File("recursos//"+foto));
 	}
 
 	public String getNombre() {
