@@ -10,19 +10,21 @@ public class Item {
 	private final int wearLocation;
 	private final int bonusSalud;
 	private final int bonusEnergia;
-	private final int bonusAtaque;
-	private final int bonusDefensa;
-	private final int bonusMagia;
-	public Item(int idItem, String nombre, int wearLocation, int bonusSalud, int bonusEnergia, int bonusAtaque, int bonusDefensa, int bonusMagia, BufferedImage foto) throws IOException {
+	private final int bonusFuerza;
+	private final int bonusDestreza;
+	private final int bonusInteligencia;
+	private final BufferedImage fotoEquipado;
+	public Item(int idItem, String nombre, int wearLocation, int bonusSalud, int bonusEnergia, int bonusAtaque, int bonusDefensa, int bonusMagia, BufferedImage foto, BufferedImage fotoEquipado) throws IOException {
 		this.foto = foto;
 		this.idItem = idItem;
 		this.nombre = nombre;
 		this.wearLocation = wearLocation;
-		this.bonusAtaque = bonusAtaque;
-		this.bonusDefensa = bonusDefensa;
-		this.bonusEnergia = bonusEnergia;
 		this.bonusSalud = bonusSalud;
-		this.bonusMagia = bonusMagia;
+		this.bonusEnergia = bonusEnergia;
+		this.bonusFuerza = bonusAtaque;
+		this.bonusDestreza = bonusDefensa;
+		this.bonusInteligencia = bonusMagia;
+		this.fotoEquipado = fotoEquipado;
 	}
 
 	public BufferedImage getFoto() {
@@ -43,15 +45,15 @@ public class Item {
 	}
 
 	public int getBonusFuerza() {
-		return bonusAtaque;
+		return bonusFuerza;
 	}
 
 	public int getBonusDestreza() {
-		return bonusDefensa;
+		return bonusDestreza;
 	}
 
 	public int getBonusInteligencia() {
-		return bonusMagia;
+		return bonusInteligencia;
 	}
 
 
