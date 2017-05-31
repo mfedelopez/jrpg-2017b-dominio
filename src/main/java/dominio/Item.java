@@ -59,6 +59,11 @@ public class Item {
 		return bonusInteligencia;
 	}
 
+	public int getIdItem() {
+		return idItem;
+	}
+	
+
 
 	
 	
