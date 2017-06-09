@@ -29,7 +29,7 @@ public abstract class MadreDeTodo {
 	 * Objeto para obtener valores aleatorios.
 	 */
 	private RandomGenerator random;
-	
+
 	protected ArrayList<Item> items = new ArrayList<Item>();
 
 
@@ -132,12 +132,12 @@ public abstract class MadreDeTodo {
 	public final void reducirDefensa(final int reduc) {
 		defensa -= reduc;
 	}
-	
-	public final void anadirItem(Item i) {
+
+	public final void anadirItem(final Item i) {
 		items.add(i);
 	}
-	
-	public final void removerItem(Item i) {
+
+	public final void removerItem(final Item i) {
 		items.remove(i);
 	}
 
