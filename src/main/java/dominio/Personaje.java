@@ -2,7 +2,10 @@
 package dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+
+import javax.swing.DefaultListModel;
 /** Clase Personaje.
  * La cual sirve de base para la creacion de las distintas Razas.
  */
@@ -959,6 +962,27 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		casta.setProbabilidadEvitarDaño(map.get("probEvitarDanio").doubleValue());
 	}
 
+	public void trueque(ArrayList<Item> misItems, ArrayList<Item> aPoner, DefaultListModel<String> aSacar) {
+		int j = 0;
+		boolean loop = true;
+		ArrayList<Item> aux = misItems;
+		while (aSacar.size() > 0) {
+			while (loop) {
+				if (misItems.get(j).getNombre().equals(aSacar.get(0))) {
+					aSacar.remove(0);
+					aux.remove(misItems.get(j));
+					loop = false;
+				}
+				j++;
+			}
+			j = 0;
+			loop = true;
+		}
+		for (Item item : aPoner) {
+			aux.add(item);
+		}
+		this.items = aux;
+	}
 
 }
 

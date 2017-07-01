@@ -141,4 +141,7 @@ public abstract class MadreDeTodo {
 		items.remove(i);
 	}
 
+	public ArrayList<Item> getItems() {
+		return items;
+	}
 }
