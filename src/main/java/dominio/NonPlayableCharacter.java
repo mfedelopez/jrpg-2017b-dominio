@@ -22,78 +22,6 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	 */
 	private static final int DIFICULTADALEATORIA = -1;
 	/**
-	 * Fuerza del NPC nivel 1.
-	 */
-	private static final int DIF1F = 10;
-	/**
-	 * Salud del NPC nivel 1.
-	 */
-	private static final int DIF1S = 30;
-	/**
-	 * Defensa del NPC nivel 1.
-	 */
-	private static final int DIF1D = 2;
-	/**
-	 * Multiplicador fuerza del NPC nivel 1.
-	 */
-	private static final int DIF1MF = 3;
-	/**
-	 * Multiplicador salud del NPC nivel 1.
-	 */
-	private static final int DIF1MS = 15;
-	/**
-	 * Multiplicador defensa del NPC nivel 1.
-	 */
-	private static final int DIF1MD = 1;
-	/**
-	 * Fuerza del NPC nivel 2.
-	 */
-	private static final int DIF2F = 20;
-	/**
-	 * Salud del NPC nivel 2.
-	 */
-	private static final int DIF2S = 40;
-	/**
-	 * Defensa del NPC nivel 2.
-	 */
-	private static final int DIF2D = 5;
-	/**
-	 * Multiplicador fuerza del NPC nivel 2.
-	 */
-	private static final int DIF2MF = 6;
-	/**
-	 * Multiplicador salud del NPC nivel 2.
-	 */
-	private static final int DIF2MS = 20;
-	/**
-	 * Multiplicador defensa del NPC nivel 2.
-	 */
-	private static final int DIF2MD = 2;
-	/**
-	 * Fuerza del NPC nivel 3.
-	 */
-	private static final int DIF3F = 30;
-	/**
-	 * Salud del NPC nivel 3.
-	 */
-	private static final int DIF3S = 50;
-	/**
-	 * Defensa del NPC nivel 3.
-	 */
-	private static final int DIF3D = 4;
-	/**
-	 * Multiplicador fuerza del NPC nivel 3.
-	 */
-	private static final int DIF3MF = 10;
-	/**
-	 * Multiplicador salud del NPC nivel 3.
-	 */
-	private static final int DIF3MS = 25;
-	/**
-	 * Multiplicador defensa del NPC nivel 3.
-	 */
-	private static final int DIF3MD = 4;
-	/**
 	 * Multiplicador de experiencia otorgada por el npc.
 	 */
 	private static final int MULTIPLICADOREXPNPC = 30;
@@ -113,6 +41,30 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 	 * Numero por el cual se divide la defensa cuando el npc es atacado.
 	 */
 	private static final int DIVISORDEDEFENSA = 2;
+	/**
+	 * Fuerza base del NPC.
+	 */
+	private static final int MODIFICADORBASEF = 10;
+	/**
+	 * Salud base del NPC.
+	 */
+	private static final int MODIFICADORBASES = 30;
+	/**
+	 * Defensa base del NPC.
+	 */
+	private static final int MODIFICADORBASED = 2;
+	/**
+	 * Multiplicador fuerza del NPC.
+	 */
+	private static final int MULTIPLICADORF = 3;
+	/**
+	 * Multiplicador salud del NPC.
+	 */
+	private static final int MULTIPLICADORS = 15;
+	/**
+	 * Multiplicador defensa del NPC.
+	 */
+	private static final int MULTIPLICADORD = 1;
 
 	/**
 	 * Constructor de la Clase.
@@ -134,25 +86,11 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 			dificultad = dificultadNPC;
 		}
 
-		switch (dificultad) {
-		case 0:
-			this.aumentarFuerza(DIF1F + (nivel - 1) * DIF1MF);
-			this.salud = DIF1S + (nivel - 1) * DIF1MS;
-			this.aumentarDefensa(DIF1D + (nivel - 1) * DIF1MD);
-			break;
-		case 1:
-			this.aumentarFuerza(DIF2F + (nivel - 1) * DIF2MF);
-			this.salud = DIF2S + (nivel - 1) * DIF2MS;
-			this.aumentarDefensa(DIF2D + (nivel - 1) * DIF2MD);
-			break;
-    	case 2:
-			this.aumentarFuerza(DIF3F + (nivel - 1) * DIF3MF);
-			this.salud = DIF3S + (nivel - 1) * DIF3MS;
-			this.aumentarDefensa(DIF3D + (nivel - 1) * DIF3MD);
-			break;
-		default:
-			break;
-		}
+		this.aumentarFuerza(MODIFICADORBASEF * (dificultad + 1) +
+				(nivel - 1) * MULTIPLICADORF * (dificultad + 1));
+		this.salud = MODIFICADORBASES * (dificultad + 1) + (nivel - 1) * MULTIPLICADORS * (dificultad + 1);
+		this.aumentarDefensa(MODIFICADORBASED * (dificultad + 1) +
+				(nivel - 1) * MULTIPLICADORD * (dificultad + 1));
 	}
 
 	/**

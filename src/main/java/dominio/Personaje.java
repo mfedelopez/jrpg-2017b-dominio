@@ -967,7 +967,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 	 * @param aPoner items a recibir.
 	 * @param aSacar items a eliminar.
 	 */
-	public void trueque(final ArrayList<Item> misItems, 
+	public void trueque(final ArrayList<Item> misItems,
 			final ArrayList<Item> aPoner, final DefaultListModel<String> aSacar) {
 		int j = 0;
 		boolean loop = true;

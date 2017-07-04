@@ -14,9 +14,9 @@ public class TestNPCNuevo {
 	@Test
 	public void testNivelNPC1() {
 		NonPlayableCharacter npc = new NonPlayableCharacter("Pepe", 1, 1);
-		Assert.assertEquals(5, npc.getDefensa());
+		Assert.assertEquals(4, npc.getDefensa());
 		Assert.assertEquals(20, npc.getFuerza());
-		Assert.assertEquals(40, npc.getSalud());
+		Assert.assertEquals(60, npc.getSalud());
 	}
 
 	@Test
@@ -70,16 +70,16 @@ public class TestNPCNuevo {
 	@Test
 	public void testNivelNPCDefault() {
 		NonPlayableCharacter npc = new NonPlayableCharacter("Pepe", 1, 9);
-		Assert.assertEquals(0, npc.getDefensa());
-		Assert.assertEquals(0, npc.getFuerza());
-		Assert.assertEquals(0, npc.getSalud());
+		Assert.assertEquals(20, npc.getDefensa());
+		Assert.assertEquals(100, npc.getFuerza());
+		Assert.assertEquals(300, npc.getSalud());
 	}
 	
 	@Test
 	public void testNivel3NPC() {
 		NonPlayableCharacter npc = new NonPlayableCharacter("Pepe", 1, 2);
-		Assert.assertEquals(4, npc.getDefensa());
-		Assert.assertEquals(50, npc.getSalud());
+		Assert.assertEquals(6, npc.getDefensa());
+		Assert.assertEquals(90, npc.getSalud());
 		Assert.assertEquals(30, npc.getFuerza());
 	}
 
