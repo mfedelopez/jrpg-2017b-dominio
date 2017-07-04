@@ -961,8 +961,14 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 		defensa = map.get("defensa").intValue();
 		casta.setProbabilidadEvitarDaño(map.get("probEvitarDanio").doubleValue());
 	}
-
-	public void trueque(ArrayList<Item> misItems, ArrayList<Item> aPoner, DefaultListModel<String> aSacar) {
+	/**
+	 * Método que realiza el trueque de items.
+	 * @param misItems Items que posee el personaje actualmente.
+	 * @param aPoner items a recibir.
+	 * @param aSacar items a eliminar.
+	 */
+	public void trueque(final ArrayList<Item> misItems, 
+			final ArrayList<Item> aPoner, final DefaultListModel<String> aSacar) {
 		int j = 0;
 		boolean loop = true;
 		ArrayList<Item> aux = misItems;

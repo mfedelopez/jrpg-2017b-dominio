@@ -132,15 +132,24 @@ public abstract class MadreDeTodo {
 	public final void reducirDefensa(final int reduc) {
 		defensa -= reduc;
 	}
-
+	/**
+	 * Metodo para anadir items sin violar el encapsulamiento.
+	 * @param i Item a agregar.
+	 */
 	public final void anadirItem(final Item i) {
 		items.add(i);
 	}
-
+	/**
+	 * Metodo para remover items sin violar el encapsulamiento.
+	 * @param i Item a eliminar.
+	 */
 	public final void removerItem(final Item i) {
 		items.remove(i);
 	}
-
+	/**
+	 * Método para obtener la lista de items.
+	 * @return Lista de items del personaje.
+	 */
 	public ArrayList<Item> getItems() {
 		return items;
 	}
