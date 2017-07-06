@@ -4,12 +4,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import dominio.Asesino;
-import dominio.Hechicero;
 import dominio.Humano;
 import dominio.Item;
 import dominio.Personaje;
@@ -45,8 +45,7 @@ public class TestTrueque {
 
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Falló");
 		}
 		
 	}
@@ -77,8 +76,7 @@ public class TestTrueque {
 
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Falló");
 		}
 		
 	}
