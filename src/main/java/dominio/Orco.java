@@ -67,13 +67,14 @@ public class Orco extends Personaje {
 	 */
 	@Override
 	public final boolean habilidadRaza1(final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (this.getEnergia() >= ENERGIAMINIMA) {
 			this.reducirEnergia(ENERGIAMINIMA);
 			if (atacado.serAtacado(this.getDefensa() * MULTIPLICADORDEFENSA) > 0) {
-				return true;
+				pudoAtacar = true;
 			}
 		}
-		return false;
+		return pudoAtacar;
 	}
 
 
@@ -95,15 +96,16 @@ public class Orco extends Personaje {
 	 */
 	@Override
 	public final boolean habilidadRaza2(final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (this.getEnergia() >= ENERGIAMINIMA) {
 			this.reducirEnergia(ENERGIAMINIMA);
 			int danioCausado = atacado.serAtacado(this.getFuerza());
 			if (danioCausado > 0) {
 				this.serCurado(danioCausado);
-				return true;
+				pudoAtacar = true;
 			}
 		}
-		return false;
+		return pudoAtacar;
 	}
 	/**Retorna un vector de string con los nombres
 	 * de las habilidades de la raza.

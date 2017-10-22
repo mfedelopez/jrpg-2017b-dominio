@@ -65,13 +65,14 @@ public class Guerrero extends Casta {
 	 */
 	@Override
 	public final boolean habilidad1(final Personaje caster, final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (caster.getEnergia() >= ENERGIAMINIMA) {
 			caster.reducirEnergia(ENERGIAMINIMA);
 			if (atacado.serAtacado(caster.getAtaque() * MULTIPLICADORFUERZA) > 0) {
-				return true;
+				pudoAtacar = true;
 			}
 		}
-		return false;
+		return pudoAtacar;
 	}
 
 
@@ -96,12 +97,13 @@ public class Guerrero extends Casta {
 	 */
 	@Override
 	public final boolean habilidad2(final Personaje caster, final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (caster.getEnergia() >= ENERGIAMINIMA) {
 			caster.reducirEnergia(ENERGIAMINIMA);
 			caster.aumentarDefensa(caster.getMagia());
-			return true;
+			pudoAtacar = true;
 		}
-		return false;
+		return pudoAtacar;
 	}
 
 
@@ -125,6 +127,7 @@ public class Guerrero extends Casta {
 	 */
 	@Override
 	public final boolean habilidad3(final Personaje caster, final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (caster.getEnergia() >= ENERGIAMINIMA) {
 			caster.reducirEnergia(ENERGIAMINIMA);
 			if (atacado instanceof Personaje) {
@@ -132,12 +135,12 @@ public class Guerrero extends Casta {
 				((Personaje) atacado).reducirDefensa(((Personaje) atacado).getDefensa());
 				if (atacado.serAtacado(caster.getAtaque()) > 0) {
 					((Personaje) atacado).aumentarDefensa(defensaOriginal);
-					return true;
+					pudoAtacar = true;
 				}
 			}
 
 		}
-		return false;
+		return pudoAtacar;
 	}
 	/** Retorna un entero.
 	 * Que otorga el bonus de
