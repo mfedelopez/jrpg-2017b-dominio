@@ -81,12 +81,13 @@ public class Humano extends Personaje {
 	 */
 	@Override
 	public final boolean habilidadRaza1(final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (this.getEnergia() >= ENERGIAMINIMA) {
 			this.reducirEnergia(ENERGIAMINIMA);
 			atacado.setAtaque(atacado.getAtaque() + this.getMagia());
-			return true;
+			pudoAtacar = true;
 		}
-		return false;
+		return pudoAtacar;
 	}
 
 
@@ -110,14 +111,15 @@ public class Humano extends Personaje {
 	 */
 	@Override
 	public final boolean habilidadRaza2(final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (this.getEnergia() >= ENERGIAMINIMA) {
 			if (atacado.serAtacado(atacado.getSalud() / DIVISORSALUD) > 0) {
 				this.reducirEnergia(this.getEnergia() / DIVISORENERGIA);
-				return true;
+				pudoAtacar = true;
 			}
 		}
 		this.reducirEnergia(ENERGIAMINIMA);
-		return false;
+		return pudoAtacar;
 	}
 	/**Retorna un vector de string con los nombres
 	 * de las habilidades de la raza.

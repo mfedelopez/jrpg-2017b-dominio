@@ -73,13 +73,14 @@ public class Elfo extends Personaje {
 	 */
 	@Override
 	public final boolean habilidadRaza1(final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (this.getEnergia() >= ENERGIAMINIMA) {
 			this.reducirEnergia(ENERGIAMINIMA);
 			if (atacado.serAtacado(this.getFuerza() + this.getNivel() * MULTIPLICADORNIVEL) > 0) {
-				return true;
+				pudoAtacar = true;
 			}
 		}
-		return false;
+		return pudoAtacar;
 	}
 
 
@@ -103,13 +104,14 @@ public class Elfo extends Personaje {
 	 */
 	@Override
 	public final boolean habilidadRaza2(final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (this.getEnergia() >= ENERGIAMINIMA) {
 			this.reducirEnergia(ENERGIAMINIMA);
 			if (atacado.serAtacado((this.getMagia())) > 0) {
-				return true;
+				pudoAtacar = true;
 			}
 		}
-		return false;
+		return pudoAtacar;
 	}
 	/**Retorna un vector de string con los nombres
 	 * de las habilidades de la raza.

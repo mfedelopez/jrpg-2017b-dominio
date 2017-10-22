@@ -75,13 +75,14 @@ public class Hechicero extends Casta {
 	 */
 	@Override
 	public final boolean habilidad1(final Personaje caster, final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (caster.getEnergia() >= ENERGIAMINIMA) {
 			caster.reducirEnergia(ENERGIAMINIMA);
 			if (atacado.serAtacado((int) (caster.calcularPuntosDeMagia() * MULTIPLICADORMAGIA)) > 0) {
-				return true;
+				pudoAtacar = true;
 			}
 		}
-		return false;
+		return pudoAtacar;
 	}
 
 
@@ -102,14 +103,15 @@ public class Hechicero extends Casta {
 	 */
 	@Override
 	public final boolean habilidad2(final Personaje caster, final Peleable aliado) {
+		boolean pudoAtacar = false;
 		if (caster.getEnergia() >= ENERGIAMINIMA) {
 			caster.reducirEnergia(ENERGIAMINIMA);
 			if (aliado instanceof Personaje) {
 				((Personaje) aliado).serCurado(caster.calcularPuntosDeMagia());
-				return true;
+				pudoAtacar = true;
 			}
 		}
-		return false;
+		return pudoAtacar;
 	}
 
 	/** Retorna un booleano dependiendo de si se
@@ -129,6 +131,7 @@ public class Hechicero extends Casta {
 	 */
 	@Override
 	public final boolean habilidad3(final Personaje caster, final Peleable atacado) {
+		boolean pudoAtacar = false;
 		if (caster.getEnergia() >= ENERGIAMINIMA) {
 			caster.reducirEnergia(ENERGIAMINIMA);
 			if (atacado instanceof Personaje) {
@@ -138,11 +141,11 @@ public class Hechicero extends Casta {
 						serRobadoSalud(caster.calcularPuntosDeMagia() / DIVISORDEMAGIA);
 				caster.serEnergizado(energiaRobada);
 				caster.serCurado(saludRobada);
-				return true;
+				pudoAtacar = true;
 			}
 
 		}
-		return false;
+		return pudoAtacar;
 	}
 	/** Retorna un entero que otorga el bonus de
 	 * inteligencia perteneciente a esta casta.
