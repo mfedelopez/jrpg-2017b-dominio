@@ -9,28 +9,28 @@ import java.util.ArrayList;
  */
 public abstract class MadreDeTodo {
 
-    /**
+  /**
      * Fuerza que recibira el personaje o npc.
      */
-    private int fuerza;
-    /**
+  private int fuerza;
+  /**
      * Defensa que recibira el personaje o npc.
      */
-    protected int defensa;
-    /**
+  protected int defensa;
+  /**
      * Nivel que recibira el personaje o npc.
      */
-    private int nivel;
-    /**
+  private int nivel;
+  /**
      * Nombre que recibira el personaje o npc.
      */
-    private String nombre;
-    /**
+  private String nombre;
+  /**
      * Objeto para obtener valores aleatorios.
      */
-    private RandomGenerator random;
+  private RandomGenerator random;
 
-    protected ArrayList<Item> items = new ArrayList<Item>();
+  protected ArrayList<Item> items = new ArrayList<Item>();
 
 
 
@@ -39,13 +39,13 @@ public abstract class MadreDeTodo {
      * funcion tener los atributos que
      * comparten las clases NPC y Personaje
      * @param fuerza valor otorgado por
-     * el constructor de NPC o Personaje.
+     *     el constructor de NPC o Personaje.
      * @param defensa valor otorgado por
-     * el constructor de NPC o Personaje.
+     *     el constructor de NPC o Personaje.
      * @param nivel valor otorgado por
-     * el constructor de NPC o Personaje.
+     *     el constructor de NPC o Personaje.
      * @param nombre valor otorgado por
-     * el constructor de NPC o Personaje.
+     *     el constructor de NPC o Personaje.
      */
   public MadreDeTodo(final int fuerza, final int defensa, final int nivel, final String nombre) {
     this.fuerza = fuerza;
@@ -60,37 +60,37 @@ public abstract class MadreDeTodo {
      * @return fuerza del personaje o NPC.
      */
   public final int getFuerza() {
-        return fuerza;
-    }
+    return fuerza;
+  }
 
   /**  Método que devuelve la defensa del personaje o NPC.
      * @return defensa del personaje o NPC.
      */
   public final int getDefensa() {
-        return defensa;
-    }
+    return defensa;
+  }
 
   /**  Método que devuelve el nivel del personaje o NPC.
      * @return nivel del personaje o NPC.
      */
   public final int getNivel() {
-        return nivel;
-    }
+    return nivel;
+  }
 
   /**  Método que devuelve el nombre del personaje o NPC.
      * @return nombre del personaje o NPC.
      */
   public final String getNombre() {
-        return nombre;
-    }
+    return nombre;
+  }
   /**  Método void que sobreescribe el atributo nombre.
      * Con el valor que se ingresa por parámetro.
      * @param nombre valor a sobreescribir
      */
     
   public final void setNombre(final String nombre) {
-        this.nombre = nombre;
-    }
+    this.nombre = nombre;
+  }
     
     
   /**  Método void que aumenta la fuerza del personaje o NPC.
@@ -99,16 +99,16 @@ public abstract class MadreDeTodo {
      */
     
   public final void aumentarFuerza(final int aumento) {
-        fuerza += aumento;
-    }
+    fuerza += aumento;
+  }
     
     
   /**  Método void que aumenta el nivel del personaje o NPC.
      */
     
   public final void aumentarNivel() {
-        nivel++;
-    }
+    nivel++;
+  }
 
     
   /**
@@ -117,8 +117,8 @@ public abstract class MadreDeTodo {
      */
     
   public final RandomGenerator getRandom() {
-        return random;
-    }
+    return random;
+  }
 
     
   /**
@@ -127,8 +127,8 @@ public abstract class MadreDeTodo {
      */
     
   public final void setRandom(final RandomGenerator random) {
-        this.random = random;
-    }
+    this.random = random;
+  }
     
     
   /**
@@ -137,8 +137,8 @@ public abstract class MadreDeTodo {
      */
     
   public final void aumentarDefensa(final int bonus) {
-        defensa += bonus;
-    }
+    defensa += bonus;
+  }
     
     
   /**
@@ -147,8 +147,8 @@ public abstract class MadreDeTodo {
      */
     
   public final void reducirDefensa(final int reduc) {
-        defensa -= reduc;
-    }
+    defensa -= reduc;
+  }
     
     
   /**
@@ -157,8 +157,8 @@ public abstract class MadreDeTodo {
      */
     
   public final void anadirItem(final Item i) {
-        items.add(i);
-    }
+    items.add(i);
+  }
     
     
   /**
@@ -167,8 +167,8 @@ public abstract class MadreDeTodo {
      */
     
   public final void removerItem(final Item i) {
-        items.remove(i);
-    }
+    items.remove(i);
+  }
     
     
   /**
@@ -177,6 +177,6 @@ public abstract class MadreDeTodo {
      */
     
   public ArrayList<Item> getItems() {
-        return items;
-    }
+    return items;
+  }
 }

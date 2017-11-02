@@ -12,23 +12,23 @@ package dominio;
 
 public class Guerrero extends Casta {
     
-    /**
+  /**
      * Energia minima requerida para realizar una habilidad.
      */
     
-    private static final int ENERGIAMINIMA = 10;
+  private static final int ENERGIAMINIMA = 10;
     
-    /**
+  /**
      * Numero por el cual sera multiplicado el ataque del guerrero.
      */
     
-    private static final int MULTIPLICADORFUERZA = 2;
+  private static final int MULTIPLICADORFUERZA = 2;
     
-    /**
+  /**
      * Bonus de fuerza por ser de la casta Guerrero.
      */
     
-    private static final int BONUSFUERZA = 5;
+  private static final int BONUSFUERZA = 5;
 
   /**  La clase Guerrero es una casta de Personaje.
      * Hereda de la clase Casta.
@@ -38,11 +38,11 @@ public class Guerrero extends Casta {
      * pasándole los argumentos recibidos
      * por el constructor hijo
      * @param probCrit Probabilidad de que el
-     * personaje realice un golpe crítico
+     *     personaje realice un golpe crítico
      * @param evasion Probabilidad de que el
-     * personaje evite un golpe crítico
+     *     personaje evite un golpe crítico
      * @param danioCrit Valor por el cual será
-     * multiplicado el golpe básico
+     *     multiplicado el golpe básico
      */
     
   public Guerrero(final double probCrit, final double evasion, final double danioCrit) {
@@ -70,22 +70,22 @@ public class Guerrero extends Casta {
      *   y se retornará false
      * @param caster Personaje que realiza el ataque.
      * @param atacado puede ser una instancia de
-     * Persona o NPC.
+     *     Persona o NPC.
      * @return retorna si se ejecutó correctamente
-     *  la habilidad.
+     *     la habilidad.
      */
     
   @Override
   public final boolean habilidad1(final Personaje caster, final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (caster.getEnergia() >= ENERGIAMINIMA) {
       caster.reducirEnergia(ENERGIAMINIMA);
       if (atacado.serAtacado(caster.getAtaque() * MULTIPLICADORFUERZA) > 0) {
         pudoAtacar = true;
       }
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
 
 
   /**  Retorna un booleano.
@@ -98,26 +98,26 @@ public class Guerrero extends Casta {
      *  de lo contrario el ataque no será posible
      *   y se retornará false
      * @param caster Personaje que realiza el ataque,
-     * en este caso no es un ataque si no un aumento en
-     * las caracteristicas del caster en este caso la
-     * defensa (se agrega a la defensa actual el atributo
-     * magia)
+     *     en este caso no es un ataque si no un aumento en
+     *     las caracteristicas del caster en este caso la
+     *     defensa (se agrega a la defensa actual el atributo
+     *     magia)
      * @param atacado no cumple función alguna dentro
-     * de este método
+     *     de este método
      * @return retorna si se ejecutó correctamente la
-     * habilidad
+     *     habilidad
      */
     
   @Override
   public final boolean habilidad2(final Personaje caster, final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (caster.getEnergia() >= ENERGIAMINIMA) {
       caster.reducirEnergia(ENERGIAMINIMA);
       caster.aumentarDefensa(caster.getMagia());
       pudoAtacar = true;
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
 
 
   /**  Retorna un booleano.
@@ -133,15 +133,15 @@ public class Guerrero extends Casta {
      * argumento atacado, es una instancia de Personaje.
      * @param caster Personaje atacante
      * @param atacado Éste argumento debe de ser
-     * clase atacado para que el método tenga posibilidad
-     * de retornar true
+     *     clase atacado para que el método tenga posibilidad
+     *     de retornar true
      * @return retorna si se ejecutó correctamente
-     * la habilidad
+     *     la habilidad
      */
     
   @Override
   public final boolean habilidad3(final Personaje caster, final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (caster.getEnergia() >= ENERGIAMINIMA) {
       caster.reducirEnergia(ENERGIAMINIMA);
       if (atacado instanceof Personaje) {
@@ -154,8 +154,8 @@ public class Guerrero extends Casta {
       }
 
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
     
     
   /**  Retorna un entero.
@@ -166,9 +166,8 @@ public class Guerrero extends Casta {
     
   @Override
   public final int recibirFuerzaBonus() {
-        return BONUSFUERZA;
-
-    }
+    return BONUSFUERZA;
+  }
     
     
   /**  Retorna un entero que.
@@ -179,9 +178,8 @@ public class Guerrero extends Casta {
     
   @Override
   public final int recibirDestrezaBonus() {
-
-        return 0;
-    }
+    return 0;
+  }
   /**  Retorna un entero.
      * Que otorga el bonus de
      * inteligencia perteneciente a esta casta.
@@ -190,8 +188,8 @@ public class Guerrero extends Casta {
     
   @Override
   public final int recibirInteligenciaBonus() {
-        return 0;
-    }
+    return 0;
+  }
     
     
   /**Retorna una string con el nombre de la casta.
@@ -200,21 +198,21 @@ public class Guerrero extends Casta {
     
   @Override
   public final String getNombreCasta() {
-        return "Guerrero";
-    }
+    return "Guerrero";
+  }
     
     
   /**Retorna un vector de string.
      * Con los nombres
      * de las habilidades de la casta.
      * @return Retorna nombres de las habilidades
-     * propias de la casta.
+     *     propias de la casta.
      */
     
   @Override
   public final String[] getHabilidadesCasta() {
-        return new String[] {"Ataque Doble", "Aumentar Defensa", "Ignorar Defensa"};
-    }
+    return new String[] {"Ataque Doble", "Aumentar Defensa", "Ignorar Defensa"};
+  }
 }
 
 

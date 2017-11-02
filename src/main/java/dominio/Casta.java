@@ -13,43 +13,43 @@ import java.io.Serializable;
 
 public abstract class Casta implements Serializable {
     
-    /**
+  /**
      * Numero que indica probabilidad.
      * Del personaje de realizar un golpe critico.
      */
     
-    private double probabilidadGolpeCritico;
+  private double probabilidadGolpeCritico;
     
-    /**
+  /**
      * Numero que indica probabilidad.
      * Del personaje de evitar un ataque.
      */
     
-    private double probabilidadEvitarDaño;
+  private double probabilidadEvitarDaño;
     
-    /**
+  /**
      * Numero por el cual sera multiplicado el ataque.
      */
     
-    private double dañoCritico;
+  private double dañoCritico;
     
-    /**
+  /**
      * Probabilidad de evitar un golpe critico.
      */
     
-    private static final double PROBEVITARGOLPC = 0.2;
+  private static final double PROBEVITARGOLPC = 0.2;
     
-    /**
+  /**
      * Probabilidad de evitar recibir dano.
      */
     
-    private static final double PROBEVITARDANIO = 0.2;
+  private static final double PROBEVITARDANIO = 0.2;
     
-    /**
+  /**
      *  Numero por el cual sera multiplicado el ataque por defecto.
      */
     
-    private static final double DANIOCRITICO = 1.5;
+  private static final double DANIOCRITICO = 1.5;
 
 
   /** Clase abstracta de la cual heredarán las
@@ -70,11 +70,11 @@ public abstract class Casta implements Serializable {
      * el valor correspondiente que será el
      * que se reciba por argumento.
      * @param probCrit Probabilidad
-     * de que el personaje realice un golpe crítico
+     *     de que el personaje realice un golpe crítico
      * @param evasion Probabilidad
-     * de que el personaje evite un golpe crítico
+     *     de que el personaje evite un golpe crítico
      * @param danioCrit Valor por el cual será
-     * multiplicado el golpe básico
+     *     multiplicado el golpe básico
      */
     
   public Casta(final double probCrit, final double evasion, final double danioCrit) {
@@ -89,7 +89,7 @@ public abstract class Casta implements Serializable {
      * @param caster Personaje atacante.
      * @param atacado Personaje que recibirá el ataque.
      * @return Retornará true si el ataque fue realizado
-     * exitosamente, false de lo contrario.
+     *     exitosamente, false de lo contrario.
      */
     
   public abstract boolean habilidad1(Personaje caster, Peleable atacado);
@@ -121,7 +121,7 @@ public abstract class Casta implements Serializable {
      * @param caster Personaje atacante.
      * @param atacado Personaje que recibirá el ataque.
      * @return Retornará true si el ataque fue realizado
-     * exitosamente, false de lo contrario.
+     *     exitosamente, false de lo contrario.
      */
     
   public abstract boolean habilidad2(Personaje caster, Peleable atacado);
@@ -132,7 +132,7 @@ public abstract class Casta implements Serializable {
      * @param caster Personaje atacante.
      * @param atacado Personaje que recibirá el ataque.
      * @return Retornará true si el ataque fue realizado
-     * exitosamente, false de lo contrario.
+     *     exitosamente, false de lo contrario.
      */
     
   public abstract boolean habilidad3(Personaje caster, Peleable atacado);
@@ -147,7 +147,7 @@ public abstract class Casta implements Serializable {
   /**Método abstracto que será implementado
      * en Asesino, Guerrero y Hechicero.
      * @return Retorna nombres de las
-     * habilidades propias de la casta.
+     *     habilidades propias de la casta.
      */
     
   public abstract String[] getHabilidadesCasta();
@@ -155,50 +155,50 @@ public abstract class Casta implements Serializable {
   /**Método abstracto que será implementado
      * en Asesino, Guerrero y Hechicero.
      * @return Retorna la probabilidad de critico
-     * propias de la casta.
+     *      propias de la casta.
      */
     
   public final double getProbabilidadGolpeCritico() {
-        return probabilidadGolpeCritico;
+    return probabilidadGolpeCritico;
   }
     
   /** Método void que sobreescribe el atributo
      * probabilidadGolpeCritico.
      * con el valor que se ingresa por parámetro.
      * @param probabilidadGolpeCritico Valor
-     * que tendra probabilidadGolpeCritico
+     *     que tendra probabilidadGolpeCritico
      */
     
   public final void setProbabilidadGolpeCritico(final double probabilidadGolpeCritico) {
-        this.probabilidadGolpeCritico = probabilidadGolpeCritico;
-    }
+    this.probabilidadGolpeCritico = probabilidadGolpeCritico;
+  }
     
   /** Método que devuelve la probabilidadEvitarDaño.
      * @return probabilidadEvitarDaño
      */
     
   public final double getProbabilidadEvitarDaño() {
-        return probabilidadEvitarDaño;
-    }
+    return probabilidadEvitarDaño;
+  }
     
   /** Método void que sobreescribe el atributo
      * probabilidadEvitarDaño.
      * con el valor que se ingresa por parámetro.
      * @param probabilidadEvitarDanio Valor que
-     * tendra probabilidadEvitarDaño.
+     *     tendra probabilidadEvitarDaño.
      */
     
   public final void setProbabilidadEvitarDaño(final double probabilidadEvitarDanio) {
-        this.probabilidadEvitarDaño = probabilidadEvitarDanio;
-    }
+    this.probabilidadEvitarDaño = probabilidadEvitarDanio;
+  }
     
   /** Método que devuelve el dañoCritico.
      * @return dañoCritico
      */
     
   public final double getDañoCritico() {
-        return dañoCritico;
-    }
+    return dañoCritico;
+  }
     
   /** Método void que sobreescribe el atributo
      * dañoCritico.
@@ -207,8 +207,8 @@ public abstract class Casta implements Serializable {
      */
     
   public final void setDañoCritico(final double danioCritico) {
-        this.dañoCritico = danioCritico;
-    }
+    this.dañoCritico = danioCritico;
+  }
     
   /** Método void que aumenta el atributo
      * probabilidadEvitarDaño.
@@ -217,8 +217,8 @@ public abstract class Casta implements Serializable {
      */
     
   public final void aumentarEvitarDaño(final double bonus) {
-        this.probabilidadEvitarDaño += bonus;
-    }
+    this.probabilidadEvitarDaño += bonus;
+  }
 
 }
 

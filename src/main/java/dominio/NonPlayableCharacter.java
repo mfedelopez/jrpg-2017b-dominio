@@ -9,62 +9,62 @@ package dominio;
  */
 
 public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
-    /**
+  /**
      * Numero que sirve de argumento para obtener la dificultad.
      */
-    private static final int ELEGIRDIF = 3;
-    /**
+  private static final int ELEGIRDIF = 3;
+  /**
      * Salud del NPC.
      */
-    private int salud;
-    /**
+  private int salud;
+  /**
      * Dificultad aleatoria NPC.
      */
-    private static final int DIFICULTADALEATORIA = -1;
-    /**
+  private static final int DIFICULTADALEATORIA = -1;
+  /**
      * Multiplicador de experiencia otorgada por el npc.
      */
-    private static final int MULTIPLICADOREXPNPC = 30;
-    /**
+  private static final int MULTIPLICADOREXPNPC = 30;
+  /**
      * Multiplicador de fuerza para el golpe critico del npc.
      */
-    private static final double MULTIPLICADORFUERZA = 1.5;
-    /**
+  private static final double MULTIPLICADORFUERZA = 1.5;
+  /**
      * Numero a superar para poder ser atacado.
      */
-    private static final double NUMEROPARASERATACADO = 0.15;
-    /**
+  private static final double NUMEROPARASERATACADO = 0.15;
+  /**
      * Numero a superar para poder atacar.
      */
-    private static final double NUMEROPARAATACAR = 0.15;
-    /**
+  private static final double NUMEROPARAATACAR = 0.15;
+  /**
      * Numero por el cual se divide la defensa cuando el npc es atacado.
      */
-    private static final int DIVISORDEDEFENSA = 2;
-    /**
+  private static final int DIVISORDEDEFENSA = 2;
+  /**
      * Fuerza base del NPC.
      */
-    private static final int MODIFICADORBASEF = 10;
-    /**
+  private static final int MODIFICADORBASEF = 10;
+  /**
      * Salud base del NPC.
      */
-    private static final int MODIFICADORBASES = 30;
-    /**
+  private static final int MODIFICADORBASES = 30;
+  /**
      * Defensa base del NPC.
      */
-    private static final int MODIFICADORBASED = 2;
-    /**
+  private static final int MODIFICADORBASED = 2;
+  /**
      * Multiplicador fuerza del NPC.
      */
-    private static final int MULTIPLICADORF = 3;
-    /**
+  private static final int MULTIPLICADORF = 3;
+  /**
      * Multiplicador salud del NPC.
      */
-    private static final int MULTIPLICADORS = 15;
-    /**
+  private static final int MULTIPLICADORS = 15;
+  /**
      * Multiplicador defensa del NPC.
      */
-    private static final int MULTIPLICADORD = 1;
+  private static final int MULTIPLICADORD = 1;
 
   /**
      * Constructor de la Clase.
@@ -74,7 +74,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
      * @param nombre Nombre que se le otorga al NPC
      * @param nivel Nivel que se le otorga al NPC
      * @param dificultadNpc Valor entero
-     * que produce una variación en los atributos.
+     *     que produce una variación en los atributos.
      */
   public NonPlayableCharacter(final String nombre, final int nivel, final int dificultadNpc) {
         super(0, 0, nivel, nombre);
@@ -88,7 +88,8 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
 
     this.aumentarFuerza(MODIFICADORBASEF * (dificultad + 1) 
           + (nivel - 1) * MULTIPLICADORF * (dificultad + 1));
-    this.salud = MODIFICADORBASES * (dificultad + 1) + (nivel - 1) * MULTIPLICADORS * (dificultad + 1);
+    this.salud = MODIFICADORBASES * (dificultad + 1) + (nivel - 1) * MULTIPLICADORS 
+            * (dificultad + 1);
     this.aumentarDefensa(MODIFICADORBASED * (dificultad + 1) 
           + (nivel - 1) * MULTIPLICADORD * (dificultad + 1));
   }
@@ -104,8 +105,8 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
      */
   @Override
   public final int otorgarExp() {
-        return this.getNivel() * MULTIPLICADOREXPNPC;
-    }
+    return this.getNivel() * MULTIPLICADOREXPNPC;
+  }
 
 
   /**
@@ -116,8 +117,8 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
      */
   @Override
   public final boolean estaVivo() {
-        return salud > 0;
-    }
+    return salud > 0;
+  }
 
 
   /**
@@ -126,16 +127,16 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
      */
   @Override
   public final int getSalud() {
-        return salud;
-    }
+    return salud;
+  }
 
   /**
      * Asigna un valor entero que representará la salud del NPC.
      * @param salud Entero que indica la nueva salud del NPC.
      */
   public final void setSalud(final int salud) {
-        this.salud = salud;
-    }
+    this.salud = salud;
+  }
 
   /**
      * Método que, dependiendo de MyRandom.nextdouble() y NUMEROPARAATACAR.
@@ -143,7 +144,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
      * mejorado por el atributo MULTIPLICADORFUERZA
      * @param atacado Peleable que recibe el ataque
      * @return Retorna un entero que representa
-     * los puntos de daño realizados
+     *     los puntos de daño realizados
      */
   @Override
   public final int atacar(final Peleable atacado) {
@@ -152,7 +153,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
     } else {
       return atacado.serAtacado(this.getAtaque());
     }
-    }
+  }
 
   /**
      * Dependiendo de MyRandom.nextdouble() y NUMEROPARASERATACADO.
@@ -170,8 +171,8 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
       }
       return 0;
     }
-        return 0;
-    }
+    return 0;
+  }
 
   /**
      * Método sin implementar.
@@ -187,7 +188,7 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
     
   public void ganarExperiencia(final int exp) {
 
-    }
+  }
 
   /**
      * Retorna un entero que representa el atributo de Fuerza del NPC.
@@ -196,8 +197,8 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
     
   @Override
   public final int getAtaque() {
-        return this.getFuerza();
-    }
+    return this.getFuerza();
+  }
 
   /**
      * Asigna un valor entero que representará el ataque del NPC.
@@ -206,8 +207,8 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
     
   @Override
   public final void setAtaque(final int ataque) {
-        this.aumentarFuerza(ataque);
-    }
+    this.aumentarFuerza(ataque);
+  }
 
   /**
      * Retorna siempre un entero de valor 0.
@@ -216,8 +217,8 @@ public class NonPlayableCharacter extends MadreDeTodo implements Peleable {
     
   @Override
   public final int getMagia() {
-        return 0;
-    }
+    return 0;
+  }
 }
 
 

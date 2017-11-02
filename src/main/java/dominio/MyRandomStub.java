@@ -5,17 +5,15 @@ package dominio;
 
 public class MyRandomStub extends RandomGenerator {
     
-    /**
-     * Valor que devolverá nextDouble().
+  /** Valor que devolverá nextDouble().
      */
     
-    private final double valDouble;
+  private final double valDouble;
     
-    /**
-     * Valor que devolverá nextInt();
+  /** Valor que devolverá nextInt();
      */
     
-    private final int valInt;
+  private final int valInt;
     
   /**
      * Constructor del MyRandomStub.
@@ -36,8 +34,8 @@ public class MyRandomStub extends RandomGenerator {
     
   @Override
   public final int nextInt(final int val) {
-        return valInt;
-    }
+    return valInt;
+  }
     
   /**
      * Método que retorna el valor entero que se pasa en el constructor.
@@ -46,7 +44,7 @@ public class MyRandomStub extends RandomGenerator {
     
   @Override
   public final double nextDouble() {
-        return valDouble;
-    }
+    return valDouble;
+  }
 
 }

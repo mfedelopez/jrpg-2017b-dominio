@@ -1,17 +1,16 @@
-package tests_dominio;
+package testsdominio;
 
+import dominio.Alianza;
 import org.junit.Assert;
 import org.junit.Test;
 
-import dominio.Alianza;
-
 public class TestAlianzaNuevo {
 
-    @Test
-    public void testGetNombre() {
-        Alianza ali = new Alianza("Los Isotopos");
-        Assert.assertEquals("Los Isotopos", ali.obtenerNombre());
-    }
+  @Test
+  public void testGetNombre() {
+    Alianza ali = new Alianza("Los Isotopos");
+    Assert.assertEquals("Los Isotopos", ali.obtenerNombre());
+  }
         
 
 }

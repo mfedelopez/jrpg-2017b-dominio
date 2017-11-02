@@ -6,21 +6,21 @@ package dominio;
 */
 
 public class Orco extends Personaje {
-    /**
+  /**
      * Energia minima que se necesita para realizar una habilidad.
      */
     
-    private static final int ENERGIAMINIMA = 10;
-    /**
+  private static final int ENERGIAMINIMA = 10;
+  /**
      * Bonus salud por ser de raza Orco.
      */
     
-    private static final int BONUSSALUD = 10;
-    /**
+  private static final int BONUSSALUD = 10;
+  /**
      * Numero por el cual se multiplicara la defensa.
      */
     
-    private static final int MULTIPLICADORDEFENSA = 2;
+  private static final int MULTIPLICADORDEFENSA = 2;
 
   /**La clase Orco hereda de la clase Personaje.
      * Completa ciertos atributos que estaban declarados en
@@ -54,7 +54,8 @@ public class Orco extends Personaje {
   public Orco(final String nombre, final int salud, final int energia, final int fuerza,
             final int destreza, final int inteligencia, final Casta casta,
             final int experiencia, final int nivel, final int idPersonaje) {
-        super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
+        super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, 
+                nivel, idPersonaje);
   }
 
 
@@ -69,22 +70,22 @@ public class Orco extends Personaje {
      * El método serAtacado() tiene como argumento
      * el doble del valor del atributo defensa del llamador
      * @param atacado Instancia de Personaje o de NPC,
-     * dependiendo de cual sea, será como responda el
-     * método serAtacado()
+     *     dependiendo de cual sea, será como responda el
+     *     método serAtacado()
      * @return Retorna si el ataque fue exitoso o no.
      */
     
   @Override
   public final boolean habilidadRaza1(final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (this.getEnergia() >= ENERGIAMINIMA) {
       this.reducirEnergia(ENERGIAMINIMA);
       if (atacado.serAtacado(this.getDefensa() * MULTIPLICADORDEFENSA) > 0) {
         pudoAtacar = true;
       }
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
 
 
   /**Retorna un booleano dependiendo de si se
@@ -99,14 +100,14 @@ public class Orco extends Personaje {
      * el valor del atributo fuerza del llamador
      * luego el llamador se cura con el daño causado al atacado
      * @param atacado Instancia de Personaje o de NPC,
-     * dependiendo de cual sea, será como responda el
-     * método serAtacado()
+     *     dependiendo de cual sea, será como responda el
+     *     método serAtacado()
      * @return Retorna si el ataque fue exitoso o no.
      */
     
   @Override
   public final boolean habilidadRaza2(final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (this.getEnergia() >= ENERGIAMINIMA) {
       this.reducirEnergia(ENERGIAMINIMA);
       int danioCausado = atacado.serAtacado(this.getFuerza());
@@ -115,20 +116,20 @@ public class Orco extends Personaje {
         pudoAtacar = true;
       }
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
     
     
   /**Retorna un vector de string con los nombres
      * de las habilidades de la raza.
      * @return Retorna nombres de las habilidades
-     * propias de la raza.
+     *     propias de la raza.
      */
     
   @Override
   public final String[] getHabilidadesRaza() {
-        return new String[] {"Golpe Defensa", "Mordisco de Vida"};
-    }
+    return new String[] {"Golpe Defensa", "Mordisco de Vida"};
+  }
     
     
   /**Retorna un entero con el bonificador de
@@ -138,8 +139,8 @@ public class Orco extends Personaje {
     
   @Override
   public final int getSaludBonus() {
-        return BONUSSALUD;
-    }
+    return BONUSSALUD;
+  }
     
     
   /**Retorna un entero con el bonificador de
@@ -149,8 +150,8 @@ public class Orco extends Personaje {
     
   @Override
   public final int getEnergiaBonus() {
-        return 0;
-    }
+    return 0;
+  }
     
     
   /**Retorna una string con el nombre de la raza.
@@ -159,8 +160,8 @@ public class Orco extends Personaje {
     
   @Override
   public final String getNombreRaza() {
-        return "Orco";
-    }
+    return "Orco";
+  }
 
 
 

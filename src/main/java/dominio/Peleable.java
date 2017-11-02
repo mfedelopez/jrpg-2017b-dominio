@@ -8,7 +8,7 @@ package dominio;
  */
 public interface Peleable {
     
-    /**
+  /**
      * Metodo implementado en Personaje
      * y en NonPlayableCharacter.
      *
@@ -16,90 +16,90 @@ public interface Peleable {
      * @return Retorna un entero con el daño causado al llamador.
      */
     
-    int serAtacado(int daño);
+  int serAtacado(int daño);
 
     
-    /**
+  /**
      * Metodo implementado en Personaje
      * y NonPlayableCharacter.
      *
      * @return Retornara un entero con la salud del llamador.
      */
     
-    int getSalud();
+  int getSalud();
     
     
-    /**
+  /**
      * Metodo implementado en Personaje
      * y NonPlayableCharacter.
      *
      * @return Retornara un entero con la energia del llamador.
      */
     
-    int getMagia();
+  int getMagia();
     
     
-    /**
+  /**
      * Metodo void implementado en Personaje
      * y NonPlayableCharacter.
      */
     
-    void despuesDeTurno();
+  void despuesDeTurno();
     
     
-    /**
+  /**
      * Metodo implementado en Personaje
      * y NonPlayableCharacter.
      * @param atacado Personaje al cual el llamador atacara.
      * @return Retorna el daño causado del atacante al atacado.
      */
     
-    int atacar(Peleable atacado);
+  int atacar(Peleable atacado);
     
     
-    /**
+  /**
      * Metodo implementado en Personaje
      * y NonPlayableCharacter.
      * @return Retorna el nivel del llamador multiplicado por la
-     * constante MULTIPLICADOREXP.
+     *     constante MULTIPLICADOREXP.
      */
     
-    int otorgarExp();
+  int otorgarExp();
     
     
-    /**
+  /**
      * Metodo implementado en Personaje
      * y NonPlayableCharacter.
      * @return Retorna un entero con el ataque del llamador.
      */
     
-    int getAtaque();
+  int getAtaque();
     
     
-    /**
+  /**
      * Metodo implementado en Personaje
      * y NonPlayableCharacter.
      * @param ataque Entero que será el nuevo ataque del llamador.
      */
     
-    void setAtaque(int ataque);
+  void setAtaque(int ataque);
     
     
-    /**
+  /**
      * Metodo implementado en Personaje
      * y NonPlayableCharacter.
      *
      * @return Retorna un boolean si esta vivo o no el llamador.
      */
     
-    boolean estaVivo();
+  boolean estaVivo();
     
     
-    /**
+  /**
      * Método.
      * @return retorna el nombre del Personaje o NPC.
      */
     
-    String getNombre();
+  String getNombre();
 }
 
