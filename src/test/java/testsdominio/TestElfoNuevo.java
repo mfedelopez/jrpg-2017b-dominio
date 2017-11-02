@@ -1,4 +1,4 @@
-package tests_dominio;
+package testsdominio;
 
 import dominio.Asesino;
 import dominio.Elfo;

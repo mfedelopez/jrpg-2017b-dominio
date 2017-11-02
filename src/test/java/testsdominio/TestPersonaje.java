@@ -1,4 +1,4 @@
-package tests_dominio;
+package testsdominio;
 
 import dominio.*;
 import org.junit.Assert;

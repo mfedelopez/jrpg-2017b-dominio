@@ -1,6 +1,6 @@
 package dominio;
 /**
- * Clase que se utiliza para generar números randoms
+ * Clase que se utiliza para generar números randoms.
  */
 
 public  class RandomGenerator {

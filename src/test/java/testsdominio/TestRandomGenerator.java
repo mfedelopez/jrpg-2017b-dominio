@@ -1,4 +1,4 @@
-package tests_dominio;
+package testsdominio;
 
 import dominio.RandomGenerator;
 import org.junit.Assert;
