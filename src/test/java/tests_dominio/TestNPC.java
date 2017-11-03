@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import dominio.NonPlayableCharacter;
 
-public class TestNpc {
+public class TestNPC {
 
     @Test
     public void testOtorgarExp() {
