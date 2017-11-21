@@ -7,26 +7,30 @@ package dominio;
  * como por ejemplo habilidadesRaza[]
  */
 public class Humano extends Personaje {
-    /**
+  /**
      * Energia minima que se necesita para realizar una habilidad.
      */
-    private static final int ENERGIAMINIMA = 10;
-    /**
+  private static final int ENERGIAMINIMA = 10;
+  
+  /**
      * Numero por el cual se divide la salud.
      */
-    private static final int DIVISORSALUD = 2;
-    /**
+  private static final int DIVISORSALUD = 2;
+  
+  /**
      * Numero por el cual se divide la energia.
      */
-    private static final int DIVISORENERGIA = 2;
-    /**
+  private static final int DIVISORENERGIA = 2;
+  
+  /**
      * Bonus de energia obtenido por ser de casta Humano.
      */
-    private static final int BONUSENERGIA = 5;
-    /**
+  private static final int BONUSENERGIA = 5;
+  
+  /**
      * Bonus de salud obtenido por ser de raza Humano.
      */
-    private static final int BONUSSALUD = 5;
+  private static final int BONUSSALUD = 5;
 
   /**La clase Humano hereda de la clase Personaje.
      * Completa ciertos atributos que estaban
@@ -61,7 +65,7 @@ public class Humano extends Personaje {
   public Humano(final String nombre, final int salud, final int energia, final int fuerza,
             final int destreza, final int inteligencia, final Casta casta,
             final int experiencia, final int nivel, final int idPersonaje) {
-        super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
+    super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
   }
 
 
@@ -84,14 +88,14 @@ public class Humano extends Personaje {
     
   @Override
   public final boolean habilidadRaza1(final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (this.getEnergia() >= ENERGIAMINIMA) {
       this.reducirEnergia(ENERGIAMINIMA);
       atacado.setAtaque(atacado.getAtaque() + this.getMagia());
       pudoAtacar = true;
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
 
 
   /**  Retorna un booleano dependiendo de si se
@@ -115,16 +119,16 @@ public class Humano extends Personaje {
     
   @Override
   public final boolean habilidadRaza2(final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (this.getEnergia() >= ENERGIAMINIMA) {
       if (atacado.serAtacado(atacado.getSalud() / DIVISORSALUD) > 0) {
         this.reducirEnergia(this.getEnergia() / DIVISORENERGIA);
         pudoAtacar = true;
       }
     }
-        this.reducirEnergia(ENERGIAMINIMA);
-        return pudoAtacar;
-    }
+    this.reducirEnergia(ENERGIAMINIMA);
+    return pudoAtacar;
+  }
     
     
   /**Retorna un vector de string con los nombres
@@ -135,8 +139,8 @@ public class Humano extends Personaje {
     
   @Override
   public final String[] getHabilidadesRaza() {
-        return new String[] {"Incentivar", "Golpe Fatal"};
-    }
+    return new String[] {"Incentivar", "Golpe Fatal"};
+  }
     
     
   /**Retorna un entero con el bonificador de salud
@@ -146,8 +150,8 @@ public class Humano extends Personaje {
     
   @Override
   public final int getSaludBonus() {
-        return BONUSSALUD;
-    }
+    return BONUSSALUD;
+  }
     
     
   /**Retorna un entero con el bonificador de energia
@@ -157,8 +161,8 @@ public class Humano extends Personaje {
     
   @Override
   public final int getEnergiaBonus() {
-        return BONUSENERGIA;
-    }
+    return BONUSENERGIA;
+  }
     
     
   /**Retorna una string con el nombre de la raza.
@@ -167,8 +171,8 @@ public class Humano extends Personaje {
     
   @Override
   public final String getNombreRaza() {
-        return "Humano";
-    }
+    return "Humano";
+  }
 
 
 

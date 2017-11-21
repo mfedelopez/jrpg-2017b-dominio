@@ -12,22 +12,22 @@ package dominio;
  */
 
 public class Asesino extends Casta {
-    /**
+  /**
      * Energia minima necesario para realizar una habilidad.
      */
-    private static final int ENERGIAMINIMA = 10;
-    /**
+  private static final int ENERGIAMINIMA = 10;
+  /**
      * Bonus de destreza por ser Asesino.
      */
-    private static final int BONUSDESTREZA = 5;
-    /**
+  private static final int BONUSDESTREZA = 5;
+  /**
      * Bonus al realizar correctamente la habilidad2.
      */
-    private static final double AUMENTARPROBEVITAR = 0.15;
-    /**
+  private static final double AUMENTARPROBEVITAR = 0.15;
+  /**
      * Probabilidad de evitar dano por defecto.
      */
-    private static final double PROBEVITARDANIO = 0.5;
+  private static final double PROBEVITARDANIO = 0.5;
 
 
   /** La clase Asesino es una casta de Personaje.
@@ -86,14 +86,14 @@ public class Asesino extends Casta {
     
   @Override
   public final boolean habilidad1(final Personaje caster, final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (caster.getEnergia() >= ENERGIAMINIMA) {
       caster.reducirEnergia(ENERGIAMINIMA);
       if (atacado.serAtacado((int) (caster.getAtaque() * caster.getCasta().getDañoCritico())) > 0) {
         pudoAtacar = true;
       }
     }
-        return pudoAtacar;
+    return pudoAtacar;
   }
 
 
@@ -118,7 +118,7 @@ public class Asesino extends Casta {
     
   @Override
   public final boolean habilidad2(final Personaje caster, final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (caster.getEnergia() >= ENERGIAMINIMA) {
       caster.reducirEnergia(ENERGIAMINIMA);
       if (this.getProbabilidadEvitarDaño() + AUMENTARPROBEVITAR < 0.5) {
@@ -128,7 +128,7 @@ public class Asesino extends Casta {
       }
       pudoAtacar = true;
     }
-        return pudoAtacar;
+    return pudoAtacar;
   }
 
   /**  Not implemented yet.
@@ -139,7 +139,7 @@ public class Asesino extends Casta {
     
   @Override
   public final boolean habilidad3(final Personaje caster, final Peleable atacado) {
-        return false;
+    return false;
   }
     
     
@@ -151,7 +151,7 @@ public class Asesino extends Casta {
     
   @Override
   public final int recibirDestrezaBonus() {
-        return BONUSDESTREZA;
+    return BONUSDESTREZA;
   }
     
     
@@ -163,7 +163,7 @@ public class Asesino extends Casta {
     
   @Override
   public final int recibirFuerzaBonus() {
-        return 0;
+    return 0;
   }
     
     
@@ -175,7 +175,7 @@ public class Asesino extends Casta {
     
   @Override
   public final int recibirInteligenciaBonus() {
-        return 0;
+    return 0;
   }
     
     
@@ -185,7 +185,7 @@ public class Asesino extends Casta {
     
   @Override
   public final String getNombreCasta() {
-        return "Asesino";
+    return "Asesino";
   }
     
     
@@ -197,7 +197,7 @@ public class Asesino extends Casta {
     
   @Override
   public final String[] getHabilidadesCasta() {
-        return new String[] {"Golpe Critico", "Aumentar Evasion", "Robar"};
+    return new String[] {"Golpe Critico", "Aumentar Evasion", "Robar"};
   }
 
 }

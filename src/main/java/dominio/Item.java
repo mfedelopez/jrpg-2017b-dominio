@@ -11,16 +11,16 @@ import javax.imageio.ImageIO;
  */
 
 public class Item implements Serializable {
-    private final int idItem;
-    private final String foto;
-    private final String nombre;
-    private final int wearLocation;
-    private final int bonusSalud;
-    private final int bonusEnergia;
-    private final int bonusFuerza;
-    private final int bonusDestreza;
-    private final int bonusInteligencia;
-    private final String fotoEquipado;
+  private final int idItem;
+  private final String foto;
+  private final String nombre;
+  private final int wearLocation;
+  private final int bonusSalud;
+  private final int bonusEnergia;
+  private final int bonusFuerza;
+  private final int bonusDestreza;
+  private final int bonusInteligencia;
+  private final String fotoEquipado;
     
   /**
      * Constructor del Item.
@@ -38,8 +38,8 @@ public class Item implements Serializable {
      */
     
   public Item(final int idItem, final String nombre, final int wearLocation,
-            final int bonusSalud, final int bonusEnergia, final int bonusFuerza, final int bonusDestreza,
-            final int bonusInteligencia, final String foto, final String fotoEquipado) throws IOException {
+      final int bonusSalud, final int bonusEnergia, final int bonusFuerza, final int bonusDestreza,
+      final int bonusInteligencia, final String foto, final String fotoEquipado) throws IOException {
     this.foto = foto;
     this.idItem = idItem;
     this.nombre = nombre;
@@ -59,9 +59,9 @@ public class Item implements Serializable {
      */
     
   public BufferedImage getFoto() throws IOException {
-        // TODO Auto-generated method stub
-        return ImageIO.read(new File("recursos//" + foto));
-    }
+    // TODO Auto-generated method stub
+    return ImageIO.read(new File("recursos//" + foto));
+  }
     
   /**
      * Método que retorna el nombre del item.
@@ -69,8 +69,8 @@ public class Item implements Serializable {
      */
     
   public String getNombre() {
-        return nombre;
-    }
+    return nombre;
+  }
     
   /**
      * Método que retorna el bonus de salud del item.
@@ -78,8 +78,8 @@ public class Item implements Serializable {
      */
     
   public int getBonusSalud() {
-        return bonusSalud;
-    }
+    return bonusSalud;
+  }
     
   /**
      * Método que retorna el bonus de energia del item.
@@ -87,8 +87,8 @@ public class Item implements Serializable {
      */
     
   public int getBonusEnergia() {
-        return bonusEnergia;
-    }
+    return bonusEnergia;
+  }
     
   /**
      * Método que retorna el bonus de fuerza del item.
@@ -96,8 +96,8 @@ public class Item implements Serializable {
      */
     
   public int getBonusFuerza() {
-        return bonusFuerza;
-    }
+    return bonusFuerza;
+  }
     
   /**
      * Método que retorna el bonus de destreza del item.
@@ -105,8 +105,8 @@ public class Item implements Serializable {
      */
     
   public int getBonusDestreza() {
-        return bonusDestreza;
-    }
+    return bonusDestreza;
+  }
     
   /**
      * Método que retorna el bonus de inteligencia del item.
@@ -114,8 +114,8 @@ public class Item implements Serializable {
      */
     
   public int getBonusInteligencia() {
-        return bonusInteligencia;
-    }
+    return bonusInteligencia;
+  }
     
     
   /**
@@ -124,8 +124,8 @@ public class Item implements Serializable {
      */
     
   public int getIdItem() {
-        return idItem;
-    }
+    return idItem;
+  }
 
 
 

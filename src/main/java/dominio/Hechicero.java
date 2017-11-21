@@ -11,29 +11,29 @@ package dominio;
 
 public class Hechicero extends Casta {
     
-    /**
+  /**
      * Energia minima para realizar una habilidad.
      */
     
-    private static final int ENERGIAMINIMA = 10;
+  private static final int ENERGIAMINIMA = 10;
     
-    /**
+  /**
      * Numero por el cual seran multiplicados los puntos de magia.
      */
     
-    private static final double MULTIPLICADORMAGIA = 1.5;
+  private static final double MULTIPLICADORMAGIA = 1.5;
     
-    /**
+  /**
      * Numero por el cual se dividiran los puntos de magia.
      */
     
-    private static final int DIVISORDEMAGIA = 2;
+  private static final int DIVISORDEMAGIA = 2;
     
-    /**
+  /**
      * Bonus de inteligencia por ser de casta Hechicero.
      */
     
-    private static final int BONUSINTELIGENCIA = 5;
+  private static final int BONUSINTELIGENCIA = 5;
 
   /**  La clase Hechicero es una casta de Personaje,
      * hereda de la clase Casta.
@@ -43,9 +43,9 @@ public class Hechicero extends Casta {
      * pasándole los argumentos recibidos
      * por el constructor hijo.
      * @param probCrit Probabilidad de que el
-     * personaje realice un golpe crítico
+    * personaje realice un golpe crítico
      * @param evasion Probabilidad de que el personaje
-     * evite un golpe crítico
+         * evite un golpe crítico
      * @param danioCrit Valor por el cual será
      * multiplicado el golpe básico
      */
@@ -87,15 +87,15 @@ public class Hechicero extends Casta {
     
   @Override
   public final boolean habilidad1(final Personaje caster, final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (caster.getEnergia() >= ENERGIAMINIMA) {
       caster.reducirEnergia(ENERGIAMINIMA);
       if (atacado.serAtacado((int) (caster.calcularPuntosDeMagia() * MULTIPLICADORMAGIA)) > 0) {
         pudoAtacar = true;
       }
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
 
 
   /**  Retorna un booleano dependiendo de si se
@@ -116,7 +116,7 @@ public class Hechicero extends Casta {
     
   @Override
   public final boolean habilidad2(final Personaje caster, final Peleable aliado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (caster.getEnergia() >= ENERGIAMINIMA) {
       caster.reducirEnergia(ENERGIAMINIMA);
       if (aliado instanceof Personaje) {
@@ -124,8 +124,8 @@ public class Hechicero extends Casta {
         pudoAtacar = true;
       }
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
 
   /**  Retorna un booleano dependiendo de si se
      * realizó exitosamente o no el ataque.
@@ -145,7 +145,7 @@ public class Hechicero extends Casta {
     
   @Override
   public final boolean habilidad3(final Personaje caster, final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (caster.getEnergia() >= ENERGIAMINIMA) {
       caster.reducirEnergia(ENERGIAMINIMA);
       if (atacado instanceof Personaje) {
@@ -159,8 +159,8 @@ public class Hechicero extends Casta {
       }
 
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
     
     
   /**  Retorna un entero que otorga el bonus de
@@ -170,8 +170,8 @@ public class Hechicero extends Casta {
     
   @Override
   public final int recibirInteligenciaBonus() {
-        return BONUSINTELIGENCIA;
-    }
+    return BONUSINTELIGENCIA;
+  }
     
     
   /**  Retorna un entero que otorga el bonus de
@@ -181,8 +181,8 @@ public class Hechicero extends Casta {
     
   @Override
   public final int recibirDestrezaBonus() {
-        return 0;
-    }
+    return 0;
+  }
     
     
   /**  Retorna un entero que otorga el bonus de
@@ -192,8 +192,8 @@ public class Hechicero extends Casta {
     
   @Override
   public final int recibirFuerzaBonus() {
-        return 0;
-    }
+    return 0;
+  }
     
     
   /**Retorna una string con el nombre de la casta.
@@ -202,8 +202,8 @@ public class Hechicero extends Casta {
     
   @Override
   public final String getNombreCasta() {
-        return "Hechiero";
-    }
+    return "Hechiero";
+  }
     
     
   /**Retorna un vector de string con los nombres
@@ -214,8 +214,8 @@ public class Hechicero extends Casta {
     
   @Override
   public final String[] getHabilidadesCasta() {
-        return new String[] {"Bola de Fuego", "Curar Aliado", "Robar Energia y Salud"};
-    }
+    return new String[] {"Bola de Fuego", "Curar Aliado", "Robar Energia y Salud"};
+  }
 
 
 

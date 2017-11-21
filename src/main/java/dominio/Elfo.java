@@ -6,18 +6,18 @@ package dominio;
  * la clase Personaje, como por ejemplo habilidadesRaza[]
 */
 public class Elfo extends Personaje {
-    /**
+  /**
      * Energia minima que se necesita para realizar una habilidad.
      */
-    private static final int ENERGIAMINIMA = 10;
-    /**
+  private static final int ENERGIAMINIMA = 10;
+  /**
      * Numero con el que se multiplica el nivel.
      */
-    private static final int MULTIPLICADORNIVEL = 10;
-    /**
+  private static final int MULTIPLICADORNIVEL = 10;
+  /**
      * Bonus de energia por ser de raza Elfo.
      */
-    private static final int BONUSENERGIA = 10;
+  private static final int BONUSENERGIA = 10;
 
   /** La clase Elfo hereda de la clase Personaje.
      * Completa ciertos atributos que estaban declarados en
@@ -75,15 +75,15 @@ public class Elfo extends Personaje {
     
   @Override
   public final boolean habilidadRaza1(final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (this.getEnergia() >= ENERGIAMINIMA) {
       this.reducirEnergia(ENERGIAMINIMA);
       if (atacado.serAtacado(this.getFuerza() + this.getNivel() * MULTIPLICADORNIVEL) > 0) {
         pudoAtacar = true;
       }
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
 
 
 
@@ -107,15 +107,15 @@ public class Elfo extends Personaje {
     
   @Override
   public final boolean habilidadRaza2(final Peleable atacado) {
-        boolean pudoAtacar = false;
+    boolean pudoAtacar = false;
     if (this.getEnergia() >= ENERGIAMINIMA) {
       this.reducirEnergia(ENERGIAMINIMA);
       if (atacado.serAtacado((this.getMagia())) > 0) {
         pudoAtacar = true;
       }
     }
-        return pudoAtacar;
-    }
+    return pudoAtacar;
+  }
     
     
   /**Retorna un vector de string con los nombres
@@ -126,8 +126,8 @@ public class Elfo extends Personaje {
     
   @Override
   public final String[] getHabilidadesRaza() {
-        return new String[] {"Golpe Level", "Ataque Bosque"};
-    }
+    return new String[] {"Golpe Level", "Ataque Bosque"};
+  }
     
     
   /**Retorna un entero con el bonificador de salud de la raza.
@@ -136,8 +136,8 @@ public class Elfo extends Personaje {
     
   @Override
   public final int getSaludBonus() {
-        return 0;
-    }
+    return 0;
+  }
     
     
   /**Retorna un entero con el bonificador de energia de la raza.
@@ -146,8 +146,8 @@ public class Elfo extends Personaje {
     
   @Override
   public final int getEnergiaBonus() {
-        return BONUSENERGIA;
-    }
+    return BONUSENERGIA;
+  }
     
     
   /**Retorna una string con el nombre de la raza.
@@ -156,8 +156,8 @@ public class Elfo extends Personaje {
     
   @Override
   public final String getNombreRaza() {
-        return "Elfo";
-    }
+    return "Elfo";
+  }
 
 
 

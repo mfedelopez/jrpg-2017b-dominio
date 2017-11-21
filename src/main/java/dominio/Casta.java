@@ -13,43 +13,43 @@ import java.io.Serializable;
 
 public abstract class Casta implements Serializable {
     
-    /**
+  /**
      * Numero que indica probabilidad.
      * Del personaje de realizar un golpe critico.
      */
     
-    private double probabilidadGolpeCritico;
+  private double probabilidadGolpeCritico;
     
-    /**
+  /**
      * Numero que indica probabilidad.
      * Del personaje de evitar un ataque.
      */
     
-    private double probabilidadEvitarDaño;
+  private double probabilidadEvitarDaño;
     
-    /**
+  /**
      * Numero por el cual sera multiplicado el ataque.
      */
     
-    private double dañoCritico;
+  private double dañoCritico;
     
-    /**
+  /**
      * Probabilidad de evitar un golpe critico.
      */
     
-    private static final double PROBEVITARGOLPC = 0.2;
+  private static final double PROBEVITARGOLPC = 0.2;
     
-    /**
+  /**
      * Probabilidad de evitar recibir dano.
      */
     
-    private static final double PROBEVITARDANIO = 0.2;
+  private static final double PROBEVITARDANIO = 0.2;
     
-    /**
+  /**
      *  Numero por el cual sera multiplicado el ataque por defecto.
      */
     
-    private static final double DANIOCRITICO = 1.5;
+  private static final double DANIOCRITICO = 1.5;
 
 
   /** Clase abstracta de la cual heredarán las
@@ -159,7 +159,7 @@ public abstract class Casta implements Serializable {
      */
     
   public final double getProbabilidadGolpeCritico() {
-        return probabilidadGolpeCritico;
+    return probabilidadGolpeCritico;
   }
     
   /** Método void que sobreescribe el atributo
@@ -170,16 +170,16 @@ public abstract class Casta implements Serializable {
      */
     
   public final void setProbabilidadGolpeCritico(final double probabilidadGolpeCritico) {
-        this.probabilidadGolpeCritico = probabilidadGolpeCritico;
-    }
+    this.probabilidadGolpeCritico = probabilidadGolpeCritico;
+  }
     
   /** Método que devuelve la probabilidadEvitarDaño.
      * @return probabilidadEvitarDaño
      */
     
   public final double getProbabilidadEvitarDaño() {
-        return probabilidadEvitarDaño;
-    }
+    return probabilidadEvitarDaño;
+  }
     
   /** Método void que sobreescribe el atributo
      * probabilidadEvitarDaño.
@@ -189,16 +189,16 @@ public abstract class Casta implements Serializable {
      */
     
   public final void setProbabilidadEvitarDaño(final double probabilidadEvitarDanio) {
-        this.probabilidadEvitarDaño = probabilidadEvitarDanio;
-    }
+    this.probabilidadEvitarDaño = probabilidadEvitarDanio;
+  }
     
   /** Método que devuelve el dañoCritico.
      * @return dañoCritico
      */
     
   public final double getDañoCritico() {
-        return dañoCritico;
-    }
+    return dañoCritico;
+  }
     
   /** Método void que sobreescribe el atributo
      * dañoCritico.
@@ -207,8 +207,8 @@ public abstract class Casta implements Serializable {
      */
     
   public final void setDañoCritico(final double danioCritico) {
-        this.dañoCritico = danioCritico;
-    }
+    this.dañoCritico = danioCritico;
+  }
     
   /** Método void que aumenta el atributo
      * probabilidadEvitarDaño.
@@ -217,8 +217,8 @@ public abstract class Casta implements Serializable {
      */
     
   public final void aumentarEvitarDaño(final double bonus) {
-        this.probabilidadEvitarDaño += bonus;
-    }
+    this.probabilidadEvitarDaño += bonus;
+  }
 
 }
 

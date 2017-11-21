@@ -11,186 +11,186 @@ import javax.swing.DefaultListModel;
  */
 
 public abstract class Personaje extends MadreDeTodo implements Peleable, Serializable {
-    /**
+  /**
      * Salud del personaje.
      */
-    private int salud;
-    /**
+  private int salud;
+  /**
      * Energia del personaje.
      */
-    private int energia;
-    /**
+  private int energia;
+  /**
      * Cantidad de habilidades que posee el personaje dada su casta.
      */
-    private static final int CANTHABILIDADESCASTA = 3;
-    /**
+  private static final int CANTHABILIDADESCASTA = 3;
+  /**
      * Cantidad de habilidades que posee el personaje dada su raza.
      */
-    private static final int CANTHABILIDADESRAZA = 2;
-    /**
+  private static final int CANTHABILIDADESRAZA = 2;
+  /**
      * Cantidad de niveles.
      */
-    private static final int CANTIDADNIVELES = 101;
-    /**
+  private static final int CANTIDADNIVELES = 101;
+  /**
      * Constante que se suma al cargar la tabla de niveles.
      */
-    private static final int CONSTANTENIVEL = 50;
-    /**
+  private static final int CONSTANTENIVEL = 50;
+  /**
      * Fuerza inicial del personaje.
      */
-    private static final int FUERZAINICIAL = 10;
-    /**
+  private static final int FUERZAINICIAL = 10;
+  /**
      * Destreza inicial del personaje.
      */
-    private static final int DESTREZAINICIAL = 10;
-    /**
+  private static final int DESTREZAINICIAL = 10;
+  /**
      * Inteligencia inicial del personaje.
      */
-    private static final int INTELIGENCIANICIAL = 10;
-    /**
+  private static final int INTELIGENCIANICIAL = 10;
+  /**
      * Defensa inicial del personaje.
      */
-    private static final int DEFENSAINICIAL = 0;
-    /**
+  private static final int DEFENSAINICIAL = 0;
+  /**
      * Experiencia inicial del personaje.
      */
-    private static final int EXPERIENCIAINICIAL = 0;
-    /**
+  private static final int EXPERIENCIAINICIAL = 0;
+  /**
      * Nivel inicial del personaje.
      */
-    private static final int NIVELINICIAL = 1;
-    /**
+  private static final int NIVELINICIAL = 1;
+  /**
      * Salud tope inicial del personaje.
      */
-    private static final int SALUDTOPEINICIAL = 100;
-    /**
+  private static final int SALUDTOPEINICIAL = 100;
+  /**
      * Energia tope inicial del personaje.
      */
-    private static final int ENERGIATOPEINICIAL = 100;
-    /**
+  private static final int ENERGIATOPEINICIAL = 100;
+  /**
      * Fuerza maxima del personaje.
      */
-    private static final int FUERZAMAXIMA = 200;
-    /**
+  private static final int FUERZAMAXIMA = 200;
+  /**
      * Defensa maxima del personaje.
      */
-    private static final int DEFENSAMAXIMA = 200;
-    /**
+  private static final int DEFENSAMAXIMA = 200;
+  /**
      * Inteligencia maxima del personaje.
      */
-    private static final int INTELIGENCIAMAXIMA = 200;
-    /**
+  private static final int INTELIGENCIAMAXIMA = 200;
+  /**
      * Nivel maximo permitido.
      */
-    private static final int NIVELMAXIMO = 100;
-    /**
+  private static final int NIVELMAXIMO = 100;
+  /**
      * Aumento de salud tope al subir de nivel.
      */
-    private static final int SALUDTOPESUBIRN = 25;
-    /**
+  private static final int SALUDTOPESUBIRN = 25;
+  /**
      * Aumento de energia tope al subir de nivel.
      */
-    private static final int ENERGIATOPESUBIRN = 20;
-    /**
+  private static final int ENERGIATOPESUBIRN = 20;
+  /**
      * Cantidad a multiplicar.
      * Para obtener los puntos de ataque de personaje.
      */
-    private static final double MULTIPLICADORFZA = 1.5;
-    /**
+  private static final double MULTIPLICADORFZA = 1.5;
+  /**
      * Cantidad a multiplicar para obtener los puntos de magia de personaje.
      */
-    private static final double MULTIPLICADORMGA = 1.5;
-    /**
+  private static final double MULTIPLICADORMGA = 1.5;
+  /**
      * Cantidad a multiplicar.
      * Para obtener la experiencia otorgada por el personaje
      * cuando este es vencido.
      */
-    private static final int MULTIPLICADOREXP = 40;
-    /**
+  private static final int MULTIPLICADOREXP = 40;
+  /**
      * Energia minima necesaria para poder realizar una habilidad.
      */
-    private static final int ENERGIAMINIMA = 10;
-    /**
+  private static final int ENERGIAMINIMA = 10;
+  /**
      * Numero por el cual se divide la destreza del personaje.
      * Para calcular la posibilidad de evitar el dano
      */
-    private static final int DIVISORDEDESTREZA = 1000;
-    /**
+  private static final int DIVISORDEDESTREZA = 1000;
+  /**
      * Posicion inicial del Personaje en X.
      */
-    private static final int POSXI = 0;
-    /**
+  private static final int POSXI = 0;
+  /**
      * Posicion inicial del personaje en Y.
      */
-    private static final int POSYI = 0;
-    /**
+  private static final int POSYI = 0;
+  /**
      * Ataque del personaje.
      */
-    private int ataque;
-    /**
+  private int ataque;
+  /**
      * Magia del personaje.
      */
-    private int magia;
-    /**
+  private int magia;
+  /**
      * Nombre de la Raza del Personaje.
      */
-    private String nombreRaza;
-    /**
+  private String nombreRaza;
+  /**
      * Salud tope del Personaje.
      */
-    private int saludTope;
-    /**
+  private int saludTope;
+  /**
      * Energia tope del Personaje.
      */
-    private int energiaTope;
-    /**
+  private int energiaTope;
+  /**
      * Destreza del Personaje.
      */
-    private int destreza;
-    /**
+  private int destreza;
+  /**
      * Inteligencia del Personaje.
      */
-    private int inteligencia;
-    /**
+  private int inteligencia;
+  /**
      * Casta del Personaje.
      */
-    private Casta casta;
-    /**
+  private Casta casta;
+  /**
      * Posicion en X del Personaje.
      */
-    private int x;
-    /**
+  private int x;
+  /**
      * Posicion en Y del Personaje.
      */
-    private int y;
-    /**
+  private int y;
+  /**
      * Experiencia del Personaje.
      */
-    private int experiencia;
-    /**
+  private int experiencia;
+  /**
      * Identificador del Personaje.
      */
-    private int idPersonaje;
-    /**
+  private int idPersonaje;
+  /**
      * Alianza del Personaje.
      */
-    private Alianza clan = null;
-    /**
+  private Alianza clan = null;
+  /**
      * Variable estatica que contiene los niveles de personaje.
      */
-    private static int[] tablaDeNiveles;
-    /**
+  private static int[] tablaDeNiveles;
+  /**
      * Habilidades obtenidas segun la raza del personaje.
      */
-    private String[] habilidadesRaza = new String[CANTHABILIDADESRAZA];
-    /**
+  private String[] habilidadesRaza = new String[CANTHABILIDADESRAZA];
+  /**
      * Habilidades obtenidas segun la casta del personaje.
      */
-    private String[] habilidadesCasta = new String[CANTHABILIDADESCASTA];
-    /**
+  private String[] habilidadesCasta = new String[CANTHABILIDADESCASTA];
+  /**
      * Nombre de la casta del personaje.
      */
-    private String nombreCasta;
+  private String nombreCasta;
 
 
   /**
@@ -200,8 +200,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
 
   public final String[] getHabilidadesCasta() {
-        return casta.getHabilidadesCasta();
-    }
+    return casta.getHabilidadesCasta();
+  }
     
   /**
      * Metodo estatico.
@@ -215,7 +215,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     for (int i = 2; i < CANTIDADNIVELES; i++) {
       Personaje.getTablaDeNiveles()[i] = Personaje.getTablaDeNiveles()[i - 1] + CONSTANTENIVEL;
     }
-    }
+  }
     
     
   /**  La clase Personaje es la cual posee todos los atributos.
@@ -315,8 +315,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 
   @Override
   public final int getAtaque() {
-        return ataque;
-    }
+    return ataque;
+  }
     
     
   /**Metodo void que sobreescribe el atributo de ataque
@@ -326,8 +326,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 
   @Override
   public final void setAtaque(final int ataque) {
-        this.ataque = ataque;
-    }
+    this.ataque = ataque;
+  }
 
   /**Retorna un enetro con la magia del personaje.
      * @return Magia del personaje.
@@ -335,8 +335,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
 
   @Override
   public final int getMagia() {
-        return magia;
-    }
+    return magia;
+  }
 
   /**Metodo void que sobreescribe el atributo de magia.
      * con el parámatero.
@@ -344,16 +344,16 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void setMagia(final int magia) {
-        this.magia = magia;
-    }
+    this.magia = magia;
+  }
     
   /**Retorna un String con la alianza del personaje.
      * @return Alianza del personaje.
      */
     
   public final Alianza getClan() {
-        return clan;
-    }
+    return clan;
+  }
     
     
   /**Metodo void que sobreescribe el atributo clan.
@@ -363,9 +363,9 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void setClan(final Alianza clan) {
-        this.clan = clan;
-        clan.añadirPersonaje(this);
-    }
+    this.clan = clan;
+    clan.añadirPersonaje(this);
+  }
     
     
   /**Retorna entero con la salud del personaje.
@@ -374,8 +374,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     
   @Override
   public final int getSalud() {
-        return salud;
-    }
+    return salud;
+  }
     
 
   /**Retorna entero con la energia del personaje.
@@ -383,8 +383,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int getEnergia() {
-        return energia;
-    }
+    return energia;
+  }
 
     
   /**Retorna un entero con la destreza del personaje.
@@ -392,8 +392,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int getDestreza() {
-        return destreza;
-    }
+    return destreza;
+  }
 
 
   /**  Retorna un entero con la inteligencia del personaje.
@@ -401,32 +401,32 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int getInteligencia() {
-        return inteligencia;
-    }
+    return inteligencia;
+  }
 
   /**Retorna una Casta con la casta del personaje.
      * @return Casta del personaje
      */
     
   public final Casta getCasta() {
-        return casta;
-    }
+    return casta;
+  }
 
   /**Retorna un entero con la experiencia del personaje.
      * @return Experiencia del personaje
      */
     
   public final int getExperiencia() {
-        return experiencia;
-    }
+    return experiencia;
+  }
 
   /**  Retorna un entero con el Id del personaje.
      * @return Identificacion del personaje
      */
     
   public final int getIdPersonaje() {
-        return idPersonaje;
-    }
+    return idPersonaje;
+  }
 
   /**Retorna un entero.
      * Con el maximo de salud que tiene el personaje
@@ -434,8 +434,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int getSaludTope() {
-        return saludTope;
-    }
+    return saludTope;
+  }
 
   /**Retorna un entero.
      * Con la energia Maxima que puede
@@ -444,8 +444,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      * */
     
   public final int getEnergiaTope() {
-        return energiaTope;
-    }
+    return energiaTope;
+  }
     
     
   /**
@@ -476,8 +476,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
         return atacado.serAtacado(this.ataque);
       }
     }
-        return 0;
-    }
+    return 0;
+  }
 
     
   /**  Metodo que retorna un entero.
@@ -490,8 +490,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int golpe_critico() {
-        return (int) (this.ataque * this.getCasta().getDañoCritico());
-    }
+    return (int) (this.ataque * this.getCasta().getDañoCritico());
+  }
     
     
   /**
@@ -501,7 +501,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
   @Override
   public void despuesDeTurno() {
 
-    }
+  }
     
     
   /**  Metodo que retorna un boolean si el personaje puede atacar o no.
@@ -512,8 +512,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final boolean puedeAtacar() {
-        return energia > ENERGIAMINIMA;
-    }
+    return energia > ENERGIAMINIMA;
+  }
 
     
   /**  Metodo que retorna un entero que representa los puntos de
@@ -524,8 +524,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int calcularPuntosDeAtaque() {
-        return (int) (this.getFuerza() * MULTIPLICADORFZA);
-    }
+    return (int) (this.getFuerza() * MULTIPLICADORFZA);
+  }
     
     
   /**Metodo que retorna un entero con los puntos de defensa.
@@ -535,8 +535,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int calcularPuntosDeDefensa() {
-        return (this.getDestreza());
-    }
+    return (this.getDestreza());
+  }
 
     
   /**Metodo que retorna un entero con los puntos de magia
@@ -547,8 +547,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int calcularPuntosDeMagia() {
-        return (int) (this.getInteligencia() * MULTIPLICADORMGA);
-    }
+    return (int) (this.getInteligencia() * MULTIPLICADORMGA);
+  }
 
     
   /**  Metodo void que establece la salud actual del personaje
@@ -556,8 +556,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void restablecerSalud() {
-        this.salud = this.saludTope;
-    }
+    this.salud = this.saludTope;
+  }
     
     
   /**  Metodo void que establece la energia del personaje
@@ -565,8 +565,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void restablecerEnergia() {
-        this.energia = this.energiaTope;
-    }
+    this.energia = this.energiaTope;
+  }
     
     
   /**  Metodo void que modifica los atributos de ataque,
@@ -578,13 +578,13 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void modificarAtributos() {
-        /*
+    /*
          * Tener en cuenta para cuando implementemos asignarPuntosSkills
          */
-        this.ataque = this.calcularPuntosDeAtaque();
-        this.aumentarDefensa(destreza);
-        this.magia = this.calcularPuntosDeMagia();
-    }
+    this.ataque = this.calcularPuntosDeAtaque();
+    this.aumentarDefensa(destreza);
+    this.magia = this.calcularPuntosDeMagia();
+  }
 
     
   /**  Metodo que retorna boolean heredado de la interface Peleable.
@@ -595,8 +595,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     
   @Override
   public final boolean estaVivo() {
-        return salud > 0;
-    }
+    return salud > 0;
+  }
     
     
   /**  Método implementado de la Interface Peleable.
@@ -630,8 +630,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
       }
       return 0;
     }
-        return 0;
-    }
+    return 0;
+  }
 
     
   /**Metodo que retorna un entero de los puntos de salud quitados
@@ -645,7 +645,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int serRobadoSalud(int danio) {
-        danio -= this.getDefensa();
+    danio -= this.getDefensa();
     if (danio <= 0) {
       return 0;
     }
@@ -655,8 +655,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
       danio = salud;
       salud = 0;
     }
-        return danio;
-    }
+    return danio;
+  }
     
     
   /**Metodo que retorna los puntos de energia quitados
@@ -669,7 +669,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final int serDesernegizado(int danio) {
-        danio -= this.getDefensa();
+    danio -= this.getDefensa();
     if (danio <= 0) {
       return 0;
     }
@@ -679,8 +679,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
       danio = energia;
       energia = 0;
     }
-        return danio;
-    }
+    return danio;
+  }
     
     
   /**  Metodo void que aumenta la salud actual del personaje.
@@ -695,7 +695,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     } else {
       this.salud = this.saludTope;
     }
-    }
+  }
     
     
   /**Metodo void que aumenta la energia actual del personaje.
@@ -710,7 +710,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     } else {
       this.energia = this.energiaTope;
     }
-    }
+  }
     
     
   /**Metodo void que crea una nueva alianza. Asigna a ésta
@@ -720,9 +720,9 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void crearAlianza(final String nombreAlianza) {
-        this.clan = new Alianza(nombreAlianza);
-        this.clan.añadirPersonaje(this);
-    }
+    this.clan = new Alianza(nombreAlianza);
+    this.clan.añadirPersonaje(this);
+  }
     
     
   /**Metodo void que desvincula al personaje de la alianza
@@ -734,7 +734,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
       this.clan.eliminarPersonaje(this);
       this.clan = null;
     }
-    }
+  }
     
     
   /**Metodo que retorna un boolean si pudo añadir un nuevo
@@ -761,7 +761,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     } else {
       return false;
     }
-    }
+  }
     
     
   /**Metodo void utilizado para aumentar los puntos
@@ -784,8 +784,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     if (this.inteligencia + inteligencia <= INTELIGENCIAMAXIMA) {
       this.inteligencia += inteligencia;
     }
-        this.modificarAtributos();
-    }
+    this.modificarAtributos();
+  }
 
     
   /**  Metodo void que aumenta el nivel del personaje
@@ -799,11 +799,11 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     
   public final void subirNivel() {
 
-        int acumuladorExperiencia = 0;
+    int acumuladorExperiencia = 0;
     if (this.getNivel() == NIVELMAXIMO) {
       return;
     }
-        while (this.getNivel() != NIVELMAXIMO
+    while (this.getNivel() != NIVELMAXIMO
           && (this.experiencia >= Personaje
           .getTablaDeNiveles()[this.getNivel() + 1] + acumuladorExperiencia)) {
       acumuladorExperiencia += Personaje.getTablaDeNiveles()[this.getNivel() + 1];
@@ -811,9 +811,9 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
       this.modificarAtributos();
       this.saludTope += SALUDTOPESUBIRN;
       this.energiaTope += ENERGIATOPESUBIRN;
-        }
-        this.experiencia -= acumuladorExperiencia;
     }
+    this.experiencia -= acumuladorExperiencia;
+  }
     
     
   /**Metodo que retorna un boolean significando éste si
@@ -825,14 +825,14 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final boolean ganarExperiencia(final int exp) {
-        this.experiencia += exp;
+    this.experiencia += exp;
 
     if (experiencia >= Personaje.getTablaDeNiveles()[this.getNivel() + 1]) {
       subirNivel();
       return true;
     }
-        return false;
-    }
+    return false;
+  }
     
     
   /**  Metodo que retorna un entero con la experiencia
@@ -845,8 +845,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     
   @Override
   public final int otorgarExp() {
-        return this.getNivel() * MULTIPLICADOREXP;
-    }
+    return this.getNivel() * MULTIPLICADOREXP;
+  }
 
     
   /**Metodo que retorna un Objetc utilizado para
@@ -858,8 +858,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     
   @Override
   public Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
+    return super.clone();
+  }
 
     
     
@@ -870,8 +870,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final double distanciaCon(final Personaje p) {
-        return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
-    }
+    return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
+  }
     
     
   /**Metodo que retorna un boolean.
@@ -887,8 +887,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final boolean habilidadCasta1(final Peleable atacado) {
-        return this.getCasta().habilidad1(this, atacado);
-    }
+    return this.getCasta().habilidad1(this, atacado);
+  }
 
     
     
@@ -905,8 +905,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final boolean habilidadCasta2(final Peleable atacado) {
-        return this.getCasta().habilidad2(this, atacado);
-    }
+    return this.getCasta().habilidad2(this, atacado);
+  }
     
     
   /**Metodo que retorna un boolean.
@@ -921,8 +921,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final boolean habilidadCasta3(final Peleable atacado) {
-        return this.getCasta().habilidad3(this, atacado);
-    }
+    return this.getCasta().habilidad3(this, atacado);
+  }
 
     
     
@@ -1002,8 +1002,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void aumentarInteligencia(final int bonus) {
-        inteligencia += bonus;
-    }
+    inteligencia += bonus;
+  }
     
     
   /**
@@ -1013,8 +1013,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void aumentarDestreza(final int bonus) {
-        destreza += bonus;
-    }
+    destreza += bonus;
+  }
     
     
   /**
@@ -1024,8 +1024,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void aumentarSaludTope(final int bonus) {
-        saludTope += bonus;
-    }
+    saludTope += bonus;
+  }
     
     
   /**
@@ -1035,8 +1035,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void aumentarEnergiaTope(final int bonus) {
-        energiaTope += bonus;
-    }
+    energiaTope += bonus;
+  }
     
     
   /**
@@ -1045,17 +1045,17 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public static final  int[] getTablaDeNiveles() {
-        return tablaDeNiveles;
-    }
+    return tablaDeNiveles;
+  }
     
-    /**
+  /**
      * Reemplaza a la tabla de niveles por otra.
      * @param tablaDeNiveles tabla de niveles que reemplazará a la anterior.
      */
     
-    private static void setTablaDeNiveles(final int[] tablaDeNiveles) {
-        Personaje.tablaDeNiveles = tablaDeNiveles;
-    }
+  private static void setTablaDeNiveles(final int[] tablaDeNiveles) {
+    Personaje.tablaDeNiveles = tablaDeNiveles;
+  }
     
     
   /**
@@ -1064,8 +1064,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void aumentarEnergia(final int bonus) {
-        energia += bonus;
-    }
+    energia += bonus;
+  }
     
     
   /**
@@ -1080,7 +1080,7 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
       energia = 0;
     }
 
-    }
+  }
 
     
   /**
@@ -1089,8 +1089,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void reducirSalud(final int reduc) {
-        salud -= reduc;
-    }
+    salud -= reduc;
+  }
     
     
   /**
@@ -1099,8 +1099,8 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void aumentarSalud(final int bonus) {
-        salud += bonus;
-    }
+    salud += bonus;
+  }
 
     
   /**
@@ -1109,11 +1109,11 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
      */
     
   public final void actualizarAtributos(final HashMap<String, Number> map) {
-        salud = map.get("salud").intValue();
-        energia = map.get("energia").intValue();
-        defensa = map.get("defensa").intValue();
-        casta.setProbabilidadEvitarDaño(map.get("probEvitarDanio").doubleValue());
-    }
+    salud = map.get("salud").intValue();
+    energia = map.get("energia").intValue();
+    defensa = map.get("defensa").intValue();
+    casta.setProbabilidadEvitarDaño(map.get("probEvitarDanio").doubleValue());
+  }
     
     
   /**
@@ -1125,26 +1125,26 @@ public abstract class Personaje extends MadreDeTodo implements Peleable, Seriali
     
   public void trueque(final ArrayList<Item> misItems,
             final ArrayList<Item> aPoner, final DefaultListModel<String> aSacar) {
-        int j = 0;
-        boolean loop = true;
-        ArrayList<Item> aux = misItems;
-        while (aSacar.size() > 0) {
-            while (loop) {
+    int j = 0;
+    boolean loop = true;
+    ArrayList<Item> aux = misItems;
+    while (aSacar.size() > 0) {
+      while (loop) {
         if (misItems.get(j).getNombre().equals(aSacar.get(0))) {
           aSacar.remove(0);
           aux.remove(misItems.get(j));
           loop = false;
         }
-                j++;
+        j++;
       }
-            j = 0;
-            loop = true;
-        }
+      j = 0;
+      loop = true;
+    }
     for (Item item : aPoner) {
       aux.add(item);
     }
-        this.items = aux;
-    }
+    this.items = aux;
+  }
 
 }
 

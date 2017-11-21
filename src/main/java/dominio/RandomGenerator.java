@@ -1,5 +1,5 @@
 package dominio;
-/**
+/**.
  * Clase que se utiliza para generar números randoms
  */
 
@@ -14,8 +14,8 @@ public  class RandomGenerator {
     
     
   public int nextInt(final int val) {
-        return 0;
-    }
+    return 0;
+  }
     
     
   /**
@@ -25,8 +25,8 @@ public  class RandomGenerator {
      */
     
   public double nextDouble() {
-        return 0;
-    }
+    return 0;
+  }
     
     
   /**

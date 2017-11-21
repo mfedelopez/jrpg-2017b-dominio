@@ -7,16 +7,15 @@ import java.util.LinkedList;
  */
 
 public class Alianza {
-    /**
+  /**
      * Nombre que tendra la alianza.
      */
     
-    private final String nombre;
-    /**
+  private final String nombre;
+  /**
      * Lista la cual contendra todos los integrantes de la alianza.
      */
-    
-    private LinkedList<Personaje> aliados;
+  private final LinkedList<Personaje> aliados; 
 
   /**La clase Alianza tiene como función agrupar a los jugadores.
      * mediante una LinkedList de Personajes
@@ -35,7 +34,7 @@ public class Alianza {
      */
     
   public final LinkedList<Personaje> getAliados() {
-        return new LinkedList<Personaje>(aliados);
+    return new LinkedList<Personaje>(aliados);
   }
 
 
@@ -45,17 +44,17 @@ public class Alianza {
      */
     
   public final String obtenerNombre() {
-        return nombre;
+    return nombre;
   }
     
   /**  Se encarga de eliminar un
     * personaje de la alianza.
     * @param pj personaje a remover
-    * de la alianza.
+   * de la alianza.
     */
     
   public final void eliminarPersonaje(final Personaje pj) {
-        aliados.remove(pj);
+    aliados.remove(pj);
   }
 
   /**Método void que agrega un nuevo Personaje a la LinkedList aliados.
@@ -64,7 +63,7 @@ public class Alianza {
      */
     
   public final void añadirPersonaje(final Personaje pj) {
-        aliados.add(pj);
+    aliados.add(pj);
   }
 }
 

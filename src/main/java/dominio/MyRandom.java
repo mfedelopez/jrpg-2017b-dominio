@@ -3,7 +3,6 @@ package dominio;
 import java.util.Random;
 
 /**
- *
  * Clase que se utiliza para obtener números aleatoreos.
  */
 
@@ -18,8 +17,8 @@ public class MyRandom extends RandomGenerator {
     
   @Override
   public final double nextDouble() {
-        return new Random().nextDouble();
-    }
+    return new Random().nextDouble();
+  }
     
   /**  El método nextInt() decrementa en 1 el argumento que se le pasó.
      * @param val número entero
@@ -28,7 +27,7 @@ public class MyRandom extends RandomGenerator {
     
   @Override
   public final int nextInt(final int val) {
-        return new Random().nextInt(val);
-    }
+    return new Random().nextInt(val);
+  }
 
 }
